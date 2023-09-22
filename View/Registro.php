@@ -11,30 +11,30 @@
 
 
 <div class="wrapper">
-        <form action="">
+        <form method="post" action="?resp=registrarme">
             <h1>Registro</h1>
             <div class="input-box">
-                <input type="Usuario" placeholder="Username" required>
+                <input type="Usuario" placeholder="Username" name="usuariotxt" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
 
             <div class="input-box">
-                <input type="Clave" placeholder="Clave" required>
+                <input type="Clave" placeholder="Clave" name="clavetxt" required>
                 <box-icon name='lock-alt'></box-icon>
             </div>
 
             <div class="input-box">
-                <input type="Correo" placeholder="Correo" required>
+                <input type="Correo" placeholder="Correo" name="correotxt" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
 
             <div class="input-box">
-                <input type="Nombre" placeholder="Nombre" required>
+                <input type="Nombre" placeholder="Nombre" name="nombretxt" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
 
             <div class="input-box">
-                <input type="Telefono" placeholder="Telefono" required>
+                <input type="Telefono" placeholder="Telefono" name="telefonotxt" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
             
