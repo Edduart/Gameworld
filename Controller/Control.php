@@ -42,7 +42,7 @@ class control{
 		{
 			foreach($usuarioValido as $Uencontrado){}
 			//var_dump($Uencontrado);
-			if($password == $Uencontrado->clave)
+			if($password == $Uencontrado->contraseña)
 			{
 				//Inicio de sesion
 				/*$_SESSION['id'] = $Uencontrado->id;
@@ -57,7 +57,7 @@ class control{
 				elseif ($Uencontrado->usuario !== "admin")
 				{
 					//include_once "View/usuario/main2.php";
-					include_once "View/index.php";
+					include_once "View/Valid.php";
 				}
 			}else{
 				//$_SESSION['error_message'] = 'Credenciales invalidas!';
@@ -67,12 +67,12 @@ class control{
 				if(password_verify($clave,$encontrado->clave)){
 					echo "verificado";
 				}*/
-			} 
-			else
-			{
-				$_SESSION['error_message'] = 'Credenciales invalidas!';
-				include_once "View/login.php";
-				// Credenciales inválidas, mostrar un mensaje de error o redirigir a la página de inicio de sesión
+		} 
+		else
+		{
+			//$_SESSION['error_message'] = 'Credenciales invalidas!';
+			include_once "View/index.php";
+			// Credenciales inválidas, mostrar un mensaje de error o redirigir a la página de inicio de sesión
 		}
 	}
 
