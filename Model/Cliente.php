@@ -1,16 +1,17 @@
 <?php
-   // require_once("conexion.php");
+   //require_once("conexion.php");
 
-    class registar //extends conexion
+    class cliente //extends conexion
     {
             public $CNX;
             public $Id;
+            public $Username;
             public $Nombre;
-            public $Usuario;
-            public $Correo;
+            public $Email;
             public $Contraseña;
             public $Telefono;
-            
+
+
             //contructor que enlaza la conexion
             public function __construct() {
                 try {
@@ -33,10 +34,22 @@
             //funcion  guardar para el registro
             }*/
 
+            public function cargarId($Id){
+                try {
+                    $query = "SELECT * from cliente where id=?";
+                    $resultado = $this->CNX->prepare($query);
+                    $resultado->execute(array($Id));
+                    return $resultado->fetch(PDO::FETCH_OBJ);
+                } catch (Exception $e) {
+                    die($e->getMessage());
+                }
+        
+            }
+
             public function guardar($data){
                 try {
-                    $query = "INSERT INTO `cliente` (`id_cliente`, `nombre`, `usuario`, `correo`, `contraseña`, `telefono`) values(?,?,?,?,?)";
-                    $this->CNX->prepare($query)->execute(array($data->Nombre,$data->Usuario,$data->Correo,$data->Contraseña,$data->Telefono));
+                    $query = "INSERT INTO cliente(usuario, correo, contraseña, nombre, telefono) VALUES(?,?,?,?,?)";
+                    $this->CNX->prepare($query)->execute(array($data->Username,$data->Email,$data->Contraseña,$data->Nombre,$data->Telefono));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
@@ -63,34 +76,19 @@
             }*/
         //funcion que hace que cargue los id del registro para que la funcion
         //modificar funcione
-            public function cargarId($id){
-                try {
-                    $query = "SELECT * from cliente where id=?";
-                    $resultado = $this->CNX->prepare($query);
-                    $resultado->execute(array($id));
-                    return $resultado->fetch(PDO::FETCH_OBJ);
-                } catch (Exception $e) {
-                    die($e->getMessage());
-                }
-        
-            }
 
             //verifica los registros 
-            /*public function verificarCredenciales($email){
+            public function verificarCredenciales($Usuario){
                 try{
-                $this->nombre = $email;
-                $query = "SELECT * FROM registro WHERE tienda='$this->nombreR'";
+                $this->Username = $Usuario;
+                $query = "SELECT * FROM cliente WHERE usuario='$this->Username'";
                 $resultado = $this->CNX->prepare($query);
                 $resultado->execute();
                 $usuarioEncontrado = $resultado->fetchAll(PDO::FETCH_OBJ);
                 return $usuarioEncontrado;
             } catch (Exception $e){
                 die ($e->getMessage());
-            }*/
+            }
         }
-
-         
-
-
-
+    }
 ?>

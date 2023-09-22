@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css"  href="../Resources/stylePrincipal.css" />
+    <link rel="stylesheet" type="text/css"  href="Resources/stylePrincipal.css" />
     <title>Document</title>
-      <!-- Compiled and minified CSS -->
-     <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
-     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- Compiled and minified CSS -->
+    <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 <body>
      <!-- !!!Comienzo del menu!!!-->
-        
     <header class="header">
         <a href="" class="logo">Logo</a>
 
@@ -21,15 +20,13 @@
          <box-icon name='x' id="close-icon"></box-icon>
         </label>
 
-        <nav class="navbar">
-            <a href="#">MENU1</a>
+          <nav class="navbar">
+            <a href="?resp=index">MENU1</a>
             <a href="#">MENU2</a>
             <a href="#">MENU3</a>
             <a href="#">MENU4</a>
         </nav>
     </header>
-
-
 
      <!-- <div class="navbar-fixed">
       <nav class="teal darken-1">
@@ -58,7 +55,7 @@
       <li><a href="?resp=nuevo">Regìstrate📓</a></li>
       <li><a href="?resp=sesion">Inicio de sesión 🔐</a></li>
       <li><a href="?resp=quienessomos">Quiénes somos ❓</a></li>
-    </ul>-->
-    <!--Fenilaizacion del menu-->
+    </ul>
+    <--Fenilaizacion del menu-->
 </body>
 </html>
