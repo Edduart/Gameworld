@@ -3,10 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="../Resources/styleRegistro.css" />
     <title>Registro</title>
 </head>
 <body>
-    <form method="post"action="">
+
+
+
+<div class="wrapper">
+        <form action="">
+            <h1>Registro</h1>
+            <div class="input-box">
+                <input type="Usuario" placeholder="Username" required>
+                <box-icon name='user' type='solid' ></box-icon>
+            </div>
+
+            <div class="input-box">
+                <input type="Clave" placeholder="Clave" required>
+                <box-icon name='lock-alt'></box-icon>
+            </div>
+
+            <div class="input-box">
+                <input type="Correo" placeholder="Correo" required>
+                <box-icon name='user' type='solid' ></box-icon>
+            </div>
+
+            <div class="input-box">
+                <input type="Nombre" placeholder="Nombre" required>
+                <box-icon name='user' type='solid' ></box-icon>
+            </div>
+
+            <div class="input-box">
+                <input type="Telefono" placeholder="Telefono" required>
+                <box-icon name='user' type='solid' ></box-icon>
+            </div>
+            
+
+            <button type = "submit" class="btn"> Registrarse </button>
+
+            <div class="register-link">
+                <p>¿Ya posees una cuenta? <a href="../View/login.php">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--  <form method="post"action="">
         <label for="name">Nombre:</label>
         <input type="text" name="nombretxt" placeholder="Ingrese su nombre">
         <br><br>
@@ -25,5 +77,6 @@
         <input type="submit" value="Guardar">
         <a href="" >Regresar</a>
     </form>
+     -->
 </body>
 </html>

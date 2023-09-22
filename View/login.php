@@ -29,7 +29,7 @@
             <button type = "submit" class="btn"> Login </button>
 
             <div class="register-link">
-                <p>Aun no tienes una cuenta? <a href="?resp=registrame">Registrate</a></p>
+                <p>Aun no tienes una cuenta? <a href="../View/Registro.php">Registrate</a></p>
             </div>
         </form>
     </div>
