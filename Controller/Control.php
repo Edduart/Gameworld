@@ -31,6 +31,10 @@ class control{
 		include_once "View/Registro_Product.php";
 	}
 
+	public function cuenta(){
+		include_once "View/Principal_login.php";
+	}
+
 	public function registrar(){
 		//$_SESSION['error_message'] = null;
 		$alm = new cliente();
@@ -80,7 +84,6 @@ class control{
 				elseif ($Uencontrado->usuario !== "admin")
 				{
 					include_once "View/Principal_login.php";
-					//header('Location: View/Principal_login.php');
 				}
 			}else{
 				//$_SESSION['error_message'] = 'Credenciales invalidas!';

@@ -22,7 +22,7 @@
           <li><a href="hero">template</a></li>
           <li><a href="Borrame.html">template</a></li>
           <li><a href="#">Carrito (0)</a></li>
-          <li><a href="?resp=cuenta">Mi cuenta</a></li>
+          <li><a href="#">Mi cuenta</a></li>
         </ul>
         <a href="#" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
         <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
@@ -38,8 +38,9 @@
     </header>
     <main>
         <section id="hero">
-            <h1>Welcome</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quasi fugiat quaerat debitis aspernatur sit pariatur corrupti delectus non eius.</p>
+          <div>
+            
+          </div>
         </section>
     </main>
     <script>
