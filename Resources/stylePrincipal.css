@@ -6,108 +6,149 @@
 }
 
 body {
-  min-height: 100vh;
-  background: url("LoginImg.png") no-repeat;
+  height: 100vh;
+  background-color: #000;
+  background-image: url(LoginImg.png);
   background-size: cover;
   background-position: center;
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+a:hover {
+  color: aqua;
+}
+
+/*HEADER*/
+
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar {
   width: 100%;
-  padding: 1.3rem 10%;
-  /* background: rgba(0, 0, 0, 0.1);*/
-  /* backdrop-filter: blur(80%);*/
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: -100;
+  justify-content: space-between;
 }
 
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(50px);
-  z-index: -1;
+.navbar .logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-.logo {
-  font-size: 3rem;
+.navbar .links {
+  display: flex;
+  gap: 5rem;
+}
+
+.navbar .toggle_btn {
   color: #fff;
-  text-decoration: none;
-  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer; /*Este cursor muestra la mano esa que aparece cuando el contenido es un hiperenlace, mostrando al usuario que ese elemento se puede apretar, hacer click, para ir a otro lugar o desencadenar algún tipo de comportamiento.*/
+  display: none; /*el valor de none permite Desactivar la Visualizacion DE UN Elemento; cuando no se utiliza none , todos los elementos descendentes también quedan desactivados.*/
 }
-
-.navbar a {
-  font-size: 1.15rem;
+.action_btn {
+  background-color: #5cd2e6;
   color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  margin-left: 2.5rem;
-}
-#check {
-  display: none;
-}
-
-.icons {
-  position: absolute;
-  right: 5%;
-  font-size: 2.8rem;
-  color: #fff;
+  padding: 0.5rem 3rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
+  transition: scale 0.2 ease;
+}
+
+.action_btn:hover {
+  scale: 1.05;
+  color: #fff;
+}
+
+.action_btn:active {
+  scale: 0.95;
+}
+
+/*dropdown_menu*/
+
+.dropdown_menu {
   display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(
+    15px
+  ); /*le permite aplicar efectos gráficos como desenfoque o cambio de color al área detrás de un elemento.*/
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* BREAKPOINTS*/
+.dropdown_menu.open {
+  height: 240px;
+}
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/*HERO*/
+section#hero {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #060606;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* RESPONSIVE DESIGN*/
 @media (max-width: 992px) {
-  .header {
-    padding: 1.3rem 5%;
+  .navbar .links,
+  .navbar .action_btn {
+    display: none;
+  }
+
+  .navbar .toggle_btn {
+    display: block;
+  }
+
+  .dropdown_menu {
+    display: block;
   }
 }
 
-@media (max-width: 768px) {
-  .icons {
-    display: inline-flex;
-  }
-
-  #check:checked ~ .icons #menu-icon {
-    display: none;
-  }
-
-  .icons #close-icon {
-    display: none;
-  }
-
-  #check:checked ~ .icons #close-icon {
-    display: block;
-  }
-  .navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 0rem;
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(50px);
-    box-shadow: 0, Srem 1rem rgba(0, 0, 0, 0.1);
-    transition: 0.3s aese;
-  }
-
-  #check:checked ~ .navbar {
-    height: 17.7rem;
-  }
-
-  .navbar a {
-    display: block;
-    font-size: 1.1rem;
-    margin: 1.5rem 0;
-    text-align: center;
+@media (max-width: 576px) {
+  .dropdown_menu {
+    left: 2rem;
+    width: unset;
   }
 }
