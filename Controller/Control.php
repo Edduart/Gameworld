@@ -69,7 +69,7 @@ class control{
 				//Si las credenciales son iguales a administrador o usuario cualquiera
 				if($Uencontrado->usuario == "admin")
 				{
-					//include_once "View/admin/admin.php";
+					include_once "View/Admin.php";
 				} 
 				elseif ($Uencontrado->usuario !== "admin")
 				{
