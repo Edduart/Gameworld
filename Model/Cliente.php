@@ -56,10 +56,10 @@
             }
 
             //actualizar para el registro a futuro
-           /* public function actualizarDatos($data){
+            public function actualizarDatos($data){
                 try {
-                    $query = "UPDATE registro set nombreR=?,apellidoR=?,cedula=?,dirección=?,email=?,clave=? WHERE id=?";
-                    $this->CNX->prepare($query)->execute(array($data->nombreR,$data->apellidoR,$data->cedula,$data->dirección,$data->email,$data->clave,$data->id));
+                    $query = "UPDATE cliente set nombre=?,usuario=?,correo=?,contraseña=?,telefono=? WHERE id=?";
+                    $this->CNX->prepare($query)->execute(array($data->Nombre,$data->Usuario,$data->Correo,$data->Contraseña,$data->Telefono,$data->Id));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
@@ -67,13 +67,13 @@
             //funcion de eliminar a futuro
             public function delete ($id){
                 try {
-                    $query = "Delete from registro where id =?";
+                    $query = "Delete from cliente where id =?";
                     $resultado = $this->CNX->prepare($query);
                     $resultado->execute(array($id));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
-            }*/
+            }
         //funcion que hace que cargue los id del registro para que la funcion
         //modificar funcione
 
