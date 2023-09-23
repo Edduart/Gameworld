@@ -36,6 +36,15 @@ class control{
 		include_once "View/login.php";
 	}
 
+	public function regist_product(){
+		//$_SESSION['error_message'] = null;
+		$alm = new cliente();
+		$alm->Nombre_p = $_POST['TxtNproducto'];
+		$alm->Descripcion = $_POST['TxtDescripcion'];
+		$this->Usuario->guardar($alm);
+		include_once "View/login.php";
+	}
+
 	public function login()
 	{
 		$User = $_POST['TxtUsuario'];
