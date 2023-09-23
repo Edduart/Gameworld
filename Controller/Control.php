@@ -1,5 +1,6 @@
 <?php
 include_once "Model/Cliente.php";
+include_once "Model/Producto.php";
 /*require "Sesion.php";*/
 
 /*$start_sesion = new SesionControl;*/
@@ -9,6 +10,7 @@ class control{
 
     public function __construct(){
 		$this->Usuario = new cliente();
+		$this->Product = new producto();
 	}
 
 	public function index(){
@@ -38,7 +40,7 @@ class control{
 
 	public function regist_product(){
 		//$_SESSION['error_message'] = null;
-		$alm = new cliente();
+		$alm = new producto();
 		$alm->Nombre_p = $_POST['TxtNproducto'];
 		$alm->Descripcion = $_POST['TxtDescripcion'];
 		$this->Usuario->guardar($alm);

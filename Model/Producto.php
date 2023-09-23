@@ -1,7 +1,7 @@
 <?php
    //require_once("conexion.php");
 
-    class cliente //extends conexion
+    class producto //extends conexion
     {
             public $CNX;
             public $Id;
