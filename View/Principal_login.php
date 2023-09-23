@@ -10,7 +10,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" type="text/css" href="Resources/stylePrincipal.css" />
+    <link rel="stylesheet" type="text/css" href="../Resources/stylePrincipal.css" />
 
     <title>Document</title>
   </head>
@@ -24,7 +24,7 @@
           <li><a href="Borrame.html">Service</a></li>
           <li><a href="Borrame.html">Contact</a></li>
         </ul>
-        <a href="View/login.php" class="action_btn">Login</a>
+        <a href="#" class="action_btn">USER_SESSION</a>
         <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
       </div>
 

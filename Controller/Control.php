@@ -74,7 +74,7 @@ class control{
 				elseif ($Uencontrado->usuario !== "admin")
 				{
 					//include_once "View/usuario/main2.php";
-					header('Location: Viev/Principal_login.php');
+					header('Location: View/Principal_login.php');
 				}
 			}else{
 				//$_SESSION['error_message'] = 'Credenciales invalidas!';
