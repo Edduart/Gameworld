@@ -21,17 +21,16 @@
             
             }
             //en lista los insert join que se hizo en sql
-          /*  public function listar(){
+            public function listar(){
                 try{
-                $query = "SELECT z.id,z.nombreR,z.apellidoR,z.cedula,z.dirección,z.email,z.clave FROM registro z ORDER BY z.id";
+                $query = "SELECT z.ID_Producto,z.Nombre_Producto,z.ID_catergoria,z.Descripcion FROM producto z ORDER BY z.ID_Producto";
                 $resultado = $this->CNX->prepare($query);
                 $resultado->execute();
                 return $resultado->fetchAll(PDO::FETCH_OBJ);
             } catch (Exception $e){
                 die ($e->getMessage());
             }
-            //funcion  guardar para el registro
-            }*/
+        }
 
           /*  public function cargarId($Id){
                 try {

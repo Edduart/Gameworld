@@ -26,6 +26,10 @@ class control{
 		include_once "View/Registro.php";
 	}
 
+	public function Product(){
+		include_once "View/Registro_Product.php";
+	}
+
 	public function registrar(){
 		//$_SESSION['error_message'] = null;
 		$alm = new cliente();
