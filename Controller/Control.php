@@ -15,6 +15,10 @@ class control{
 		include_once "View/login.php";
 	}
 
+	public function sesion(){
+		include_once "View/login.php";
+	}
+
     public function Registro(){
 		include_once "View/Registro.php";
 	}
@@ -31,6 +35,7 @@ class control{
 		$this->Usuario->guardar($alm);
 		include_once "View/login.php";
 	}
+
 	public function login()
 	{
 		$User = $_POST['TxtUsuario'];

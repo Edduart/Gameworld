@@ -73,7 +73,7 @@
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
-            }*/
+            }
         //funcion que hace que cargue los id del registro para que la funcion
         //modificar funcione
 
