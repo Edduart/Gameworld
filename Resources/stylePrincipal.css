@@ -9,8 +9,13 @@ body {
   height: 100vh;
   background-color: #000;
   background-image: url(LoginImg.png);
+
   background-size: cover;
   background-position: center;
+}
+
+body .navbar {
+  padding: 30px;
 }
 
 li {
@@ -42,6 +47,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  backdrop-filter: blur(
+    15px
+  ); /*le permite aplicar efectos gráficos como desenfoque o cambio de color al área detrás de un elemento.*/
+  border-radius: 100px;
+  overflow: hidden;
 }
 
 .navbar .logo a {
