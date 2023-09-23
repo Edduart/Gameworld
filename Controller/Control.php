@@ -7,6 +7,7 @@ include_once "Model/Producto.php";
 class control{
 
 	public $Usuario;
+	public $Product;
 
     public function __construct(){
 		$this->Usuario = new cliente();
