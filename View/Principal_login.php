@@ -10,7 +10,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" type="text/css" href="../Resources/stylePrincipal.css" />
+    <link rel="stylesheet" type="text/css" href="Resources/stylePrincipal.css" />
 
     <title>Document</title>
   </head>
@@ -19,12 +19,12 @@
       <div class="navbar">
         <div class="logo"><a href="#">GAMEWORLD</a></div>
         <ul class="links">
-          <li><a href="hero">Home</a></li>
-          <li><a href="Borrame.html">NOMBRE</a></li>
-          <li><a href="Borrame.html">Service</a></li>
-          <li><a href="Borrame.html">Contact</a></li>
+          <li><a href="hero">template</a></li>
+          <li><a href="Borrame.html">template</a></li>
+          <li><a href="#">Carrito (0)</a></li>
+          <li><a href="#">Mi cuenta</a></li>
         </ul>
-        <a href="#" class="action_btn">USER_SESSION</a>
+        <a href="#" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
         <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
       </div>
 

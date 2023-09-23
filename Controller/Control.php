@@ -1,9 +1,10 @@
 <?php
 include_once "Model/Cliente.php";
 include_once "Model/Producto.php";
-/*require "Sesion.php";*/
+require "SesionControl.php";
 
-/*$start_sesion = new SesionControl;*/
+$start_sesion = new SesionControl;
+
 class control{
 
 	public $Usuario;
@@ -66,10 +67,11 @@ class control{
 			if($password == $Uencontrado->contraseña)
 			{
 				//Inicio de sesion
-				/*$_SESSION['id'] = $Uencontrado->id;
-				$_SESSION['nombre'] = $Uencontrado->nombre;
+				$_SESSION['id'] = $Uencontrado->id_cliente;
+				$_SESSION['nombre'] = $Uencontrado->usuario;
 				$_SESSION['correo'] = $Uencontrado->correo;
-				$_SESSION['error_message'];*/
+				$_SESSION['error_message'] = null;
+
 				//Si las credenciales son iguales a administrador o usuario cualquiera
 				if($Uencontrado->usuario == "admin")
 				{
@@ -77,8 +79,8 @@ class control{
 				} 
 				elseif ($Uencontrado->usuario !== "admin")
 				{
-					//include_once "View/usuario/main2.php";
-					header('Location: View/Principal_login.php');
+					include_once "View/Principal_login.php";
+					//header('Location: View/Principal_login.php');
 				}
 			}else{
 				//$_SESSION['error_message'] = 'Credenciales invalidas!';
