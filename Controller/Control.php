@@ -11,22 +11,70 @@ class control{
 		$this->Usuario = new cliente();
 	}
 
-    public function registrame(){
+	public function index(){
+		include_once "View/login.php";
+	}
+
+    public function Registro(){
 		include_once "View/Registro.php";
 	}
 
-	public function registrarse(){
+	public function registrar(){
+		//$_SESSION['error_message'] = null;
 		$alm = new cliente();
 		$alm->Id = $_POST['txtId'];
-		$alm->Nombre = $_POST['nombretxt'];
-		$alm->Usuario = $_POST['usuariotxt'];
-		$alm->Correo = $_POST['correotxt'];
-		$alm->Contraseña = $_POST['contraseñatxt'];
-		$alm->Telefono = $_POST['telefonotxt'];
-		$alm->id > 0 ? $this->Registro->actualizarDatos($alm) : $this->Registro->guardar($alm);
-		//header("location: formulario.php");
-		require_once "View/inicio.php";
-	  }
+		$alm->Username = $_POST['TxtUsername'];
+		$alm->Email = $_POST['TxtEmail'];
+		$alm->Contraseña = $_POST['TxtContraseña'];
+		$alm->Nombre = $_POST['TxtNombre'];
+		$alm->Telefono = $_POST['TxtTelefono'];
+		$this->Usuario->guardar($alm);
+		include_once "View/login.php";
+	}
+	public function login()
+	{
+		$User = $_POST['TxtUsuario'];
+		$password = $_POST['TxtClave'];
+		// Verificar las credenciales del usuario
+		$usuarioValido = $this->Usuario->verificarCredenciales($User);
+		
+		if ($usuarioValido) 
+		{
+			foreach($usuarioValido as $Uencontrado){}
+			//var_dump($Uencontrado);
+			if($password == $Uencontrado->contraseña)
+			{
+				//Inicio de sesion
+				/*$_SESSION['id'] = $Uencontrado->id;
+				$_SESSION['nombre'] = $Uencontrado->nombre;
+				$_SESSION['correo'] = $Uencontrado->correo;
+				$_SESSION['error_message'];*/
+				//Si las credenciales son iguales a administrador o usuario cualquiera
+				if($Uencontrado->usuario == "admin")
+				{
+					//include_once "View/admin/admin.php";
+				} 
+				elseif ($Uencontrado->usuario !== "admin")
+				{
+					//include_once "View/usuario/main2.php";
+					include_once "View/Valid.php";
+				}
+			}else{
+				//$_SESSION['error_message'] = 'Credenciales invalidas!';
+				include_once "View/index.php";
+			}
+				/* Si utilizo hash
+				if(password_verify($clave,$encontrado->clave)){
+					echo "verificado";
+				}*/
+		} 
+		else
+		{
+			//$_SESSION['error_message'] = 'Credenciales invalidas!';
+			include_once "View/index.php";
+			// Credenciales inválidas, mostrar un mensaje de error o redirigir a la página de inicio de sesión
+		}
+	}
 
 }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css"  href="../Resources/styleRegistro.css" />
+    <link rel="stylesheet" type="text/css"  href="Resources/styleRegistro.css" />
     <title>Registro</title>
 </head>
 <body>
@@ -11,35 +11,35 @@
 
 
 <div class="wrapper">
-        <form method="post" action="?resp=registrarme">
+        <form method="POST" action="?resp=registrar">
             <h1>Registro</h1>
+            <input type="hidden" name="txtId">
             <div class="input-box">
-                <input type="Usuario" placeholder="Username" name="usuariotxt" required>
+                <input type="Usuario" placeholder="Username" name="TxtUsername" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
 
             <div class="input-box">
-                <input type="Clave" placeholder="Clave" name="clavetxt" required>
+                <input type="Correo" placeholder="Email" name="TxtEmail" required>
+                <box-icon name='user' type='solid' ></box-icon>
+            </div>
+
+            <div class="input-box">
+                <input type="Clave" placeholder="Clave"  name="TxtContraseña" required>
                 <box-icon name='lock-alt'></box-icon>
             </div>
 
             <div class="input-box">
-                <input type="Correo" placeholder="Correo" name="correotxt" required>
+                <input type="Nombre" placeholder="Nombre" name="TxtNombre" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
 
             <div class="input-box">
-                <input type="Nombre" placeholder="Nombre" name="nombretxt" required>
-                <box-icon name='user' type='solid' ></box-icon>
-            </div>
-
-            <div class="input-box">
-                <input type="Telefono" placeholder="Telefono" name="telefonotxt" required>
+                <input type="Telefono" placeholder="Telefono" name="TxtTelefono" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
             
-
-            <button type = "submit" class="btn"> Registrarse </button>
+            <button type="submit" class="btn"> Registrarse </button>
 
             <div class="register-link">
                 <p>¿Ya posees una cuenta? <a href="../View/login.php">Login</a></p>
