@@ -24,7 +24,7 @@
           <li><a href="Borrame.html">Service</a></li>
           <li><a href="Borrame.html">Contact</a></li>
         </ul>
-        <a href="?resp=sesion" class="action_btn">Login</a>
+        <a href="View/login.php" class="action_btn">Login</a>
         <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
       </div>
 
