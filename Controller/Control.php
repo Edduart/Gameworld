@@ -14,7 +14,7 @@ class control{
 	}
 
 	public function index(){
-		include_once "View/login.php";
+		include_once "View/Principal.php";
 	}
 
 	public function sesion(){
@@ -43,7 +43,7 @@ class control{
 		$alm = new producto();
 		$alm->Nombre_p = $_POST['TxtNproducto'];
 		$alm->Descripcion = $_POST['TxtDescripcion'];
-		$this->Usuario->guardar($alm);
+		$this->Product->guardar($alm);
 		include_once "View/login.php";
 	}
 
