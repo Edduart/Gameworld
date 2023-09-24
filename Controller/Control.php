@@ -19,6 +19,10 @@ class control{
 		include_once "View/Principal.php";
 	}
 
+	public function test(){
+		include_once "View/Principal.php";
+	}
+
 	public function sesion(){
 		include_once "View/login.php";
 	}
