@@ -32,7 +32,7 @@ class control{
 	}
 
 	public function cuenta(){
-		include_once "View/Principal_login.php";
+		include_once "View/Usuario/Principal_login.php";
 	}
 
 	public function registrar(){
@@ -79,14 +79,14 @@ class control{
 				//Si las credenciales son iguales a administrador o usuario cualquiera
 				if($Uencontrado->usuario == "admin")
 				{
-					include_once "View/Admin.php";
+					include_once "View/Admin/Admin.php";
 				} 
 				elseif ($Uencontrado->usuario !== "admin")
 				{
-					include_once "View/Principal_login.php";
+					include_once "View/Usuario/Principal_login.php";
 				}
 			}else{
-				//$_SESSION['error_message'] = 'Credenciales invalidas!';
+				$_SESSION['error_message'] = 'Credenciales invalidas!';
 				include_once "View/index.php";
 			}
 				/* Si utilizo hash
