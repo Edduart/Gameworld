@@ -6,6 +6,43 @@
   font-family: "Poppins", sans-serif;
 }
 
+header {
+  backdrop-filter: blur(
+    15px
+  ); /*le permite aplicar efectos gráficos como desenfoque o cambio de color al área detrás de un elemento.*/
+  border-radius: 100px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo {
+  font-size: 2em;
+  color: #fff;
+  user-select: none;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}
+
+header a:hover {
+  color: aqua;
+}
+
 body {
   display: flex;
   justify-content: center;
