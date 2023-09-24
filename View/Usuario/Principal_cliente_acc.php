@@ -42,7 +42,6 @@
             <form method="POST" action="?resp=registrar">
                 <h1>Datos del usuario</h1>
                 <input type="hidden" name="txtId" value="<?php echo $alm->Id; ?>">
-                <input type="hidden" name="txtContraseña" value="null">
                 <div class="input-box">
                     <p1>Usuario</p1>
                     <input type="Usuario" placeholder="Username" name="TxtUsername" id="TxtUsername" value="<?php echo $alm->Username; ?>" required>

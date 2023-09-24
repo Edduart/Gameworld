@@ -41,6 +41,13 @@
             <div class="register-link">
                 <p>Aun no tienes una cuenta? <a href="?resp=Registro">Registrate</a></p>
             </div>
+
+            <div>
+                <?php 
+                    echo $_SESSION['error_message'];
+                    $_SESSION['error_message'] == null;
+                ?>
+            </div>
         </form>
     </div>
 

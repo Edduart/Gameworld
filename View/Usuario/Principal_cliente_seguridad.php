@@ -39,10 +39,10 @@
     <main>
         <section id="hero">
           <div class="wrapper">
-            <form method="POST" action="?resp=seguridadCheck">
+            <form method="POST" id="seguridadForm">
                 <h1>Cambiar Contraseña</h1>
                 <div class="input-box">
-                <input type="hidden" name="txtId" value="<?php echo $_SESSION['id']; ?>">
+                <input type="hidden" name="txtId" value="<?php echo $_SESSION['nombre']; ?>">
                     <p1>Ingrese contraseña actual</p1>
                     <input type="Contraseña_actual" placeholder="Contraseña actual" name="TxtContraseña" id="TxtContraseña" required>
                     <box-icon name='user' type='solid' ></box-icon>
@@ -53,17 +53,17 @@
                     <input type="Contraseña_nueva" placeholder="Contraseña nueva" name="TxtContraseñaNueva" id="TxtContraseñaNueva" required>
                     <box-icon name='user' type='solid' ></box-icon>
                 </div>
-
-                <!--<div class="input-box">
-                    <p1>Repita la contraseña nueva</p1>
-                    <input type="Nombre" placeholder="Nombre" name="TxtNombre" id="TxtNombre" value="<?php echo $alm->Nombre; ?>" required>
-                    <box-icon name='user' type='solid' ></box-icon>
-                </div>-->
                 
                 <button type="submit" class="btn" id="GuardarBtn"> Guardar </button>
 
-                <button type="submit" class="btn" id="GuardarBtn" disabled> Eliminar cuenta </button>
+                <p1>Ingrese contraseña para eliminar cuenta</p1>
 
+                <button type="submit" class="btn_warning" id="EliminarBtn"> Eliminar cuenta </button>
+
+                <?php 
+                  echo $_SESSION['error_message'];
+                  $_SESSION['error_message'] = null;
+                ?>
             </form>
           </div>
         </section>
@@ -78,36 +78,19 @@
           const isOpen = dropDownMenu.classList.contains("open");
         };
 
-        // Obtener referencias a los elementos del formulario
-        const TxtUsername = document.getElementById('TxtUsername');
-        const TxtEmail = document.getElementById('TxtEmail');
-        const TxtNombre = document.getElementById('TxtNombre');
-        const TxtTelefono = document.getElementById('TxtTelefono');
-        const TxtDir = document.getElementById('TxtDir');
-        // Agregar eventos oninput a los campos de entrada
-        TxtUsername.addEventListener('input', habilitarGuardar);
-        TxtEmail.addEventListener('input', habilitarGuardar);
-        TxtNombre.addEventListener('input', habilitarGuardar);
-        TxtTelefono.addEventListener('input', habilitarGuardar);
-        TxtDir.addEventListener('input', habilitarGuardar);
+        document.addEventListener('DOMContentLoaded', function () {
+        const seguridadForm = document.getElementById('seguridadForm');
+        const guardarBtn = document.getElementById('GuardarBtn');
+        const eliminarBtn = document.getElementById('EliminarBtn');
 
-        // Agregar funciones para habilitar el botón "Guardar"
-        function habilitarGuardar() {
-            const GuardarBtn = document.getElementById('GuardarBtn');
-            // Verificar si algún campo de entrada tiene un valor diferente al valor inicial
-            if (
-                TxtUsername.value !== "<?php echo $alm->Username; ?>" ||
-                TxtEmail.value !== "<?php echo $alm->Email; ?>" ||
-                TxtNombre.value !== "<?php echo $alm->Nombre; ?>" ||
-                TxtTelefono.value !== "<?php echo $alm->Telefono; ?>" ||
-                TxtDir.value !== null
-               ) 
-            {
-                GuardarBtn.disabled = false; // Habilitar el botón
-            } else {
-                GuardarBtn.disabled = true; // Deshabilitar el botón
-            }
-        }
+        guardarBtn.addEventListener('click', function () {
+            seguridadForm.action = '?resp=seguridadCheck&check=true';
+        });
+
+        eliminarBtn.addEventListener('click', function () {
+            seguridadForm.action = '?resp=seguridadCheck';
+        });
+    });
     </script>
   </body>
 </html>

@@ -225,3 +225,17 @@ section#hero {
   color: #333;
   font-weight: 600;
 }
+
+.wrapper .btn_warning {
+  width: 100%;
+  height: 45px;
+  background: #ff0000;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-sizing: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+}

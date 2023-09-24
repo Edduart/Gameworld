@@ -21,13 +21,13 @@ class control{
 		$alm->Id = $_POST['txtId'];
 		$alm->Username = $_POST['TxtUsername'];
 		$alm->Email = $_POST['TxtEmail'];
-		$alm->Contraseña = $_POST['TxtContraseña'];
 		$alm->Nombre = $_POST['TxtNombre'];
 		$alm->Telefono = $_POST['TxtTelefono'];
 
 		if ($alm->Id > 0) {
 			$this->Usuario->actualizarDatos($alm);
 		} else {
+			$alm->Contraseña = $_POST['TxtContraseña'];
 			$this->Usuario->guardar($alm);
 		}
 		
@@ -79,9 +79,9 @@ class control{
 		} 
 		else
 		{
-			$_SESSION['error_message'] = 'Credenciales invalidas!';
-			include_once "View/login.php";
 			// Credenciales inválidas, mostrar un mensaje de error o redirigir a la página de inicio de sesión
+			$_SESSION['error_message'] = '¡Credenciales invalidas!';
+			include_once "View/login.php";
 		}
 	}
 
@@ -109,16 +109,23 @@ class control{
 		$contraseñaUsuario = $this->Usuario->verificarContraseña($_SESSION['id']);
 		foreach($contraseñaUsuario as $contraseñaValida){}
 
-		// Verificar las credenciales del usuario
+		$alm = new cliente;
+		$alm->Id = $_SESSION['id'];
 
-		if ($password == $contraseñaValida->contraseña) {
-			$alm = new cliente;
-			$alm->Id = $_SESSION['id'];
+		// Verificar las credenciales del usuario
+		if (($password == $contraseñaValida->contraseña) && (isset($_REQUEST['check']) == true)) {
+			//actualizar password
+
 			$alm->Contraseña = $newPassword;
 			$this->Usuario->actualizarContraseña($alm);
 			include_once "View/Usuario/Principal_cliente_seguridad.php";
+		} elseif (($password == $contraseñaValida->contraseña)) {
+			//Eliminar
+			$this->Usuario->delete($alm->Id);
+			include_once "View/Principal.php.php";
 		} else {
-			var_dump($contraseñaValida);
+			//contraseña invalida
+			$_SESSION['error_message'] = "Contraseña invalida";
 			include_once "View/Usuario/Principal_cliente_seguridad.php";
 		}
 
