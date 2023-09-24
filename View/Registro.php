@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<header>
+        <h2 class="logo">GAMEWORLD</h2>
+        <nav class="naigation">
+            <a href="Principal.php">UNO</a>
+            <a href="#">UNO</a>
+            <a href="#">UNO</a>
+        </nav>
+    </header>
+
+
 
 
 <div class="wrapper">
@@ -46,37 +56,5 @@
             </div>
         </form>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--  <form method="post"action="">
-        <label for="name">Nombre:</label>
-        <input type="text" name="nombretxt" placeholder="Ingrese su nombre">
-        <br><br>
-        <label for="user">Ususuario:</label>
-        <input type="text" name="usuariotxt" placeholder="Ingrese su usuario">
-        <br><br>
-        <label for="email">Correo:</label>
-        <input type="text" name="correotxt" placeholder="Ingrese su correo">
-        <br><br>
-        <label for="password">Contraseña:</label>
-        <input type="text" name="contraseñatxt" placeholder="Ingrese su contraseña">
-        <br><br>
-        <label for="telf">Telefono:</label>
-        <input type="text" name="telefonotxt" placeholder="Ingrese su telefono">
-        <br><br>
-        <input type="submit" value="Guardar">
-        <a href="" >Regresar</a>
-    </form>
-     -->
 </body>
 </html>
