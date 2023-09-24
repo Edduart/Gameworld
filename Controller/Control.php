@@ -134,7 +134,7 @@ class control{
 		if(isset($_REQUEST['ID_Producto'])){
 			$alm = $this->Product->cargarId($_REQUEST['ID_Producto']);
 		}
-		include_once "View/Edit_Product.php";
+		include_once "View/Admin/Edit_Product.php";
 	}
 
 	public function dProducto(){
