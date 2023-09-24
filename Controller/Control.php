@@ -21,10 +21,18 @@ class control{
 		$alm->Id = $_POST['txtId'];
 		$alm->Username = $_POST['TxtUsername'];
 		$alm->Email = $_POST['TxtEmail'];
-		$alm->Contraseña = $_POST['TxtContraseña'];
+		if ($_POST['txtContraseña'] != null) {
+			$alm->Contraseña = $_POST['TxtContraseña'];
+		}
 		$alm->Nombre = $_POST['TxtNombre'];
 		$alm->Telefono = $_POST['TxtTelefono'];
-		$this->Usuario->guardar($alm);
+
+		if ($alm->Id > 0) {
+			$this->Usuario->actualizarDatos($alm);
+		} else {
+			$this->Usuario->guardar($alm);
+		}
+		
 		include_once "View/login.php";
 	}
 
@@ -82,6 +90,23 @@ class control{
 		}
 	}
 
+	// obtener informacion del usuario para actualizar
+	public function obtenerInfo()
+	{
+		$currentUserId = $_SESSION['id'];
+		$getData = $this->Usuario->cargarInfo($currentUserId);
+		foreach($getData as $UserData);
+
+		$alm = new cliente;
+		$alm->Id = $_SESSION['id'];
+		$alm->Username = $UserData->usuario;
+		$alm->Email = $UserData->correo;
+		$alm->Nombre = $UserData->nombre;
+		$alm->Telefono = $UserData->telefono;
+
+		include_once "View/Usuario/Principal_cliente_acc.php";
+	}
+
 	//Funciones de redireccion ***** hay que organizar
 
 	public function index(){
@@ -100,8 +125,30 @@ class control{
 		include_once "View/Registro_Product.php";
 	}
 
-	public function cuenta(){
-		include_once "View/Usuario/Principal_cliente_acc.php";
+	public function seguridad(){
+		include_once "View/Usuario/Principal_cliente_seguridad.php";
+	}
+
+	public function seguridadCheck(){
+
+		$password = $_POST['TxtContraseña'];
+		$newPassword = $_POST['TxtContraseñaNueva'];
+		$contraseñaUsuario = $this->Usuario->verificarContraseña($_SESSION['id']);
+		foreach($contraseñaUsuario as $contraseñaValida){}
+
+		// Verificar las credenciales del usuario
+
+		if ($password == $contraseñaValida->contraseña) {
+			$alm = new cliente;
+			$alm->Id = $_SESSION['id'];
+			$alm->Contraseña = $newPassword;
+			$this->Usuario->actualizarContraseña($alm);
+			include_once "View/Usuario/Principal_cliente_seguridad.php";
+		} else {
+			var_dump($contraseñaValida);
+			include_once "View/Usuario/Principal_cliente_seguridad.php";
+		}
+
 	}
 
 }

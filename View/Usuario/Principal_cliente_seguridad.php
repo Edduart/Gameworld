@@ -39,41 +39,30 @@
     <main>
         <section id="hero">
           <div class="wrapper">
-            <form method="POST" action="?resp=registrar">
-                <h1>Datos del usuario</h1>
-                <input type="hidden" name="txtId" value="<?php echo $alm->Id; ?>">
-                <input type="hidden" name="txtContraseña" value="null">
+            <form method="POST" action="?resp=seguridadCheck">
+                <h1>Cambiar Contraseña</h1>
                 <div class="input-box">
-                    <p1>Usuario</p1>
-                    <input type="Usuario" placeholder="Username" name="TxtUsername" id="TxtUsername" value="<?php echo $alm->Username; ?>" required>
+                <input type="hidden" name="txtId" value="<?php echo $_SESSION['id']; ?>">
+                    <p1>Ingrese contraseña actual</p1>
+                    <input type="Contraseña_actual" placeholder="Contraseña actual" name="TxtContraseña" id="TxtContraseña" required>
                     <box-icon name='user' type='solid' ></box-icon>
                 </div>
 
                 <div class="input-box">
-                    <p1>Correo</p1>
-                    <input type="Correo" placeholder="Email" name="TxtEmail" id="TxtEmail" value="<?php echo $alm->Email; ?>" required>
+                    <p1>Ingrese contraseña nueva</p1>
+                    <input type="Contraseña_nueva" placeholder="Contraseña nueva" name="TxtContraseñaNueva" id="TxtContraseñaNueva" required>
                     <box-icon name='user' type='solid' ></box-icon>
                 </div>
 
-                <div class="input-box">
-                    <p1>Nombre</p1>
+                <!--<div class="input-box">
+                    <p1>Repita la contraseña nueva</p1>
                     <input type="Nombre" placeholder="Nombre" name="TxtNombre" id="TxtNombre" value="<?php echo $alm->Nombre; ?>" required>
                     <box-icon name='user' type='solid' ></box-icon>
-                </div>
-
-                <div class="input-box">
-                    <p1>Telefono</p1>
-                    <input type="Telefono" placeholder="Telefono" name="TxtTelefono" id="TxtTelefono" value="<?php echo $alm->Telefono; ?>" required>
-                    <box-icon name='user' type='solid' ></box-icon>
-                </div>
-
-                <div class="input-box">
-                    <p1>Direccion de facturacion</p1>
-                    <input type="Dir_facturacion" placeholder="Direccion de facturacion" id="TxtDir" name="TxtDir">
-                    <box-icon name='user' type='solid' ></box-icon>
-                </div>
+                </div>-->
                 
-                <button type="submit" class="btn" id="GuardarBtn" disabled> Guardar </button>
+                <button type="submit" class="btn" id="GuardarBtn"> Guardar </button>
+
+                <button type="submit" class="btn" id="GuardarBtn" disabled> Eliminar cuenta </button>
 
             </form>
           </div>
