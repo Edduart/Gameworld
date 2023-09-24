@@ -20,9 +20,9 @@
         <div class="logo"><a href="#">GAMEWORLD</a></div>
         <ul class="links">
           <li><a href="hero">template</a></li>
-          <li><a href="Borrame.html">template</a></li>
+          <li><a href="?resp=seguridad">Seguridad</a></li>
           <li><a href="#">Carrito (0)</a></li>
-          <li><a href="#">Mi cuenta</a></li>
+          <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
         </ul>
         <a href="#" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
         <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>

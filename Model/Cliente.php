@@ -1,5 +1,4 @@
 <?php
-   //require_once("conexion.php");
 
     class cliente //extends conexion
     {
@@ -21,19 +20,20 @@
                 }
             
             }
-            //en lista los insert join que se hizo en sql
-          /*  public function listar(){
+
+            //Obtener los datos del cliente
+            public function cargarInfo($data){
                 try{
-                $query = "SELECT z.id,z.nombreR,z.apellidoR,z.cedula,z.dirección,z.email,z.clave FROM registro z ORDER BY z.id";
+                $query = "SELECT nombre,usuario,correo,telefono FROM cliente where id_cliente = $data";
                 $resultado = $this->CNX->prepare($query);
                 $resultado->execute();
                 return $resultado->fetchAll(PDO::FETCH_OBJ);
-            } catch (Exception $e){
-                die ($e->getMessage());
+                } catch (Exception $e){
+                    die ($e->getMessage());
+                }
             }
-            //funcion  guardar para el registro
-            }*/
-
+            
+            //ID cargada para actualizar
             public function cargarId($Id){
                 try {
                     $query = "SELECT * from cliente where id=?";
@@ -46,6 +46,7 @@
         
             }
 
+            // Registro de cliente 
             public function guardar($data){
                 try {
                     $query = "INSERT INTO cliente(usuario, correo, contraseña, nombre, telefono) VALUES(?,?,?,?,?)";
@@ -58,8 +59,8 @@
             //actualizar para el registro a futuro
             public function actualizarDatos($data){
                 try {
-                    $query = "UPDATE cliente set nombre=?,usuario=?,correo=?,contraseña=?,telefono=? WHERE id=?";
-                    $this->CNX->prepare($query)->execute(array($data->Nombre,$data->Usuario,$data->Correo,$data->Contraseña,$data->Telefono,$data->Id));
+                    $query = "UPDATE cliente set usuario=?,correo=?,nombre=?,telefono=? WHERE id_cliente=?";
+                    $this->CNX->prepare($query)->execute(array($data->Username,$data->Email,$data->Nombre,$data->Telefono,$data->Id));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
@@ -74,8 +75,6 @@
                     die($e->getMessage());
                 }
             }
-        //funcion que hace que cargue los id del registro para que la funcion
-        //modificar funcione
 
             //verifica los registros 
             public function verificarCredenciales($Usuario){
@@ -88,6 +87,28 @@
                 return $usuarioEncontrado;
             } catch (Exception $e){
                 die ($e->getMessage());
+            }
+        }
+
+        //Verificacion de contraseña para actualizacion
+        public function verificarContraseña($Id){
+            try{
+            $this->Id = $Id;
+            $query = "SELECT contraseña FROM cliente WHERE id_cliente='$this->Id'";
+            $resultado = $this->CNX->prepare($query);
+            $resultado->execute();
+            $Ucontraseña = $resultado->fetchAll(PDO::FETCH_OBJ);
+            return $Ucontraseña;
+            } catch (Exception $e){
+                die ($e->getMessage());
+            }
+        }
+        public function actualizarContraseña($data){
+            try {
+                $query = "UPDATE cliente set contraseña=? WHERE id_cliente=?";
+                $this->CNX->prepare($query)->execute(array($data->Contraseña,$data->Id));
+            } catch (Exception $e) {
+                die($e->getMessage());
             }
         }
     }

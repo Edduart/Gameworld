@@ -8,6 +8,16 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 <body>
+
+    <header>
+        <h2 class="logo">GAMEWORLD</h2>
+        <nav class="naigation">
+            <a href="Principal.php">UNO</a>
+            <a href="#">UNO</a>
+            <a href="#">UNO</a>
+        </nav>
+    </header>
+
     <div class="wrapper">
         <form method="POST" action="?resp=login">
             <h1>Login</h1>
