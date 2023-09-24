@@ -10,7 +10,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" type="text/css" href="Resources/stylePrincipal.css" />
+    <link rel="stylesheet" type="text/css" href="Resources/stylePrincipal.css"/>
 
     <title>Document</title>
   </head>
@@ -24,7 +24,7 @@
           <li><a href="#">Carrito (0)</a></li>
           <li><a href="#">Mi cuenta</a></li>
         </ul>
-        <a href="#" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
+        <a href="#" class="action_btn"> <?php echo $_SESSION['nombre'] ?> </a>
         <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
       </div>
 
@@ -38,8 +38,38 @@
     </header>
     <main>
         <section id="hero">
-          <div>
-            
+          <div class="wrapper">
+            <form method="POST" action="?resp=registrar">
+                <h1>Datos del usuario</h1>
+                <input type="hidden" name="txtId">
+                <div class="input-box">
+                    <input type="Usuario" placeholder="Username" name="TxtUsername" required>
+                    <box-icon name='user' type='solid' ></box-icon>
+                </div>
+
+                <div class="input-box">
+                    <input type="Correo" placeholder="Email" name="TxtEmail" required>
+                    <box-icon name='user' type='solid' ></box-icon>
+                </div>
+
+                <div class="input-box">
+                    <input type="Clave" placeholder="Clave"  name="TxtContraseña" required>
+                    <box-icon name='lock-alt'></box-icon>
+                </div>
+
+                <div class="input-box">
+                    <input type="Nombre" placeholder="Nombre" name="TxtNombre" required>
+                    <box-icon name='user' type='solid' ></box-icon>
+                </div>
+
+                <div class="input-box">
+                    <input type="Telefono" placeholder="Telefono" name="TxtTelefono" required>
+                    <box-icon name='user' type='solid' ></box-icon>
+                </div>
+                
+                <button type="submit" class="btn"> Guardar </button>
+
+            </form>
           </div>
         </section>
     </main>

@@ -1,5 +1,4 @@
 <?php
-   //require_once("conexion.php");
 
     class cliente //extends conexion
     {
@@ -21,19 +20,20 @@
                 }
             
             }
-            //en lista los insert join que se hizo en sql
-          /*  public function listar(){
+
+            //Obtener los datos del cliente
+            public function cargarInfo(){
                 try{
-                $query = "SELECT z.id,z.nombreR,z.apellidoR,z.cedula,z.dirección,z.email,z.clave FROM registro z ORDER BY z.id";
+                $query = "SELECT * FROM cliente";
                 $resultado = $this->CNX->prepare($query);
                 $resultado->execute();
                 return $resultado->fetchAll(PDO::FETCH_OBJ);
-            } catch (Exception $e){
-                die ($e->getMessage());
+                } catch (Exception $e){
+                    die ($e->getMessage());
+                }
             }
-            //funcion  guardar para el registro
-            }*/
-
+            
+            //ID cargada para actualizar
             public function cargarId($Id){
                 try {
                     $query = "SELECT * from cliente where id=?";
@@ -46,6 +46,7 @@
         
             }
 
+            // Registro de cliente 
             public function guardar($data){
                 try {
                     $query = "INSERT INTO cliente(usuario, correo, contraseña, nombre, telefono) VALUES(?,?,?,?,?)";
@@ -74,8 +75,8 @@
                     die($e->getMessage());
                 }
             }
-        //funcion que hace que cargue los id del registro para que la funcion
-        //modificar funcione
+            //funcion que hace que cargue los id del registro para que la funcion
+            //modificar funcione
 
             //verifica los registros 
             public function verificarCredenciales($Usuario){

@@ -15,26 +15,6 @@ class control{
 		$this->Product = new producto();
 	}
 
-	public function index(){
-		include_once "View/Principal.php";
-	}
-
-	public function sesion(){
-		include_once "View/login.php";
-	}
-
-    public function Registro(){
-		include_once "View/Registro.php";
-	}
-
-	public function Product(){
-		include_once "View/Registro_Product.php";
-	}
-
-	public function cuenta(){
-		include_once "View/Usuario/Principal_login.php";
-	}
-
 	public function registrar(){
 		//$_SESSION['error_message'] = null;
 		$alm = new cliente();
@@ -100,6 +80,28 @@ class control{
 			include_once "View/index.php";
 			// Credenciales inválidas, mostrar un mensaje de error o redirigir a la página de inicio de sesión
 		}
+	}
+
+	//Funciones de redireccion ***** hay que organizar
+
+	public function index(){
+		include_once "View/Principal.php";
+	}
+
+	public function sesion(){
+		include_once "View/login.php";
+	}
+
+    public function Registro(){
+		include_once "View/Registro.php";
+	}
+
+	public function Product(){
+		include_once "View/Registro_Product.php";
+	}
+
+	public function cuenta(){
+		include_once "View/Usuario/Principal_cliente_acc.php";
 	}
 
 }
