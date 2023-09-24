@@ -73,9 +73,6 @@ class control{
 				{
 					include_once "View/Usuario/Principal_login.php";
 				}
-			}else{
-				$_SESSION['error_message'] = 'Credenciales invalidas!';
-				include_once "View/index.php";
 			}
 				/* Si utilizo hash
 				if(password_verify($clave,$encontrado->clave)){
@@ -84,8 +81,8 @@ class control{
 		} 
 		else
 		{
-			//$_SESSION['error_message'] = 'Credenciales invalidas!';
-			include_once "View/index.php";
+			$_SESSION['error_message'] = 'Credenciales invalidas!';
+			include_once "View/login.php";
 			// Credenciales inválidas, mostrar un mensaje de error o redirigir a la página de inicio de sesión
 		}
 	}
