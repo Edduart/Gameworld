@@ -99,6 +99,21 @@ class control{
 		}
 	}
 
+	public function ActProducto(){
+		$alm = new producto();
+		if(isset($_REQUEST['ID_Producto'])){
+			$alm = $this->Product->cargarId($_REQUEST['ID_Producto']);
+		}
+		include_once "View/Edit_Product.php";
+	}
+
+	public function dProducto(){
+
+		$this->Product->delete($_REQUEST['ID_Producto']);
+
+		header("Location: index.php");
+	}
+
 }
 
 ?>

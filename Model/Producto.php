@@ -32,9 +32,9 @@
             }
         }
 
-          /*  public function cargarId($Id){
+            public function cargarId($Id){
                 try {
-                    $query = "SELECT * from cliente where id=?";
+                    $query = "SELECT * from producto where ID_Producto=?";
                     $resultado = $this->CNX->prepare($query);
                     $resultado->execute(array($Id));
                     return $resultado->fetch(PDO::FETCH_OBJ);
@@ -42,7 +42,7 @@
                     die($e->getMessage());
                 }
         
-            }*/
+            }
 
             public function guardar($data){
                 try {
@@ -54,24 +54,24 @@
             }
 
             //actualizar para el registro a futuro
-           /* public function actualizarDatos($data){
+            public function actualizarDatos($data){
                 try {
-                    $query = "UPDATE cliente set nombre=?,usuario=?,correo=?,contraseña=?,telefono=? WHERE id=?";
-                    $this->CNX->prepare($query)->execute(array($data->Nombre,$data->Usuario,$data->Correo,$data->Contraseña,$data->Telefono,$data->Id));
+                    $query = "UPDATE producto set Nombre_Producto=?,Descripcion=? WHERE ID_Producto=?";
+                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->Descripcion));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
-            }*/
+            }
             //funcion de eliminar a futuro
-            /*public function delete ($id){
+            public function delete ($Id){
                 try {
-                    $query = "Delete from cliente where id =?";
+                    $query = "Delete from producto where ID_Producto =?";
                     $resultado = $this->CNX->prepare($query);
-                    $resultado->execute(array($id));
+                    $resultado->execute(array($Id));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
-            }*/
+            }
         //funcion que hace que cargue los id del registro para que la funcion
         //modificar funcione
 

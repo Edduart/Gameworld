@@ -52,10 +52,10 @@
 								<td><?php echo $k->ID_catergoria; ?></td>
 								<td><?php echo $k->Descripcion; ?></td>
 								<td>
-									<a href="?resp=eliminar&id=<?php echo $k->id; ?>" class="btn red z-depth-4">Eliminar</a>
+									<a href="?resp=dProducto&Id=<?php echo $k->Id; ?>" class="btn red z-depth-4">Eliminar</a>
 								</td>
 								<td>
-									<a href="?resp=nuevo&id=<?php echo $k->id; ?>" class="btn green z-depth-4">Actualizar</a>
+									<a href="?resp=ActProducto&Id=<?php echo $k->Id; ?>" class="btn green z-depth-4">Actualizar</a>
 								</td>
 							</tr>
 						<?php endforeach; ?>
