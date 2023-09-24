@@ -14,7 +14,7 @@
         <form method="POST" action="?resp=regist_product">
             <h1>Registro de Producto</h1>
             <div class="input-box">
-                <input type="Nombre de producto" placeholder="Nombre de producto" name="TxtNproducto" value="<?php echo $alm->Nombre_p; ?>" required>
+                <input type="Nombre de producto" placeholder="Nombre de producto" name="TxtNproducto" value="<?php echo $alm->Nombre_Producto; ?>" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
 

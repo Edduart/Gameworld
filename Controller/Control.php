@@ -21,9 +21,7 @@ class control{
 		$alm->Id = $_POST['txtId'];
 		$alm->Username = $_POST['TxtUsername'];
 		$alm->Email = $_POST['TxtEmail'];
-		if ($_POST['txtContraseña'] != null) {
-			$alm->Contraseña = $_POST['TxtContraseña'];
-		}
+		$alm->Contraseña = $_POST['TxtContraseña'];
 		$alm->Nombre = $_POST['TxtNombre'];
 		$alm->Telefono = $_POST['TxtTelefono'];
 
@@ -156,7 +154,7 @@ class control{
 	}
 
 	public function Product(){
-		include_once "View/Registro_Product.php";
+		include_once "View/Admin/Registro_Product.php";
 	}
 
 	public function seguridad(){
