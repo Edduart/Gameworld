@@ -107,28 +107,6 @@ class control{
 		include_once "View/Usuario/Principal_cliente_acc.php";
 	}
 
-	//Funciones de redireccion ***** hay que organizar
-
-	public function index(){
-		include_once "View/Principal.php";
-	}
-
-	public function sesion(){
-		include_once "View/login.php";
-	}
-
-    public function Registro(){
-		include_once "View/Registro.php";
-	}
-
-	public function Product(){
-		include_once "View/Registro_Product.php";
-	}
-
-	public function seguridad(){
-		include_once "View/Usuario/Principal_cliente_seguridad.php";
-	}
-
 	public function seguridadCheck(){
 
 		$password = $_POST['TxtContraseña'];
@@ -164,6 +142,28 @@ class control{
 		$this->Product->delete($_REQUEST['ID_Producto']);
 
 		header("Location: index.php");
+	}
+
+	//Funciones de redireccion ***** hay que organizar
+
+	public function index(){
+		include_once "View/Principal.php";
+	}
+
+	public function sesion(){
+		include_once "View/login.php";
+	}
+
+    public function Registro(){
+		include_once "View/Registro.php";
+	}
+
+	public function Product(){
+		include_once "View/Registro_Product.php";
+	}
+
+	public function seguridad(){
+		include_once "View/Usuario/Principal_cliente_seguridad.php";
 	}
 
 }
