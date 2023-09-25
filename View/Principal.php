@@ -18,11 +18,12 @@
     <header>
       <div class="navbar">
         <div class="logo"><a href="?resp=index">GAMEWORLD</a></div>
-        <ul class="links">
-          <li><a href="hero">Home</a></li>
-          <li><a href="Borrame.html">NOMBRE</a></li>
-          <li><a href="Borrame.html">Service</a></li>
-        </ul>
+        <form class="search_container">
+          <input class="search_bar" type="text" placeholder="Search..">
+          <ul>
+          <li><a href="#">Buscar</a></li>
+          </ul>
+        </form>
           <div class="navbar_login">
           <a href="?resp=Registro" class="action_btn">Registrate</a>
           <a href="?resp=sesion" class="action_btn">Login</a>

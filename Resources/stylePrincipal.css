@@ -58,9 +58,25 @@ header {
   font-weight: bold;
 }
 
-.navbar .links {
+.navbar .search_container {
   display: flex;
   gap: 10px;
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #5cd1e6;;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.navbar .search_bar {
+  border-radius: 50px;
+  border: 1px;
+  text-align: center;
+  color: #000;
 }
 
 .navbar .toggle_btn {
@@ -74,8 +90,10 @@ header {
   float: right;
 }
 .action_btn {
+  width: auto;
+  text-align: center;
   float: right;
-  background-color: #5cd2e6;
+  background-color: #5cd1e6;
   color: #fff;
   padding: 0.5rem 3rem;
   border-radius: 20px;
@@ -83,7 +101,7 @@ header {
   font-weight: bold;
   cursor: pointer;
   transition: scale 0.2 ease;
-  margin-left: 10px; /* Adjust the distance between buttons */
+  margin-left: 5px; /* Adjust the distance between buttons */
   position: relative;
 }
 
@@ -233,13 +251,17 @@ header {
 /*HERO*/
 section#hero {
   height: 400px;
+  width: auto;
+  margin-left: 100px;
+  margin-right: 100px;
   display: flex;
   /*flex-direction: column;*/ /*ESTO ERAA LO QUE NO DEJA QUE SE JUNTARAN*/
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #060606;
-  background-color: #000;
+  backdrop-filter: blur(15px);
+  border-radius: 50px;
 }
 
 #hero h1 {
@@ -250,11 +272,18 @@ section#hero {
 /* PRODUCTOS */
 
 .top-tittle {
+  position: relative;
   text-align: center;
-  padding: 10px 20px 20px 20px;
+  padding: 5px;
   height: 50px;
   width: auto;
-  background-color: #ff0000;
+  color: #ffffff;
+  backdrop-filter: blur(15px);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 50px;
 }
 
 .product-container {
@@ -289,6 +318,7 @@ section#hero {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: #fff;
   text-align: center; /* Center align the content */
+  background-color: #282929;
 }
 
 .image {

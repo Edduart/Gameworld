@@ -34,23 +34,19 @@
         <li><a href="#" class="action_btn"></a></li>
       </div>
     </header>
-
-
-
-    <div class="container">
-           <table>
-            <thead>
-              <tr> 
-                <th>Id Cliente</th>
-                <th>Nombre del Cliente</th>
-                <th>Usuario</th>
-                <th>Correo</th>
-                <th>Contraseña</th>
-                <th>Telefono</th>
-                <th class="white-text center-align">Eliminar</th>
-                <th class="white-text center-align">Actualizar</th>
-              </tr>
-              </thead>
+    <div class="row">
+		<div class="col m12">
+    <table class="table-responsive blue z-depth-4 white-text center-align">
+						<tr> 
+							<th>Id Cliente</th>
+							<th>Nombre del Cliente</th>
+							<th>Usuario</th>
+							<th>Correo</th>
+                            <th>Contraseña</th>
+                            <th>Telefono</th>
+							<th class="white-text center-align">Eliminar</th>
+							<th class="white-text center-align">Actualizar</th>
+						  </tr>
 						<?php foreach ($this->Usuario->listar() as $k) : ?>
 							<tr>
 								<td><?php echo $k->id_cliente; ?></td>
@@ -68,7 +64,7 @@
 							</tr>
 						<?php endforeach; ?>
 					</table>
- 
+                </div>
     </div>        
     <script>
         const toggleBtn = document.querySelector(".toggle_btn");
