@@ -141,6 +141,7 @@ class control{
 		session_unset();
 		//Destruit la sesion
 		session_destroy();
+		$_SESSION['error_message'] = null;
 		$this->index();
 	}
 

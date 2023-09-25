@@ -239,3 +239,27 @@ section#hero {
   color: #ffffff;
   font-weight: 600;
 }
+
+/* PRODUCTOS */
+
+.product-container{
+  color: #fff;
+}
+
+.prod_box {
+  width: 300px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
