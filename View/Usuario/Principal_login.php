@@ -30,13 +30,13 @@
           <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
         </div>
 
-        <!-- MENU DESPLEGABLE
+        
           <ul class="links">
           <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
           <li><a href="?resp=seguridad">Seguridad</a></li>
           <li><a href="#">Carrito (0)</a></li>
           <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
-        </ul>-->
+          </ul>
 
 
       <div class="dropdown_menu">

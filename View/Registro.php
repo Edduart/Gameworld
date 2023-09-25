@@ -9,12 +9,13 @@
 <body>
 
     <header>
-        <h2 class="logo"><a href="?resp=index">GAMEWORLD</a></h2>
-            <nav class="navigation">
-                <a href="Principal.php">UNO</a>
-                <a href="#">UNO</a>
-                <a href="#">UNO</a>
-            </nav>
+    <div class="navbar">
+        <div class="logo"><a href="?resp=index">GAMEWORLD</a></div>
+          <div class="navbar_login">
+          <a href="?resp=Registro" class="action_btn">Registrate</a>
+          <a href="?resp=sesion" class="action_btn">Login</a>
+        </div>
+      </div>
     </header>
 
     <div class="wrapper">
