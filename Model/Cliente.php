@@ -34,9 +34,9 @@
             }
             
             //ID cargada para actualizar
-            /*public function cargarId($Id){
+            public function cargarId($Id){
                 try {
-                    $query = "SELECT * from cliente where id=?";
+                    $query = "SELECT * from cliente where id_cliente=?";
                     $resultado = $this->CNX->prepare($query);
                     $resultado->execute(array($Id));
                     return $resultado->fetch(PDO::FETCH_OBJ);
@@ -44,7 +44,18 @@
                     die($e->getMessage());
                 }
         
-            }*/
+            }
+
+            public function listar(){
+                try{
+                $query = "SELECT z.id_cliente,z.usuario,z.correo,z.contraseña,z.nombre,z.telefono FROM cliente z ORDER BY z.id_cliente";
+                $resultado = $this->CNX->prepare($query);
+                $resultado->execute();
+                return $resultado->fetchAll(PDO::FETCH_OBJ);
+            } catch (Exception $e){
+                die ($e->getMessage());
+            }
+        }
 
             // Registro de cliente 
             public function guardar($data){

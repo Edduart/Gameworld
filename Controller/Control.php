@@ -152,11 +152,26 @@ class control{
 		include_once "View/Admin/Edit_Product.php";
 	}
 
+	public function ActCliente(){
+		$alm = new cliente();
+		if(isset($_REQUEST['id_cliente'])){
+			$alm = $this->Usuario->cargarId($_REQUEST['id_cliente']);
+		}
+		include_once "View/Admin/Edit_Client.php";
+	}
+
 	public function dProducto(){
 
 		$this->Product->delete($_REQUEST['ID_Producto']);
 
-		include_once "View/Admin/Admin.php";
+		include_once "View/Admin/List_Product.php";
+	}
+
+	public function dCliente(){
+
+		$this->Usuario->delete($_REQUEST['id_cliente']);
+
+		include_once "View/Admin/List_Client.php";
 	}
 
 	//Funciones de redireccion ***** hay que organizar
@@ -179,6 +194,10 @@ class control{
 
 	public function Lista_Product(){
 		include_once "View/Admin/List_Product.php";
+	}
+
+	public function Lista_Client(){
+		include_once "View/Admin/List_Client.php";
 	}
 
 	public function seguridad(){
