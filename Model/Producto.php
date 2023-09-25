@@ -9,8 +9,7 @@
             public $Id_categoria;
             public $Descripcion;
             public $Precio;
-
-
+            public $Image_URL;
 
             //contructor que enlaza la conexion
             public function __construct() {
@@ -48,7 +47,7 @@
             public function guardar($data){
                 try {
                     $query = "INSERT INTO producto(Nombre_Producto, Descripcion, Precio) VALUES(?,?,?)";
-                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->Descripcion,$data->Precio));
+                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->Descripcion,$data->Precio,$data->Image_URL));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
@@ -73,10 +72,15 @@
                     die($e->getMessage());
                 }
             }
-        //funcion que hace que cargue los id del registro para que la funcion
-        //modificar funcione
-
-            //verifica los registros 
-
+            public function obtenerProductos() {
+                try{
+                    $query = "SELECT * FROM producto ORDER BY Nombre_Producto";
+                    $resultado = $this->CNX->prepare($query);
+                    $resultado->execute();
+                    return $resultado->fetchAll(PDO::FETCH_OBJ);
+                } catch (Exception $e){
+                    die ($e->getMessage());
+                }
+            }
     }
 ?>

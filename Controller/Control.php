@@ -26,12 +26,15 @@ class control{
 
 		if ($alm->Id > 0) {
 			$this->Usuario->actualizarDatos($alm);
+			$_SESSION['error_message'] = '¡Datos de usuario actualizados!';
+			include_once "View/Usuario/Principal_cliente_acc.php";
 		} else {
 			$alm->Contraseña = $_POST['TxtContraseña'];
 			$this->Usuario->guardar($alm);
+			$_SESSION['error_message'] = "¡Usuario Registrado exitosamente!";
+			include_once "View/login.php";
 		}
-		
-		include_once "View/login.php";
+		$_SESSION['error_message'] = null;
 	}
 
 	public function regist_product(){
@@ -83,6 +86,7 @@ class control{
 			// Credenciales inválidas, mostrar un mensaje de error o redirigir a la página de inicio de sesión
 			$_SESSION['error_message'] = '¡Credenciales invalidas!';
 			include_once "View/login.php";
+			$_SESSION['error_message'] == null;
 		}
 	}
 
@@ -116,20 +120,29 @@ class control{
 		// Verificar las credenciales del usuario
 		if (($password == $contraseñaValida->contraseña) && (isset($_REQUEST['check']) == true)) {
 			//actualizar password
-
 			$alm->Contraseña = $newPassword;
 			$this->Usuario->actualizarContraseña($alm);
+			$_SESSION['error_message'] = "Contraseña actualizada!";
 			include_once "View/Usuario/Principal_cliente_seguridad.php";
 		} elseif (($password == $contraseñaValida->contraseña)) {
 			//Eliminar
 			$this->Usuario->delete($alm->Id);
-			include_once "View/Principal.php.php";
+			include_once "View/Principal.php";
 		} else {
 			//contraseña invalida
-			$_SESSION['error_message'] = "Contraseña invalida";
+			$_SESSION['error_message'] = "Contraseña invalida!";
 			include_once "View/Usuario/Principal_cliente_seguridad.php";
 		}
+		$_SESSION['error_message'] = null;
+	}
 
+	public function CerrarSesion() {
+		//Eliminar todas las variables de sesion
+		session_unset();
+		//Destruit la sesion
+		session_destroy();
+		$_SESSION['error_message'] = null;
+		$this->index();
 	}
 
 	public function ActProducto(){
@@ -190,6 +203,10 @@ class control{
 
 	public function seguridad(){
 		include_once "View/Usuario/Principal_cliente_seguridad.php";
+	}
+
+	public function PrincipalUser(){
+		include_once "View/Usuario/Principal_login.php";
 	}
 
 }

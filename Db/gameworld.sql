@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2023 a las 23:55:39
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Sep 25, 2023 at 05:25 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `gameworld`
+-- Database: `gameworld`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
+-- Table structure for table `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -36,10 +36,48 @@ CREATE TABLE `cliente` (
   `telefono` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cliente`
+--
+
+INSERT INTO `cliente` (`id_cliente`, `nombre`, `usuario`, `correo`, `contraseña`, `telefono`) VALUES
+(6, 'Pepe', 'Pepon', 'pepito43', '1234', '0424123'),
+(7, 'admin', 'admin', 'dfdsfdf', 'admin', '123'),
+(8, 'edgardo', 'edgardo', 'edgardo', '123', '4165454424'),
+(9, 'edd', 'edd', 'edd', '123', '28937389'),
+(10, 'jesus', 'Jesus', 'Jesus', '123', '3783673'),
+(11, 'jesus', 'Jesus', 'Jesus', '123', '3783673'),
+(12, 'jesus', 'Jesus', 'Jesus', '123', '3783673'),
+(13, 'dbdbj', 'bhdvbhjd', 'ddgvghd', '123', 'dhdb'),
+(14, 'dbdbj', 'bhdvbhjd', 'ddgvghd', '123', 'dhdb');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `producto`
+--
+
+CREATE TABLE `producto` (
+  `ID_Producto` int(11) NOT NULL,
+  `Nombre_Producto` varchar(15) NOT NULL,
+  `ID_catergoria` int(11) NOT NULL,
+  `Descripcion` varchar(50) NOT NULL,
+  `Precio` decimal(10,0) NOT NULL,
+  `Image_URL` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `producto`
+--
+
+INSERT INTO `producto` (`ID_Producto`, `Nombre_Producto`, `ID_catergoria`, `Descripcion`, `Precio`, `Image_URL`) VALUES
+(1, 'Steam Gift Card', 1, 'Gift Card para steam store.', 5, 'Resources/Productos/steam.jpeg'),
+(2, 'Steam Gift Card', 2, 'Gift Card para steam store.', 10, 'Resources/Productos/steam.jpeg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -49,33 +87,45 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `cliente`
+-- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `producto`
+--
+ALTER TABLE `producto`
+  ADD PRIMARY KEY (`ID_Producto`);
+
+--
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`Id_usuario`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `cliente`
+-- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT for table `producto`
+--
+ALTER TABLE `producto`
+  MODIFY `ID_Producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `Id_usuario` int(11) NOT NULL AUTO_INCREMENT;

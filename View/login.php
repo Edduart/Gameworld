@@ -10,8 +10,8 @@
 <body>
 
     <header>
-        <h2 class="logo">GAMEWORLD</h2>
-        <nav class="naigation">
+        <h2 class="logo"><a href="?resp=index">GAMEWORLD</a></h2>
+        <nav class="navigation">
             <a href="Principal.php">UNO</a>
             <a href="#">UNO</a>
             <a href="#">UNO</a>
@@ -45,7 +45,6 @@
             <div>
                 <?php 
                     echo $_SESSION['error_message'];
-                    $_SESSION['error_message'] == null;
                 ?>
             </div>
         </form>

@@ -17,9 +17,9 @@
   <body>
     <header>
       <div class="navbar">
-        <div class="logo"><a href="#">GAMEWORLD</a></div>
+        <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
         <ul class="links">
-          <li><a href="hero">template</a></li>
+          <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
           <li><a href="?resp=seguridad">Seguridad</a></li>
           <li><a href="#">Carrito (0)</a></li>
           <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
@@ -38,8 +38,35 @@
     </header>
     <main>
         <section id="hero">
+          <!-- Aquí se mostrarán los productos -->
+          <div>
             <h1>Welcome</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quasi fugiat quaerat debitis aspernatur sit pariatur corrupti delectus non eius.</p>
+            </div>
+              <div class="product-container">
+              <?php
+              // Obtener los productos desde la base de datos (supongamos que la función obtenerProductos existe)
+              $productos = $this->Product->obtenerProductos();
+
+              // Verificar si hay productos para mostrar
+              if (!empty($productos)) {
+                  foreach ($productos as $producto) {
+                      // Generar el HTML para mostrar cada producto
+                      echo '<div class="prod_box">';
+                      echo '<img class="image" src="' . $producto->Image_URL . '" alt="' . $producto->Nombre_Producto . '">';
+                      //echo '<img class="image" src="Resources/Productos/steam.jpeg" alt="">';
+                      echo '<h3>' . $producto->Nombre_Producto . '</h3>';
+                      echo '<p>' . $producto->Descripcion . '</p>';
+                      echo '<span class="price">$' . $producto->Precio . '</span>';
+                      //echo '<a href="#" class="btn">Agregar al carrito</a>';
+                      echo '</div>';
+                  }
+              } else {
+                  // Si no hay productos disponibles, puedes mostrar un mensaje o contenido alternativo
+                  echo '<p>No hay productos disponibles en este momento.</p>';
+              }
+              ?>
+          </div>
         </section>
     </main>
     <script>
