@@ -42,8 +42,8 @@
 							<th>Nombre del Cliente</th>
 							<th>Usuario</th>
 							<th>Correo</th>
-                            <th>Contraseña</th>
-                            <th>Telefono</th>
+              <th>Contraseña</th>
+              <th>Telefono</th>
 							<th class="white-text center-align">Eliminar</th>
 							<th class="white-text center-align">Actualizar</th>
 						</tr>
@@ -53,8 +53,8 @@
 								<td><?php echo $k->nombre; ?></td>
 								<td><?php echo $k->usuario; ?></td>
 								<td><?php echo $k->correo; ?></td>
-                                <td><?php echo $k->contraseña; ?></td>
-                                <td><?php echo $k->telefono; ?></td>
+                <td><?php echo $k->contraseña; ?></td>
+                <td><?php echo $k->telefono; ?></td>
 								<td>
 									<a href="?resp=dCliente&id_cliente=<?php echo $k->id_cliente; ?>" class="btn red z-depth-4">Eliminar</a>
 								</td>

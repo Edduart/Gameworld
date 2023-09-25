@@ -42,7 +42,7 @@
 							<th>Nombre del Producto</th>
 							<th>Id Categoria</th>
 							<th>Descripción</th>
-                            <th>Precio</th>
+              <th>Precio</th>
 							<th class="white-text center-align">Eliminar</th>
 							<th class="white-text center-align">Actualizar</th>
 						</tr>
@@ -52,7 +52,7 @@
 								<td><?php echo $k->Nombre_Producto; ?></td>
 								<td><?php echo $k->ID_catergoria; ?></td>
 								<td><?php echo $k->Descripcion; ?></td>
-                                <td><?php echo $k->Precio; ?></td>
+                <td><?php echo $k->Precio; ?></td>
 								<td>
 									<a href="?resp=dProducto&ID_Producto=<?php echo $k->ID_Producto; ?>" class="btn red z-depth-4">Eliminar</a>
 								</td>

@@ -25,22 +25,22 @@
             <h1>Registro</h1>
             <input type="hidden" name="txtId">
             <div class="input-box">
-                <input type="Usuario" placeholder="Username" name="TxtUsername" value="<?php echo $alm->Username; ?>" required>
+                <input type="Usuario" placeholder="Username" name="TxtUsername" value="<?php echo $alm->usuario; ?>" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
 
             <div class="input-box">
-                <input type="Correo" placeholder="Email" name="TxtEmail" value="<?php echo $alm->Email; ?>" required>
+                <input type="Correo" placeholder="Email" name="TxtEmail" value="<?php echo $alm->correo; ?>" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
 
             <div class="input-box">
-                <input type="Nombre" placeholder="Nombre" name="TxtNombre" value="<?php echo $alm->Nombre; ?>" required>
+                <input type="Nombre" placeholder="Nombre" name="TxtNombre" value="<?php echo $alm->nombre; ?>" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
 
             <div class="input-box">
-                <input type="Telefono" placeholder="Telefono" name="TxtTelefono" value="<?php echo $alm->Telefono; ?>" required>
+                <input type="Telefono" placeholder="Telefono" name="TxtTelefono" value="<?php echo $alm->telefono; ?>" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
             
