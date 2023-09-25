@@ -17,9 +17,9 @@
   <body>
     <header>
       <div class="navbar">
-        <div class="logo"><a href="#">GAMEWORLD</a></div>
+        <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
         <ul class="links">
-          <li><a href="hero">template</a></li>
+          <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
           <li><a href="?resp=seguridad">Seguridad</a></li>
           <li><a href="#">Carrito (0)</a></li>
           <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
@@ -62,7 +62,6 @@
 
                 <?php 
                   echo $_SESSION['error_message'];
-                  $_SESSION['error_message'] = null;
                 ?>
             </form>
           </div>

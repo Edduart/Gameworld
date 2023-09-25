@@ -8,19 +8,16 @@
 </head>
 <body>
 
-<header>
-        <h2 class="logo">GAMEWORLD</h2>
-        <nav class="naigation">
-            <a href="Principal.php">UNO</a>
-            <a href="#">UNO</a>
-            <a href="#">UNO</a>
-        </nav>
+    <header>
+        <h2 class="logo"><a href="?resp=index">GAMEWORLD</a></h2>
+            <nav class="navigation">
+                <a href="Principal.php">UNO</a>
+                <a href="#">UNO</a>
+                <a href="#">UNO</a>
+            </nav>
     </header>
 
-
-
-
-<div class="wrapper">
+    <div class="wrapper">
         <form method="POST" action="?resp=registrar">
             <h1>Registro</h1>
             <input type="hidden" name="txtId">
@@ -50,6 +47,12 @@
             </div>
             
             <button type="submit" class="btn"> Registrarse </button>
+
+            <div class="">
+                <?php  
+                    echo $_SESSION['error_message'];
+                ?>
+            </div>
 
             <div class="register-link">
                 <p>¿Ya posees una cuenta? <a href="?resp=sesion">Login</a></p>

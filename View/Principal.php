@@ -17,12 +17,12 @@
   <body>
     <header>
       <div class="navbar">
-        <div class="logo"><a href="#">GAMEWORLD</a></div>
+        <div class="logo"><a href="?resp=index">GAMEWORLD</a></div>
         <ul class="links">
           <li><a href="hero">Home</a></li>
           <li><a href="Borrame.html">NOMBRE</a></li>
           <li><a href="Borrame.html">Service</a></li>
-          <li><a href="Borrame.html">Contact</a></li>
+          <li><a href="?resp=Registro" class="action_btn">Registrate</a></li>
         </ul>
         <a href="?resp=sesion" class="action_btn">Login</a>
         <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
