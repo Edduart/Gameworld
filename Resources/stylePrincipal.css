@@ -45,7 +45,7 @@ header {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   backdrop-filter: blur(
     15px
   ); /*le permite aplicar efectos gráficos como desenfoque o cambio de color al área detrás de un elemento.*/
@@ -60,7 +60,7 @@ header {
 
 .navbar .links {
   display: flex;
-  gap: 5rem;
+  gap: 10px;
 }
 
 .navbar .toggle_btn {
@@ -69,16 +69,22 @@ header {
   cursor: pointer; /*Este cursor muestra la mano esa que aparece cuando el contenido es un hiperenlace, mostrando al usuario que ese elemento se puede apretar, hacer click, para ir a otro lugar o desencadenar algún tipo de comportamiento.*/
   display: none; /*el valor de none permite Desactivar la Visualizacion DE UN Elemento; cuando no se utiliza none , todos los elementos descendentes también quedan desactivados.*/
 }
+
+.navbar_login {
+  float: right;
+}
 .action_btn {
+  float: right;
   background-color: #5cd2e6;
   color: #fff;
   padding: 0.5rem 3rem;
-  border: none;
   border-radius: 20px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: scale 0.2 ease;
+  margin-left: 10px; /* Adjust the distance between buttons */
+  position: relative;
 }
 
 .action_btn:hover {
@@ -226,13 +232,14 @@ header {
 
 /*HERO*/
 section#hero {
-  height: calc(100vh - 60px);
+  height: 400px;
   display: flex;
   /*flex-direction: column;*/ /*ESTO ERAA LO QUE NO DEJA QUE SE JUNTARAN*/
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #060606;
+  background-color: #000;
 }
 
 #hero h1 {
@@ -242,6 +249,14 @@ section#hero {
 
 /* PRODUCTOS */
 
+.top-tittle {
+  text-align: center;
+  padding: 10px 20px 20px 20px;
+  height: 50px;
+  width: auto;
+  background-color: #ff0000;
+}
+
 .product-container {
   color: #fff;
   align-self: stretch;
@@ -250,40 +265,40 @@ section#hero {
   grid-gap: 10px; /* Reducir la distancia entre los cuadros */
   padding: 10px;
   justify-items: left; /* Alinear los cuadros horizontalmente */
-  margin-top: 5rem;
+  margin-top: 15px;
   margin: center;
 }
 
+.products-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribuir los productos horizontalmente */
+  margin: 0 -10px; /* Espaciado negativo para contrarrestar el padding en los elementos hijos */
+}
+
 .prod_box {
-  width: 330px;
-  margin: 0 auto; /* Quitar los márgenes vertical y horizontal */
-  padding: 20px 0;
+  flex: 1;
+  width: 150px;
+  height: 280px;
+  margin: 10px;
+  padding: 10px 0px;
   border-radius: 5px;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: #fff;
+  text-align: center; /* Center align the content */
 }
 
 .image {
-  margin-top: 20px;
+  margin-top: 10px;
   border-radius: 10px;
   border: 2px solid #ddd;
-  padding: px;
-  width: 300px;
+  padding: 5px;
+  width: 80%; /* Make the image width 100% of its container */
+  max-width: 150px; /* Limit the maximum width */
   cursor: pointer;
-}
-/* PRODUCTOS */
-
-/* DISEÑO DE TABAL DE REGISTRO */
-.container {
-  margin-top: 5rem;
-  border: solid 1px #fff;
-  background: #5cd2e6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 table {
