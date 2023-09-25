@@ -8,6 +8,7 @@
             public $Nombre_p;
             public $Id_categoria;
             public $Descripcion;
+            public $Precio;
 
 
 
@@ -23,7 +24,7 @@
             //en lista los insert join que se hizo en sql
             public function listar(){
                 try{
-                $query = "SELECT z.ID_Producto,z.Nombre_Producto,z.ID_catergoria,z.Descripcion FROM producto z ORDER BY z.ID_Producto";
+                $query = "SELECT z.ID_Producto,z.Nombre_Producto,z.ID_catergoria,z.Descripcion,z.Precio FROM producto z ORDER BY z.ID_Producto";
                 $resultado = $this->CNX->prepare($query);
                 $resultado->execute();
                 return $resultado->fetchAll(PDO::FETCH_OBJ);
@@ -46,8 +47,8 @@
 
             public function guardar($data){
                 try {
-                    $query = "INSERT INTO producto(Nombre_Producto, Descripcion) VALUES(?,?)";
-                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->Descripcion));
+                    $query = "INSERT INTO producto(Nombre_Producto, Descripcion, Precio) VALUES(?,?,?)";
+                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->Descripcion,$data->Precio));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
@@ -56,8 +57,8 @@
             //actualizar para el registro a futuro
             public function actualizarDatos($data){
                 try {
-                    $query = "UPDATE producto set Nombre_Producto=?,Descripcion=? WHERE ID_Producto=?";
-                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->Descripcion));
+                    $query = "UPDATE producto set Nombre_Producto=?,Descripcion=?,Precio=? WHERE ID_Producto=?";
+                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->Descripcion,$data->Precio));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }

@@ -22,6 +22,11 @@
                 <input type="Descripción" placeholder="Descripción" name="TxtDescripcion" value="<?php echo $alm->Descripcion; ?>" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
+
+            <div class="input-box">
+                <input type="Precio" placeholder="Precio" name="TxtPrecio" value="<?php echo $alm->Precio; ?>" required>
+                <box-icon name='user' type='solid' ></box-icon>
+            </div>
             
             <button type="submit" class="btn"> Registrar </button>
         </form>

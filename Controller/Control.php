@@ -39,8 +39,9 @@ class control{
 		$alm = new producto();
 		$alm->Nombre_p = $_POST['TxtNproducto'];
 		$alm->Descripcion = $_POST['TxtDescripcion'];
+		$alm->Precio = $_POST['TxtPrecio'];
 		$this->Product->guardar($alm);
-		include_once "View/login.php";
+		include_once "View/Admin/Admin.php";
 	}
 
 	public function login()
@@ -136,7 +137,7 @@ class control{
 
 		$this->Product->delete($_REQUEST['ID_Producto']);
 
-		header("Location: index.php");
+		include_once "View/Admin/Admin.php";
 	}
 
 	//Funciones de redireccion ***** hay que organizar
@@ -155,6 +156,10 @@ class control{
 
 	public function Product(){
 		include_once "View/Admin/Registro_Product.php";
+	}
+
+	public function Lista_Product(){
+		include_once "View/Admin/List_Product.php";
 	}
 
 	public function seguridad(){
