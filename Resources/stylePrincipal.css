@@ -123,22 +123,6 @@ header {
   justify-content: center;
 }
 
-/*HERO*/
-section#hero {
-  height: calc(100vh - 60px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #060606;
-}
-
-#hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
 /* RESPONSIVE DESIGN*/
 @media (max-width: 992px) {
   .navbar .links,
@@ -240,26 +224,77 @@ section#hero {
   font-weight: 600;
 }
 
+/*HERO*/
+section#hero {
+  height: calc(100vh - 60px);
+  display: flex;
+  /*flex-direction: column;*/ /*ESTO ERAA LO QUE NO DEJA QUE SE JUNTARAN*/
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #060606;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
 /* PRODUCTOS */
 
-.product-container{
+.product-container {
   color: #fff;
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px; /* Reducir la distancia entre los cuadros */
+  padding: 10px;
+  justify-items: left; /* Alinear los cuadros horizontalmente */
+  margin-top: 5rem;
+  margin: center;
 }
 
 .prod_box {
-  width: 300px;
+  width: 330px;
+  margin: 0 auto; /* Quitar los márgenes vertical y horizontal */
+  padding: 20px 0;
+  border-radius: 5px;
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: #fff;
-  border-radius: 10px;
-  padding: 30px 40px;
 }
 
 .image {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  padding: px;
+  width: 300px;
+  cursor: pointer;
+}
+/* PRODUCTOS */
+
+/* DISEÑO DE TABAL DE REGISTRO */
+.container {
+  margin-top: 5rem;
+  border: solid 1px #fff;
+  background: #5cd2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  color: black;
+  margin: 0 auto; /* Centrar la tabla horizontalmente */
+  max-width: 50%; /* Ancho máximo */
+}
+
+th,
+td {
+  padding: 5px 8px; /* Ajusta los valores de padding según tus necesidades */
+  text-align: center; /* Centrar el contenido en las celdas */
+  font-size: 700;
 }
