@@ -34,7 +34,7 @@
             }
             
             //ID cargada para actualizar
-            public function cargarId($Id){
+            /*public function cargarId($Id){
                 try {
                     $query = "SELECT * from cliente where id=?";
                     $resultado = $this->CNX->prepare($query);
@@ -44,7 +44,7 @@
                     die($e->getMessage());
                 }
         
-            }
+            }*/
 
             // Registro de cliente 
             public function guardar($data){
@@ -68,7 +68,7 @@
             //funcion de eliminar a futuro
             public function delete ($id){
                 try {
-                    $query = "Delete from cliente where id =?";
+                    $query = "DELETE FROM cliente WHERE id_cliente=?";
                     $resultado = $this->CNX->prepare($query);
                     $resultado->execute(array($id));
                 } catch (Exception $e) {
