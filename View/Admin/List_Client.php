@@ -17,14 +17,16 @@
   <body>
     <header>
       <div class="navbar">
-        <div class="logo"><a href="#">GAMEWORLD</a></div>
-        <ul class="links">
-          <li><a href="hero">Home</a></li>
-          <li><a href="?resp=Product">Registrar Producto</a></li>
-        </ul>
+        <div class="logo"><a href="?resp=PrincipalAdmin">GAMEWORLD</a></div>
         <a href="?resp=sesion" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
         <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
       </div>
+
+      <ul class="links">
+          <li><a href="?resp=Product">Registrar Producto</a></li>
+          <li><a href="?resp=Lista_Product">Lista de Productos</a></li>
+          <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
+        </ul>
 
       <div class="dropdown_menu">
         <li><a href="hero">Home</a></li>

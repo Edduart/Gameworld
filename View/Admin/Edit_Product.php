@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css"  href="Resources/styleRegistro.css" />
-    <title>Registro_Product</title>
+    <title>Edit_Product</title>
 </head>
 <body>
 
@@ -12,7 +12,7 @@
 
     <div class="wrapper">
         <form method="POST" action="?resp=regist_product">
-            <h1>Registro de Producto</h1>
+            <h1>Editar Producto</h1>
             <div class="input-box">
                 <input type="Nombre de producto" placeholder="Nombre de producto" name="TxtNproducto" value="<?php echo $alm->Nombre_Producto; ?>" required>
                 <box-icon name='user' type='solid' ></box-icon>
@@ -32,8 +32,9 @@
                 <input type="Imagen" placeholder="Imagen" name="TxtImagen" value="<?php echo $alm->Image_URL; ?>" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
-            
-            <button type="submit" class="btn"> Registrar </button>
+            <a class="btn" href="?resp=Lista_Product">Volver</a>
+            <br><br>
+            <button type="submit" class="btn"> Editar </button>
         </form>
     </div>
  </body>

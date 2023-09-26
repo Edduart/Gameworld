@@ -210,6 +210,11 @@ class control{
 		include_once "View/Usuario/Principal_login.php";
 	}
 
+	public function PrincipalAdmin(){
+		include_once "View/Admin/Admin.php";
+	}
+	
+
 }
 
 ?>

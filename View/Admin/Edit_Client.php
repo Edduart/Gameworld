@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css"  href="Resources/styleRegistro.css" />
-    <title>Registro</title>
+    <title>Edit_Client</title>
 </head>
 <body>
 
@@ -15,14 +15,14 @@
             <a href="#">UNO</a>
             <a href="#">UNO</a>
         </nav>
-    </header>
+</header>
 
 
 
 
 <div class="wrapper">
         <form method="POST" action="?resp=registrar">
-            <h1>Registro</h1>
+            <h1>Editar Cliente</h1>
             <input type="hidden" name="txtId">
             <div class="input-box">
                 <input type="Usuario" placeholder="Username" name="TxtUsername" value="<?php echo $alm->usuario; ?>" required>
@@ -43,12 +43,11 @@
                 <input type="Telefono" placeholder="Telefono" name="TxtTelefono" value="<?php echo $alm->telefono; ?>" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
-            
-            <button type="submit" class="btn"> Registrarse </button>
 
-            <div class="register-link">
-                <p>¿Ya posees una cuenta? <a href="?resp=sesion">Login</a></p>
-            </div>
+            <a class="btn" href="?resp=Lista_Client">Volver</a>
+            <br><br>
+            <button type="submit" class="btn"> Editar </button>
+
         </form>
     </div>
 </body>
