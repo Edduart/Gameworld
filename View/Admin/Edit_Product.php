@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<header>
+<div class="logo"><a href="?resp=PrincipalAdmin">GAMEWORLD</a></div>
+<nav class="naigation">
+            <a href="?resp=Product">Registrar Producto</a>
+            <a href="?resp=Lista_Client">Lista de Clientes</a>
+            <a href="?resp=CerrarSesion">Cerrar sesion</a>
+        </nav>
+        <a href="?resp=sesion" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
+        <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+</header>
+
 
 
     <div class="wrapper">
@@ -32,8 +43,6 @@
                 <input type="Imagen" placeholder="Imagen" name="TxtImagen" value="<?php echo $alm->Image_URL; ?>" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
-            <a class="btn" href="?resp=Lista_Product">Volver</a>
-            <br><br>
             <button type="submit" class="btn"> Editar </button>
         </form>
     </div>

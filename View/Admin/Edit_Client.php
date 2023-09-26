@@ -9,15 +9,15 @@
 <body>
 
 <header>
-        <h2 class="logo">GAMEWORLD</h2>
-        <nav class="naigation">
-            <a href="Principal.php">UNO</a>
-            <a href="#">UNO</a>
-            <a href="#">UNO</a>
-        </nav>
+<div class="logo"><a href="?resp=PrincipalAdmin">GAMEWORLD</a></div>
+    <nav class="naigation">
+        <a href="?resp=Product">Registrar Producto</a>
+        <a href="?resp=Lista_Product">Lista de Productos</a>
+        <a href="?resp=CerrarSesion">Cerrar sesion</a>
+    </nav>
+        <a href="?resp=sesion" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
+        <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
 </header>
-
-
 
 
 <div class="wrapper">
@@ -44,8 +44,6 @@
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
 
-            <a class="btn" href="?resp=Lista_Client">Volver</a>
-            <br><br>
             <button type="submit" class="btn"> Editar </button>
 
         </form>
