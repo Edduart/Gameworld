@@ -43,6 +43,7 @@
 							<th>Id Categoria</th>
 							<th>Descripción</th>
               <th>Precio</th>
+              <th>Url_Imagen</th>
 							<th class="white-text center-align">Eliminar</th>
 							<th class="white-text center-align">Actualizar</th>
 						</tr>
@@ -53,6 +54,7 @@
 								<td><?php echo $k->ID_catergoria; ?></td>
 								<td><?php echo $k->Descripcion; ?></td>
                 <td><?php echo $k->Precio; ?></td>
+                <td><?php echo $k->Image_URL; ?></td>
 								<td>
 									<a href="?resp=dProducto&ID_Producto=<?php echo $k->ID_Producto; ?>" class="btn red z-depth-4">Eliminar</a>
 								</td>

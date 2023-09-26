@@ -43,6 +43,7 @@ class control{
 		$alm->Nombre_p = $_POST['TxtNproducto'];
 		$alm->Descripcion = $_POST['TxtDescripcion'];
 		$alm->Precio = $_POST['TxtPrecio'];
+		$alm->Image_URL = $_POST['TxtImagen'];
 		$this->Product->guardar($alm);
 		include_once "View/Admin/Admin.php";
 	}

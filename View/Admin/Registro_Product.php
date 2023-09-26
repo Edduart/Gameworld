@@ -27,6 +27,11 @@
                 <input type="Precio" placeholder="Precio" name="TxtPrecio" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
+
+            <div class="input-box">
+                <input type="Imagen" placeholder="Imagen" name="TxtImagen" required>
+                <box-icon name='user' type='solid' ></box-icon>
+            </div>
             
             <button type="submit" class="btn"> Registrar </button>
         </form>
