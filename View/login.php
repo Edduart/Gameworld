@@ -32,12 +32,14 @@
         <form method="POST" action="?resp=login">
             <h1>Login</h1>
             <div class="input-box">
-                <input type="Usuario" placeholder="Usuario" name="TxtUsuario" required>
+                <input type="Usuario" name="TxtUsuario" id="Usuario" required>
+                <label for="Usuario" class="label_group">Usuario</label>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
 
             <div class="input-box">
-                <input type="Clave" placeholder="Contraseña" name="TxtClave" required>
+                <input type="Clave" name="TxtClave" id="Clave" required>
+                <label for="Clave" class="label_group">Contraseña</label>
                 <box-icon name='lock-alt'></box-icon>
             </div>
 
