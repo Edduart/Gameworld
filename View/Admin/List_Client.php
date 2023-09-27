@@ -15,7 +15,9 @@
     <title>Document</title>
   </head>
   <body>
+    
     <header>
+
       <div class="navbar">
         <div class="logo"><a href="?resp=PrincipalAdmin">GAMEWORLD</a></div>
         <a href="?resp=sesion" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
@@ -36,16 +38,16 @@
         <li><a href="#" class="action_btn"></a></li>
       </div>
     </header>
-    <div class="row">
-		<div class="col m12">
-    <table class="table-responsive blue z-depth-4 white-text center-align">
+<div class="container">
+    <table class="table-responsive">
+        <thead>
 						<tr> 
 							<th>Id Cliente</th>
 							<th>Nombre del Cliente</th>
 							<th>Usuario</th>
 							<th>Correo</th>
-                            <th>Contraseña</th>
-                            <th>Telefono</th>
+              <th>Contraseña</th>
+              <th>Telefono</th>
 							<th class="white-text center-align">Eliminar</th>
 							<th class="white-text center-align">Actualizar</th>
 						  </tr>
@@ -65,9 +67,10 @@
 								</td>
 							</tr>
 						<?php endforeach; ?>
+            </thead>
 					</table>
-                </div>
-    </div>        
+  </div>  
+
     <script>
         const toggleBtn = document.querySelector(".toggle_btn");
         const toggleBtnIcon = document.querySelector(".toggle_btn i");
