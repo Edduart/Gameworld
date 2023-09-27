@@ -11,11 +11,14 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" type="text/css" href="Resources/stylePrincipal.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Document</title>
   </head>
   <body>
     <header>
+
+
       <div class="navbar">
           <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
           <form class="search_container">
@@ -23,12 +26,22 @@
             <ul>
             <li><a href="#">Buscar</a></li>
             </ul>
+            <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+
           </form>
-            <div class="navbar_login">
             <a href="#" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
+      </div>
+      <div class="navbar_login">
+            <div class="dropdown"><i class='bx bx-menu' ></i>
+                <div class="items">
+                    <a href="#">Cerrar sesion</a>
+                    <a href="#">Seguridad</a>
+                    <a href="#">Mi cuenta</a>
+                </div>
             </div>
-          <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
-        </div>
+      </div>
+    
+      
 
         <!-- MENU DESPLEGABLE
           <ul class="links">
@@ -47,6 +60,12 @@
         <li><a href="#" class="action_btn">Login</a></li>
       </div>
     </header>
+
+
+
+
+
+
     <main>
        <div class="top-tittle">
         <h1>Tarjetas regalo electrónicas más vendidas</h1>    
