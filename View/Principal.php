@@ -48,7 +48,6 @@
           <?php
           // Obtener los productos desde la base de datos (supongamos que la función obtenerProductos existe)
           $productos = $this->Product->obtenerProductos();
-
           // Verificar si hay productos para mostrar
           if (!empty($productos)) {
               echo '<div class="products-wrapper">';
