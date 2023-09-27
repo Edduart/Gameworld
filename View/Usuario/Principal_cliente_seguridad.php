@@ -19,7 +19,6 @@
       <div class="navbar">
           <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
             <ul class="links">
-              <li><a href="?resp=seguridad">Seguridad</a></li>
               <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
             </ul>
             <div class="navbar_login">

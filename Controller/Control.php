@@ -188,6 +188,7 @@ class control{
 	}
 
     public function Registro(){
+		error_reporting(0);
 		include_once "View/Registro.php";
 	}
 
