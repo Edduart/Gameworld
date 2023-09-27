@@ -17,17 +17,16 @@
   <body>
     <header>
       <div class="navbar">
-        <div class="logo"><a href="#">GAMEWORLD</a></div>
-        <a href="?resp=sesion" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
-        <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
-      </div>
-
-      <ul class="links">
+        <div class="logo"><a href="?resp=PrincipalAdmin">GAMEWORLD</a></div>
+        <ul class="links">
           <li><a href="?resp=Product">Registrar Producto</a></li>
           <li><a href="?resp=Lista_Client">Lista de Clientes</a></li>
           <li><a href="?resp=Lista_Product">Lista de Productos</a></li>
           <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
         </ul>
+        <a href="#" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
+        <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+      </div>
 
       <div class="dropdown_menu">
         <li><a href="hero">Home</a></li>
@@ -36,40 +35,40 @@
         <li><a href="Borrame.html">Contactanos</a></li>
         <li><a href="#" class="action_btn"></a></li>
       </div>
+
     </header>
     <main>
-        <section id="hero">
-          <!-- Aquí se mostrarán los productos -->
-          <div>
-            <h1>Welcome</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quasi fugiat quaerat debitis aspernatur sit pariatur corrupti delectus non eius.</p>
-            </div>
-              <div class="product-container">
-              <?php
-              // Obtener los productos desde la base de datos (supongamos que la función obtenerProductos existe)
-              $productos = $this->Product->obtenerProductos();
+       <div class="top-tittle">
+        <h1>Tarjetas regalo electrónicas más vendidas</h1>    
+       </div> 
+       <section id="hero">
+        <div class="product-container">
+          <?php
+          // Obtener los productos desde la base de datos (supongamos que la función obtenerProductos existe)
+          $productos = $this->Product->obtenerProductos();
 
-              // Verificar si hay productos para mostrar
-              if (!empty($productos)) {
-                  foreach ($productos as $producto) {
-                      // Generar el HTML para mostrar cada producto
-                      echo '<div class="prod_box">';
-                      echo '<img class="image" src="' . $producto->Image_URL . '" alt="' . $producto->Nombre_Producto . '">';
-                      //echo '<img class="image" src="Resources/Productos/steam.jpeg" alt="">';
-                      echo '<h3>' . $producto->Nombre_Producto . '</h3>';
-                      echo '<p>' . $producto->Descripcion . '</p>';
-                      echo '<span class="price">$' . $producto->Precio . '</span>';
-                      //echo '<a href="#" class="btn">Agregar al carrito</a>';
-                      echo '</div>';
-                  }
-              } else {
-                  // Si no hay productos disponibles, puedes mostrar un mensaje o contenido alternativo
-                  echo '<p>No hay productos disponibles en este momento.</p>';
+          // Verificar si hay productos para mostrar
+          if (!empty($productos)) {
+              echo '<div class="products-wrapper">';
+              foreach ($productos as $producto) {
+                  // Generar el HTML para mostrar cada producto
+                  echo '<div class="prod_box">';
+                  echo '<img class="image" src="' . $producto->Image_URL . '" alt="' . $producto->Nombre_Producto . '">';
+                  echo '<h3>' . $producto->Nombre_Producto . '</h3>';
+                  echo '<p>' . $producto->Descripcion . '</p>';
+                  echo '<span class="price">$' . $producto->Precio . '</span>';
+                  //echo '<a href="#" class="btn">Agregar al carrito</a>';
+                  echo '</div>';
               }
-              ?>
+              echo '</div>';
+          } else {
+              // Si no hay productos disponibles, puedes mostrar un mensaje o contenido alternativo
+              echo '<p>No hay productos disponibles en este momento.</p>';
+          }
+          ?>
           </div>
         </section>
-    </main>      
+    </main>   
     <script>
         const toggleBtn = document.querySelector(".toggle_btn");
         const toggleBtnIcon = document.querySelector(".toggle_btn i");

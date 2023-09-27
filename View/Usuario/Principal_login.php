@@ -18,7 +18,6 @@
   <body>
     <header>
 
-
       <div class="navbar">
           <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
           <form class="search_container">
@@ -41,16 +40,12 @@
             </div>
       </div>
     
-      
-
-        
-          <ul class="links">
-          <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
-          <li><a href="?resp=seguridad">Seguridad</a></li>
-          <li><a href="#">Carrito (0)</a></li>
-          <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
-          </ul>
-
+      <ul class="links">
+        <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
+        <li><a href="?resp=seguridad">Seguridad</a></li>
+        <li><a href="#">Carrito (0)</a></li>
+        <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
+      </ul>
 
       <div class="dropdown_menu">
         <li><a href="hero">Home</a></li>
@@ -60,11 +55,6 @@
         <li><a href="#" class="action_btn">Login</a></li>
       </div>
     </header>
-
-
-
-
-
 
     <main>
        <div class="top-tittle">

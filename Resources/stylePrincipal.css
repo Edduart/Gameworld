@@ -79,6 +79,12 @@ header {
   color: #000;
 }
 
+.navbar .links {
+  display: flex;
+  position: relative;
+  gap: 10px;
+}
+
 .navbar .toggle_btn {
   color: #fff;
   font-size: 1.5rem;
@@ -292,7 +298,6 @@ section#hero {
 /* PRODUCTOS */
 
 .top-tittle {
-  MAR
   position: relative;
   text-align: center;
   padding: 5px;
@@ -300,7 +305,7 @@ section#hero {
   width: auto;
   color: #ffffff;
   backdrop-filter: blur(15px);
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 100px;
   margin-right: 100px;

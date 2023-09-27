@@ -29,7 +29,7 @@
             </div>
 
             <div class="input-box">
-                <input type="Imagen" placeholder="Imagen" name="TxtImagen" required>
+                <input type="Imagen" placeholder="Imagen" name="TxtImagen" value="Resources/Productos/steam.jpeg" required>
                 <box-icon name='user' type='solid' ></box-icon>
             </div>
             <a class="btn" href="?resp=PrincipalAdmin">Volver</a>
