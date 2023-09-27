@@ -10,31 +10,27 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" type="text/css" href="Resources/stylePrincipal.css"/>
+    <link rel="stylesheet" type="text/css" href="Resources/styleRegistro.css"/>
 
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <div class="navbar">
-        <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
-        <ul class="links">
-          <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
-          <li><a href="?resp=seguridad">Seguridad</a></li>
-          <li><a href="#">Carrito (0)</a></li>
-          <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
-        </ul>
-        <a href="#" class="action_btn"> <?php echo $_SESSION['nombre'] ?> </a>
-        <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
-      </div>
+  <header>
+        <div class="navbar">
+          <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
+            <div class="navbar_login">
+            <a href="#" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
+            </div>
+          <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+        </div>
 
-      <div class="dropdown_menu">
+      <!--<div class="dropdown_menu">
         <li><a href="hero">Home</a></li>
         <li><a href="Borrame.html">About</a></li>
         <li><a href="Borrame.html">Service</a></li>
         <li><a href="Borrame.html">Contactanos</a></li>
         <li><a href="#" class="action_btn">Login</a></li>
-      </div>
+      </div>-->
     </header>
     <main>
         <section id="hero">
