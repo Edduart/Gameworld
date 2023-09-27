@@ -185,6 +185,13 @@ body {
 .navbar_login {
   float: right;
 }
+
+.navbar .links {
+  position: relative;
+  gap: 10px;
+  list-style-type: none;
+}
+
 .action_btn {
   width: auto;
   text-align: center;

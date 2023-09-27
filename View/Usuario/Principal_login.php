@@ -27,29 +27,24 @@
             <li><a href="#">Buscar</a></li>
             </ul>
             <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
-
           </form>
-            <a href="#" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
+            <li><a href="#">Carrito (0)</a></li>
+            <a href="?resp=PrincipalUser" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
       </div>
-      <div class="navbar_login">
+
+          <div class="navbar_login">
             <div class="dropdown"><i class='bx bx-menu' ></i>
                 <div class="items">
-                    <a href="#">Cerrar sesion</a>
-                    <a href="#">Seguridad</a>
-                    <a href="#">Mi cuenta</a>
+                    <a href="?resp=CerrarSesion">Cerrar sesion</a>
+                    <a href="?resp=seguridad">Seguridad</a>
+                    <a href="?resp=obtenerInfo">Mi cuenta</a>
                 </div>
             </div>
-      </div>
-    
-      
 
-        
-          <ul class="links">
-          <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
+          <!--<ul class="links">
           <li><a href="?resp=seguridad">Seguridad</a></li>
-          <li><a href="#">Carrito (0)</a></li>
           <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
-          </ul>
+          </ul>-->
 
       <div class="dropdown_menu">
         <li><a href="hero">Home</a></li>

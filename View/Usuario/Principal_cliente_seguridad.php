@@ -16,10 +16,14 @@
   </head>
   <body>
     <header>
-    <div class="navbar">
+      <div class="navbar">
           <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
+            <ul class="links">
+              <li><a href="?resp=seguridad">Seguridad</a></li>
+              <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
+            </ul>
             <div class="navbar_login">
-            <a href="#" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
+            <a href="?resp=PrincipalUser" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
             </div>
           <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
         </div>

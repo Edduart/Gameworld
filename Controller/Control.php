@@ -183,6 +183,7 @@ class control{
 	}
 
 	public function sesion(){
+		error_reporting(0);
 		include_once "View/login.php";
 	}
 
