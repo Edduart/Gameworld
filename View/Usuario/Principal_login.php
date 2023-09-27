@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" type="text/css" href="Resources/stylePrincipal.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
 
     <title>Document</title>
   </head>
@@ -40,12 +41,15 @@
             </div>
       </div>
     
-      <ul class="links">
-        <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
-        <li><a href="?resp=seguridad">Seguridad</a></li>
-        <li><a href="#">Carrito (0)</a></li>
-        <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
-      </ul>
+      
+
+        
+          <ul class="links">
+          <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
+          <li><a href="?resp=seguridad">Seguridad</a></li>
+          <li><a href="#">Carrito (0)</a></li>
+          <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
+          </ul>
 
       <div class="dropdown_menu">
         <li><a href="hero">Home</a></li>
