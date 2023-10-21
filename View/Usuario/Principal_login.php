@@ -37,7 +37,7 @@
             </ul>
             <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
           </form>
-            <li><a href="#">Carrito <?php echo $total_cantidad; ?> </a></li>
+            <li><a href="?resp=Mipedido">Carrito <?php echo $total_cantidad; ?> </a></li>
             <a href="?resp=PrincipalUser" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
       </div>
 

@@ -245,5 +245,8 @@ class control{
 		include_once "View/Admin/Admin.php";
 	}
 	
+	public function Mipedido(){
+		include_once "View/Usuario/Pedido.php";
+	}
 
 }
