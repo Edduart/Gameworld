@@ -21,23 +21,29 @@
                 <h1>Registro</h1>
                 <input type="hidden" name="txtId">
                 <div class="input-box">
-                    <input type="Usuario" placeholder="Username" name="TxtUsername" required>
+                    <input type="Usuario" name="TxtUsername" required>
+                    <label for="Usuario" class="label_group">Usuario</label>
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <div class="input-box">
-                    <input type="Correo" placeholder="Email" name="TxtEmail" required>
+                    <input type="Correo"  name="TxtEmail" required>
+                    <label for="Clave" class="label_group">Contraseña</label>
+                    
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <div class="input-box">
-                    <input type="Clave" placeholder="Clave" name="TxtContraseña" required>
+                    <input type="Clave" name="TxtContraseña" required>
+                    <label for="Clave" class="label_group">Clave</label>
                     <box-icon name='lock-alt'></box-icon>
                 </div>
                 <div class="input-box">
-                    <input type="Nombre" placeholder="Nombre" name="TxtNombre" required>
+                    <input type="Nombre" name="TxtNombre" required>
+                    <label for="Clave" class="label_group">Nombre</label>
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <div class="input-box">
-                    <input type="Telefono" placeholder="Telefono" name="TxtTelefono" required>
+                    <input type="Telefono" name="TxtTelefono" required>
+                    <label for="Clave" class="label_group">Telefono</label>
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <button type="submit" class="btn"> Registrarse </button>

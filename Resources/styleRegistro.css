@@ -207,3 +207,52 @@ body {
   margin-left: 5px; /* Adjust the distance between buttons */
   position: relative;
 }
+
+/* Input responsivo */
+
+.input-box input::placeholder {
+  color: #fff;
+}
+
+.input-box box-icon {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.input-box input {
+  font: inherit;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: 2px solid #fff;
+  background-color: transparent;
+  transition: outline-color 500ms;
+  border-radius: 50px;
+}
+
+.input-box input:is(:focus, :valid) {
+  outline-color: #5cd1e6;
+}
+
+.label_group {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  translate: 10px 10px;
+  color: #fff;
+  transition: translate 500ms, scale 500ms;
+}
+
+.input-box input:focus + .label_group,
+.input-box input:valid + .label_group {
+  padding-inline: 5px;
+  translate: 1px -20px;
+  scale: 0.9;
+}
+
+/* fin input responsivo */
