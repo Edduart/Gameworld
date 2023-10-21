@@ -100,6 +100,46 @@
           </div>
         </section>
     </main>
+        
+    <!-- <div class="Espacio">
+      <div class="contenido">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt libero molestiae excepturi, iste consequatur odio adipisci, sunt nostrum accusantium quaerat delectus saepe placeat voluptatum impedit quibusdam nemo repellat. Est, atque!</p>
+      </div>
+    </div> -->
+
+    
+    <div class="top-tittle2">
+        <h2>Informacion para realizar la compra</h2>    
+    </div> 
+
+      <div class="contenedor-allcard">
+
+        <div class = "container-card">
+            <div class="card">
+              <img src="./Resources/Paso1.jpeg" alt="#">
+              <h4>Primer Paso</h4>
+              <p>Selecciona la “Gift Card” que deseas agregar a tu carrito, recuerda verificar su costo y la plataforma de la Gift Card sea la correcta. </p>
+            </div>
+          </div>
+
+          <div class = "container-card">
+            <div class="card">
+              <img src="./Resources/Paso2.jpeg" alt="#">
+              <h4>Segundo Paso</h4>
+              <p>Ingresa a tu carrito y selecciona la opción “Pagar”. Verifica los objetos del carrito antes de proceder con el pago.</p>
+            </div>
+          </div>
+
+          <div class = "container-card">
+            <div class="card">
+              <img src="./Resources/Paso3.jpeg" alt="#">
+              <h4>Tercer Paso</h4>
+              <p>Ingresa los datos solicitados para procesar el pago y por ultimo finaliza con la compra. </p>
+          </div>
+        </div>
+
+      </div>    
+
     <script>
         const toggleBtn = document.querySelector(".toggle_btn");
         const toggleBtnIcon = document.querySelector(".toggle_btn i");
