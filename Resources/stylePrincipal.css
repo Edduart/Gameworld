@@ -467,20 +467,38 @@ td {
   height: 200px;
   justify-content: center;
   margin: auto;
-  box-shadow: #060606;
 }
 
 .container-card .card {
-  width: 330px;
-  height: 430px;
-  border-radius: 8px;
-  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  height: 400px;
+  border-radius: 20px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   margin: 50px;
   text-align: center;
   transition: all 0.25s;
-  background: green;
+  background: #fff;
+  margin-left: 50px;
 }
 
+.container-card .card img {
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  padding: 5px;
+  width: 90%; /* Make the image width 100% of its container */
+  height: 250px;
+  max-width: 800px; /* Limit the maximum width */
+}
+
+.container-card .card h4 {
+  margin-top: 20px;
+}
+
+.container-card .card p {
+  padding: 3%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
 .container-card .card:hover {
   transform: translateY(-15px);
   box-shadow: 0 12px 16px rgba(0, 0, 0, 0, 2);

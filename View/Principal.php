@@ -71,25 +71,25 @@
 
           <div class = "container-card">
             <div class="card">
-              <img src="#" alt="#">
+              <img src="./Resources/Paso1.jpeg" alt="#">
               <h4>Primer Paso</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, assumenda.</p>
+              <p>Selecciona la “Gift Card” que deseas agregar a tu carrito, recuerda verificar su costo y la plataforma de la Gift Card sea la correcta. </p>
             </div>
           </div>
 
           <div class = "container-card">
             <div class="card">
-              <img src="#" alt="#">
+              <img src="./Resources/Paso2.jpeg" alt="#">
               <h4>Segundo Paso</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, assumenda.</p>
+              <p>Ingresa a tu carrito y selecciona la opción “Pagar”. Verifica los objetos del carrito, antes de proceder con el pago.</p>
             </div>
           </div>
 
           <div class = "container-card">
             <div class="card">
-              <img src="#" alt="#">
+              <img src="./Resources/Paso3.jpeg" alt="#">
               <h4>Tercer Paso</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, assumenda.</p>
+              <p>Ingresa los datos solicitados para procesar el pago y por ultimo finaliza con la compra. </p>
             </div>
           </div>
 
