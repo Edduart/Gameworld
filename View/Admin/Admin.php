@@ -96,7 +96,7 @@
             <div class="card">
               <img src="./Resources/Paso2.jpeg" alt="#">
               <h4>Segundo Paso</h4>
-              <p>Ingresa a tu carrito y selecciona la opción “Pagar”. Verifica los objetos del carrito, antes de proceder con el pago.</p>
+              <p>Ingresa a tu carrito y selecciona la opción “Pagar”. Verifica los objetos del carrito antes de proceder con el pago.</p>
             </div>
           </div>
 
