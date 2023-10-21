@@ -21,8 +21,9 @@ body {
   height: 100vh;
   background-color: #000;
   background-image: url(LoginImg.png);
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-attachment: fixed;
 }
 
 body .navbar {
@@ -326,6 +327,21 @@ section#hero {
   border-radius: 50px;
 }
 
+.top-tittle2 {
+  position: relative;
+  text-align: center;
+  padding: 12px;
+  height: 50px;
+  width: auto;
+  color: aqua;
+  background: black;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 50px;
+}
+
 /* Seccion de productos */
 
 .products-wrapper {
@@ -333,7 +349,6 @@ section#hero {
   justify-items: start;
   margin: 0 -10px; /* Espaciado negativo para contrarrestar el padding en los elementos hijos */
 }
-
 
 .prod_box {
   width: 180px;
@@ -379,7 +394,7 @@ td {
   width: auto;
   background-color: transparent;
   backdrop-filter: blur(20px);
-  color: red;
+  color: #fff;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
@@ -440,3 +455,35 @@ td {
 .container {
   border: 1px black;
 }
+
+/*Comienzo  Tarjetas de la pantalla principal*/
+.contenedor-allcard {
+  display: flex;
+}
+
+.container-card {
+  float: left;
+  max-width: 50rem;
+  height: 200px;
+  justify-content: center;
+  margin: auto;
+  box-shadow: #060606;
+}
+
+.container-card .card {
+  width: 330px;
+  height: 430px;
+  border-radius: 8px;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+  margin: 50px;
+  text-align: center;
+  transition: all 0.25s;
+  background: green;
+}
+
+.container-card .card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0, 2);
+}
+
+/*Final Tarjetas de la pantalla principal*/
