@@ -87,6 +87,40 @@
           </div>
         </section>
     </main>
+        
+    
+    <div class="top-tittle2">
+        <h2>Informacion para realizar la compra</h2>    
+    </div> 
+
+        <div class="contenedor-allcard">
+
+          <div class = "container-card">
+            <div class="card">
+              <img src="#" alt="#">
+              <h4>Primer Paso</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, assumenda.</p>
+            </div>
+          </div>
+
+          <div class = "container-card">
+            <div class="card">
+              <img src="#" alt="#">
+              <h4>Segundo Paso</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, assumenda.</p>
+            </div>
+          </div>
+
+          <div class = "container-card">
+            <div class="card">
+              <img src="#" alt="#">
+              <h4>Tercer Paso</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, assumenda.</p>
+            </div>
+          </div>
+
+        </div>    
+
     <script>
         const toggleBtn = document.querySelector(".toggle_btn");
         const toggleBtnIcon = document.querySelector(".toggle_btn i");

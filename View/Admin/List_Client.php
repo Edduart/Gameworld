@@ -11,7 +11,8 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" type="text/css" href="Resources/stylePrincipal.css" />
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
     <title>Document</title>
   </head>
   <body>
@@ -20,15 +21,23 @@
 
     <div class="navbar">
         <div class="logo"><a href="?resp=PrincipalAdmin">GAMEWORLD</a></div>
-        <ul class="links">
-          <li><a href="?resp=Product">Registrar Producto</a></li>
-          <li><a href="?resp=Lista_Client">Lista de Clientes</a></li>
-          <li><a href="?resp=Lista_Product">Lista de Productos</a></li>
-          <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
-        </ul>
         <a href="#" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
+        <div class="reporte">
+        <a href="Reporte_C.php" target="_blank" class="action_btn">Generar Reporte</a>
+        </div>
         <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
       </div>
+
+
+      <div class="navbar_login">
+            <div class="dropdown"><i class='bx bx-menu' ></i>
+                <div class="items">
+                <li><a href="?resp=Product">Registrar Producto</a></li>
+                <li><a href="?resp=Lista_Product">Lista de Productos</a></li>
+                <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
+                </div>
+            </div>
+      </div>  
 
       <div class="dropdown_menu">
         <li><a href="hero">Home</a></li>
