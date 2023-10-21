@@ -14,23 +14,24 @@
         <form method="POST" action="?resp=regist_product">
             <h1>Registro de Producto</h1>
             <div class="input-box">
-                <input type="Nombre de producto" placeholder="Nombre de producto" name="TxtNproducto" required>
+                <input type="Nombre de producto"name="TxtNproducto" required>
+                <label for="Usuario" class="label_group">Nombre de producto</label>
                
             </div>
 
             <div class="input-box">
-                <input type="Descripción" placeholder="Descripción" name="TxtDescripcion" required>
-               
+                <input type="Descripción"  name="TxtDescripcion" required>
+                <label for="Usuario" class="label_group">Descripción</label>
             </div>
 
             <div class="input-box">
-                <input type="Precio" placeholder="Precio" name="TxtPrecio" required>
-              
+                <input type="Precio" name="TxtPrecio" required>
+                <label for="Usuario" class="label_group">Precio</label>
             </div>
 
             <div class="input-box">
-                <input type="Imagen" placeholder="Imagen" name="TxtImagen" value="Resources/Productos/steam.jpeg" required>
-            
+                <input type="Imagen" name="TxtImagen" value="Resources/Productos/steam.jpeg" required>
+                <label for="Usuario" class="label_group">Imagen</label>
             </div>
              
             <button type="submit" class="btn"> Registrar </button>

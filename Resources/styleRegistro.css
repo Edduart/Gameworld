@@ -251,8 +251,8 @@ body {
 .input-box input:focus + .label_group,
 .input-box input:valid + .label_group {
   padding-inline: 5px;
-  translate: 1px -20px;
-  scale: 0.9;
+  translate: 1px -25px;
+  scale: 1;
 }
 
 /* fin input responsivo */
