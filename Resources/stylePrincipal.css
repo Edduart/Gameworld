@@ -470,8 +470,8 @@ td {
 }
 
 .container-card .card {
-  width: 300px;
-  height: 400px;
+  width: 310px;
+  height: 410px;
   border-radius: 20px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   margin: 50px;
@@ -492,11 +492,13 @@ td {
 }
 
 .container-card .card h4 {
-  margin-top: 20px;
+  margin-top: 10px;
+  font-size: 25px;
 }
 
 .container-card .card p {
-  padding: 3%;
+  padding: 2%;
+  font-size: 18px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .container-card .card:hover {
