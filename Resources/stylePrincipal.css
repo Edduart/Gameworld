@@ -450,13 +450,28 @@ td {
 .action_btn:active {
   scale: 0.95;
 }
+
 /*FINAL DEL MENU DESPEGABLE*/
 
 .container {
   border: 1px black;
 }
 
+/*Comienzo del ESPACIO*/
+
+.Espacio {
+  display: flex;
+  background: #4b165c;
+  margin-left: 50px;
+  width: 50%;
+  height: 10%;
+  justify-content: center;
+}
+
+/*Final del ESPACIO*/
+
 /*Comienzo  Tarjetas de la pantalla principal*/
+
 .contenedor-allcard {
   display: flex;
 }
