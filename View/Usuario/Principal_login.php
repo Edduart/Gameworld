@@ -88,18 +88,11 @@
         </section>
     </main>
         
-    <div class="Espacio">
+    <!-- <div class="Espacio">
       <div class="contenido">
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt libero molestiae excepturi, iste consequatur odio adipisci, sunt nostrum accusantium quaerat delectus saepe placeat voluptatum impedit quibusdam nemo repellat. Est, atque!</p>
       </div>
-    </div>
-
-
-
-
-
-
-
+    </div> -->
 
     
     <div class="top-tittle2">
