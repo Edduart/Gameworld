@@ -45,19 +45,23 @@
       </div>
     </header>
     
-    <div class="row">
-				<div class="col m12">
-    <table class="table-responsive blue z-depth-4 white-text center-align">
-						<tr> 
+    <div class="table-container">
+      
+    <table  class="table-responsive">
+      <thead>
+            <tr> 
 							<th>Id Producto</th>
 							<th>Nombre del Producto</th>
 							<th>Id Categoria</th>
 							<th>Descripción</th>
               <th>Precio</th>
               <th>Url_Imagen</th>
-							<th class="white-text center-align">Eliminar</th>
-							<th class="white-text center-align">Actualizar</th>
+              <th class="white-text center-align">Eliminar</th>
+            <th class="white-text center-align">Actualizar</th>
+	
 						</tr>
+  
+
 						<?php foreach ($this->Product->listar() as $k) : ?>
 							<tr>
 								<td><?php echo $k->ID_Producto; ?></td>
@@ -66,7 +70,7 @@
 								<td><?php echo $k->Descripcion; ?></td>
                 <td><?php echo $k->Precio; ?></td>
                 <td><?php echo $k->Image_URL; ?></td>
-								<td>
+								<td class = "Eliminar">
 									<a href="?resp=dProducto&ID_Producto=<?php echo $k->ID_Producto; ?>" class="btn red z-depth-4">Eliminar</a>
 								</td>
 								<td>
@@ -74,8 +78,8 @@
 								</td>
 							</tr>
 						<?php endforeach; ?>
+            </thead>
 					</table>
-                </div>
     </div>        
     <script>
         const toggleBtn = document.querySelector(".toggle_btn");

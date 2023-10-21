@@ -9,14 +9,6 @@
   background: #060606;
 }
 
-.table-responsive {
-  margin-top: 10px;
-  padding: 10px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  border-radius: 5px;
-}
 body {
   height: 100vh;
   background-color: #000;
@@ -375,17 +367,39 @@ section#hero {
   cursor: pointer;
 }
 
+.table-responsive {
+  margin-top: 40px;
+  padding: 10px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 5px;
+}
+
 table {
   color: black;
   margin: 0 auto; /* Centrar la tabla horizontalmente */
-  max-width: 50%; /* Ancho máximo */
+  max-width: 200%; /* Ancho máximo */
+  border-radius: 200px;
 }
 
-th,
-td {
-  padding: 5px 8px; /* Ajusta los valores de padding según tus necesidades */
-  text-align: center; /* Centrar el contenido en las celdas */
-  font-size: 700;
+table thead tr th {
+  padding: 20px 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+  background: #687eff;
+}
+
+table thead tr td {
+  padding: 5px 5px;
+  text-align: center;
+  font-size: 15px;
+  background: #80b3ff;
+  color: black;
+}
+
+.Eliminar a:hover {
+  color: #ff0000;
 }
 
 /*COMIENZO DEL MENU DESPEGABLE*/
