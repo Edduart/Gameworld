@@ -42,8 +42,8 @@
           $productos = $this->Product->obtenerProductos();
           // Verificar si hay productos para mostrar
           if (!empty($productos)) {
-            echo '<div class="products-wrapper">';
-            foreach ($productos as $producto) {
+              echo '<div class="products-wrapper">';
+              foreach ($productos as $producto) {
               // Generar el HTML para mostrar cada producto
               echo '<div class="prod_box">';
               echo '<img class="image" src="' . $producto->Image_URL . '" alt="' . $producto->Nombre_Producto . '">';

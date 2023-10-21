@@ -176,6 +176,35 @@ class control{
 		include_once "View/Admin/List_Client.php";
 	}
 
+	public function carrito(){
+		if(isset($_SESSION['carrito']) || isset($_POST['nombre_product'])){
+    
+			if(isset($_SESSION['carrito'])){
+		
+				$carrito_mio = $_SESSION['carrito'];
+		
+				if(isset($_POST['nombre_product'])){
+		
+					$nombre = $_POST['nombre_product'];
+					$descripcion = $_POST['descripcion'];
+					$precio = $_POST['precio'];
+					$cantidad = $_POST['cantidad'];
+		
+					$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "cantidad"=>$cantidad);
+				}
+			}else{
+				$nombre = $_POST['nombre_product'];
+				$descripcion = $_POST['descripcion'];
+				$precio = $_POST['precio'];
+				$cantidad = $_POST['cantidad'];
+				$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "cantidad"=>$cantidad);
+			}
+			$_SESSION['carrito'] = $carrito_mio;
+			var_dump($_SESSION['carrito']);
+		}
+		include_once "View/Usuario/Principal_login.php";
+	} 
+
 	//Funciones de redireccion ***** hay que organizar
 
 	public function index(){
