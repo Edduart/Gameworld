@@ -47,38 +47,40 @@
         <li><a href="#" class="action_btn"></a></li>
       </div>
     </header>
-<div class="container">
-    <table class="table-responsive">
-        <thead>
-						<tr> 
-							<th>Id Cliente</th>
-							<th>Nombre del Cliente</th>
-							<th>Usuario</th>
-							<th>Correo</th>
-              <th>Contraseña</th>
-              <th>Telefono</th>
-							<th class="white-text center-align">Eliminar</th>
-							<th class="white-text center-align">Actualizar</th>
-						  </tr>
-						<?php foreach ($this->Usuario->listar() as $k) : ?>
-							<tr>
-								<td><?php echo $k->id_cliente; ?></td>
-								<td><?php echo $k->nombre; ?></td>
-								<td><?php echo $k->usuario; ?></td>
-								<td><?php echo $k->correo; ?></td>
-                <td><?php echo $k->contraseña; ?></td>
-                <td><?php echo $k->telefono; ?></td>
-								<td>
-									<a href="?resp=dCliente&id_cliente=<?php echo $k->id_cliente; ?>" class="btn red z-depth-4">Eliminar</a>
-								</td>
-								<td>
-									<a href="?resp=ActCliente&id_cliente=<?php echo $k->id_cliente; ?>" class="btn green z-depth-4">Actualizar</a>
-								</td>
-							</tr>
-						<?php endforeach; ?>
-            </thead>
-					</table>
-  </div>  
+
+
+      <div class="table-container">
+          <table class="table-responsive">
+              <thead>
+                    <tr> 
+                      <th>Id Cliente</th>
+                      <th>Nombre del Cliente</th>
+                      <th>Usuario</th>
+                      <th>Correo</th>
+                      <th>Contraseña</th>
+                      <th>Telefono</th>
+                      <th class="white-text center-align">Eliminar</th>
+                      <th class="white-text center-align">Actualizar</th>
+                      </tr>
+                    <?php foreach ($this->Usuario->listar() as $k) : ?>
+                      <tr>
+                        <td><?php echo $k->id_cliente; ?></td>
+                        <td><?php echo $k->nombre; ?></td>
+                        <td><?php echo $k->usuario; ?></td>
+                        <td><?php echo $k->correo; ?></td>
+                        <td><?php echo $k->contraseña; ?></td>
+                        <td><?php echo $k->telefono; ?></td>
+                        <td class = "Eliminar">
+                          <a href="?resp=dCliente&id_cliente=<?php echo $k->id_cliente; ?>" class="btn red z-depth-4">Eliminar</a>
+                        </td>
+                        <td>
+                          <a href="?resp=ActCliente&id_cliente=<?php echo $k->id_cliente; ?>" class="btn green z-depth-4">Actualizar</a>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+                    </thead>
+                  </table>
+        </div>  
 
     <script>
         const toggleBtn = document.querySelector(".toggle_btn");
