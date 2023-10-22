@@ -35,7 +35,7 @@
                   echo '<div class="products-wrapper">';
                   foreach($carrito_mio as $pedido){ 
                   echo '<div class="prod_box">';
-                  /*echo '<img class="image" src="' . $pedido["Image_URL"] . '" alt="' . $pedido["Nombre_Producto"] . '">';*/
+                  echo '<img class="image" src="' . $pedido["img"] . '" alt="' . $pedido["nombre_product"] . '">';
                   echo '<h3>' . $pedido["nombre_product"] . '</h3>';
                   echo '<p>' . $pedido["descripcion"] . '</p>';
                   /*echo '<p> ID producto = ' . $pedido->ID_Producto . '</p>';*/
