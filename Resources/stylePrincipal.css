@@ -538,3 +538,39 @@ table thead tr td {
 }
 
 /*Final Tarjetas de la pantalla principal*/
+
+section#list {
+  height: 400px;
+  width: auto;
+  margin-left: 100px;
+  margin-right: 100px;
+  align-content: left;
+  color: #060606;
+  backdrop-filter: blur(15px);
+  border-radius: 50px;
+}
+
+.list-container {
+  background: #ff00d4;
+  border: #00ff11;
+  padding: 10px;
+}
+
+.pedidos-wrapper {
+  display: flex;
+  margin: 0 -10px;
+  background-color: transparent;
+  border: 1px solid #00ff11;
+  
+}
+
+.prod_desc{
+  background-color: #841313;
+}
+
+.icon {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1px;
+  width: 75px;
+}
