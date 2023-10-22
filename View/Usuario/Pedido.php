@@ -25,26 +25,27 @@
             </div>
 
         </header>
-        <div class="wrapper">
+        <div class="pedidos-wrapper">
         <?php 
-      if(isset($_SESSION['carrito'])){
-        $carrito_mio = $_SESSION['carrito'];
-        }
-        
-        if(!empty($carrito_mio)){ 
-            echo '<div class="products-wrapper">';
-              foreach($carrito_mio as $pedido){ 
-                echo '<div class="prod_box">';
-                echo '<img class="image" src="' . $pedido->Image_URL . '" alt="' . $pedido->Nombre_Producto . '">';
-                echo '<h3>' . $pedido->Nombre_Producto . '</h3>';
-                echo '<p>' . $pedido->Descripcion . '</p>';
-                echo '<p> ID producto = ' . $pedido->ID_Producto . '</p>';
-                echo '<span class="price">$' . $pedido->Precio . '</span>';
-                echo '</div>';
-              }
-          } else {
-            echo '<p>No hay productos disponibles en este momento.</p>';
-          }       
+          if(isset($_SESSION['carrito'])){
+
+            $carrito_mio = $_SESSION['carrito'];
+
+            if(!empty($carrito_mio)){ 
+                    echo '<div class="pedidos">';
+                  foreach($carrito_mio as $pedido){ 
+                  echo '<div class="prod_box">';
+                  echo '<img class="image" src="' . $pedido["img"] . '" alt="' . $pedido["nombre_product"] . '">';
+                  echo '<h3>' . $pedido["nombre_product"] . '</h3>';
+                  echo '<p>' . $pedido["descripcion"] . '</p>';
+                  /*echo '<p> ID producto = ' . $pedido->ID_Producto . '</p>';*/
+                  echo '<span class="price">$' . $pedido["precio"] . '</span>';
+                  echo '</div>';
+                }
+            } else {
+              echo '<p>No hay productos disponibles en este momento.</p>';
+            }
+          }      
         ?>
         </div>
     </body>

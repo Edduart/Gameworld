@@ -188,16 +188,18 @@ class control{
 					$nombre = $_POST['nombre_product'];
 					$descripcion = $_POST['descripcion'];
 					$precio = $_POST['precio'];
+					$imagen = $_POST['img'];
 					$cantidad = $_POST['cantidad'];
 		
-					$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "cantidad"=>$cantidad);
+					$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "img"=>$imagen, "cantidad"=>$cantidad);
 				}
 			}else{
 				$nombre = $_POST['nombre_product'];
 				$descripcion = $_POST['descripcion'];
 				$precio = $_POST['precio'];
+				$imagen = $_POST['img'];
 				$cantidad = $_POST['cantidad'];
-				$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "cantidad"=>$cantidad);
+				$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "img"=>$imagen, "cantidad"=>$cantidad);
 			}
 			$_SESSION['carrito'] = $carrito_mio;
 			var_dump($_SESSION['carrito']);
@@ -247,6 +249,10 @@ class control{
 	
 	public function Mipedido(){
 		include_once "View/Usuario/Pedido.php";
+	}
+
+	public function MetodoPagos(){
+		include_once "View/Usuario/MetodoPagos.php";
 	}
 
 }
