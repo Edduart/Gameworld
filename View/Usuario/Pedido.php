@@ -77,7 +77,7 @@
                   echo '<button class="action_btn" type="submit" name="agregar">Añadir al carrito</button>';
                 echo '</form>';
                 echo '<h2> Cantidad de productos = ' . $cantidad .'</h2>';
-                echo '<h2> Precio total = ' . $precioTotal .'</h2>';
+                echo '<h2> Precio total = ' . $precioTotal .'$</h2>';
                 echo '<button class="action_btn" type="button" name="agregar"><a href="?resp=MetodoPagos">Pagos</a></button>';
               echo '</div>';
             echo '</div>';
