@@ -241,7 +241,27 @@ class control{
 		include_once "View/Usuario/Principal_login.php";
 	} 
 	public function crearPedido(){
+		// Obtener los arreglos de productos desde $_POST
+		$id_productos = $_POST['TxtId_producto'];
+		$id_clientes = $_POST['TxtId_cliente'];
+		$id_pagos = $_POST['TxtId_pago'];
+		$precios = $_POST['Txtprecio'];
+		$pedidoN = $_POST['TxtpedidoN'];
+		$estatus = $_POST['TxtEstatus'];
 
+		// Iterar sobre los arreglos y guardar cada producto en la base de datos
+		foreach ($id_productos as $key => $id_producto) {
+			$alm = new pedido();
+			$alm->Id_producto = $id_producto;
+			$alm->Id_cliente = $id_clientes[$key];
+			$alm->Id_pago = $id_pagos[$key];
+			$alm->Precio_total = $precios[$key];
+			$alm->pedidoN = $pedidoN[$key];
+			$alm->estatus = $estatus[$key];
+
+			$this->Pedido->guardar($alm);
+		}
+		$this->Mipedido();
 	}
 
 	//Funciones de redireccion ***** hay que organizar

@@ -9,6 +9,7 @@
             public $Id_cliente;
             public $Id_pago;
             public $Precio_total;
+            public $pedidoN;
             public $estatus;
 
             //contructor que enlaza la conexion
@@ -46,8 +47,8 @@
 
             public function guardar($data){
                 try {
-                    $query = "INSERT INTO pedido(Id_pedido, Id_producto, id_cliente, Id_pago, Precio_total, estatus) VALUES(?,?,?,?,?,?)";
-                    $this->CNX->prepare($query)->execute(array($data->Id_pedido,$data->Id_producto,$data->Id_cliente,$data->Id_pago,$data->Precio_total,$data->estatus));
+                    $query = "INSERT INTO pedido(Id_producto, id_cliente, Id_pago, Precio_total, pedidoN, estatus) VALUES(?,?,?,?,?,?)";
+                    $this->CNX->prepare($query)->execute(array($data->Id_producto,$data->Id_cliente,$data->Id_pago,$data->Precio_total,$data->pedidoN,$data->estatus));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }

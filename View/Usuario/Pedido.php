@@ -69,18 +69,19 @@
             echo '<div class="resumen-container">';
             echo '<h1>Resumen del carrito</h1>';
               echo '<div class="resumen-list">';
-              // Generar pedido
-              foreach ($carrito_mio as $pedido){
-                echo '<form method="post" action="#">';
-                  echo '<input name="id_pedido" type="hidden" value="' . $_SESSION['id_pedido']  . '">';
-                  echo '<input name="id_producto" type="hidden" value="' . $pedido["id_producto"]  . '">';
-                  echo '<input name="id_producto" type="hidden" value="' .  $_SESSION['id']  . '">';
-                  echo '<input name="id_pago" type="hidden" value="' . $_SESSION['pago'] . '">';
-                  echo '<input name="precio" type="hidden" value="' . $pedido["precio"] . '">';
-                  echo '<input name="precio" type="hidden" value="' . false . '">';
-                echo '</form>';
-              }
-              echo '<button class="action_btn" type="submit" name="agregar">Generar Pedido</button>';
+                // Generar pedido
+                echo '<form method="post" action="?resp=crearPedido">';
+                foreach ($carrito_mio as $pedido){
+
+                    echo '<input name="TxtId_producto[]" type="hidden" value="' . $pedido["id_producto"]  . '">';
+                    echo '<input name="TxtId_cliente[]" type="hidden" value="' .  $_SESSION['id']  . '">';
+                    echo '<input name="TxtId_pago[]" type="hidden" value="' . $_SESSION['pago'] . '">';
+                    echo '<input name="Txtprecio[]" type="hidden" value="' . $pedido["precio"] . '">';
+                    echo '<input name="TxtpedidoN[]" type="hidden" value="' . $_SESSION['id_pedido']  . '">';
+                    echo '<input name="TxtEstatus[]" type="hidden" value="' . false . '">';
+                }
+                echo '<button class="action_btn" type="submit" name="agregar">Generar Pedido</button>';
+              echo '</form>';
               echo '<h2> Cantidad de productos = ' . $cantidad .'</h2>';
               echo '<h2> Precio total = ' . $precioTotal .'$</h2>';
               echo '<button class="action_btn" type="button" name="agregar"><a href="?resp=MetodoPagos">Pagos</a></button>';
