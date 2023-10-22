@@ -1,6 +1,7 @@
 <?php
 include_once "Model/Cliente.php";
 include_once "Model/Producto.php";
+include_once "Model/Pedido.php";
 require "SesionControl.php";
 
 $start_sesion = new SesionControl;
@@ -9,10 +10,12 @@ class control{
 
 	public $Usuario;
 	public $Product;
+	public $Pedido;
 
     public function __construct(){
 		$this->Usuario = new cliente();
 		$this->Product = new producto();
+		$this->Pedido = new pedido();
 	}
 
 	public function registrar(){
@@ -219,8 +222,9 @@ class control{
 					$precio = $_POST['precio'];
 					$imagen = $_POST['img'];
 					$cantidad = $_POST['cantidad'];
+					$id_producto = $_POST['id_producto'];
 		
-					$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "img"=>$imagen, "cantidad"=>$cantidad);
+					$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "img"=>$imagen, "cantidad"=>$cantidad, "id_producto"=>$id_producto);
 				}
 			}else{
 				$nombre = $_POST['nombre_product'];
@@ -228,13 +232,17 @@ class control{
 				$precio = $_POST['precio'];
 				$imagen = $_POST['img'];
 				$cantidad = $_POST['cantidad'];
-				$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "img"=>$imagen, "cantidad"=>$cantidad);
+				$id_producto = $_POST['id_producto'];
+				$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "img"=>$imagen, "cantidad"=>$cantidad, "id_producto"=>$id_producto);
 			}
 			$_SESSION['carrito'] = $carrito_mio;
 			var_dump($_SESSION['carrito']);
 		}
 		include_once "View/Usuario/Principal_login.php";
 	} 
+	public function crearPedido(){
+
+	}
 
 	//Funciones de redireccion ***** hay que organizar
 

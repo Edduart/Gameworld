@@ -45,6 +45,8 @@
   <section id="list">
     <div class="list-container">
       <?php
+        $_SESSION['id_pedido'] = rand(0,10000);
+        $_SESSION['pago'] = rand(0,10000);
         $precioTotal = 0;
         if (isset($_SESSION['carrito'])) {
           $carrito_mio = $_SESSION['carrito'];
@@ -70,14 +72,15 @@
               // Generar pedido
               foreach ($carrito_mio as $pedido){
                 echo '<form method="post" action="#">';
-                  echo '<input name="id_pedido" type="hidden" value="' . $productos->ID_Producto  . '">';
+                  echo '<input name="id_pedido" type="hidden" value="' . $_SESSION['id_pedido']  . '">';
                   echo '<input name="id_producto" type="hidden" value="' . $pedido["id_producto"]  . '">';
-                  echo '<input name="descripcion" type="hidden" value="' . $productos->Descripcion . '">';
-                  echo '<input name="precio" type="hidden" alue="' . $productos->Precio . '">';
-                  echo '<input name="cantidad" type="hidden" value="1">';
+                  echo '<input name="id_producto" type="hidden" value="' .  $_SESSION['id']  . '">';
+                  echo '<input name="id_pago" type="hidden" value="' . $_SESSION['pago'] . '">';
+                  echo '<input name="precio" type="hidden" value="' . $pedido["precio"] . '">';
+                  echo '<input name="precio" type="hidden" value="' . false . '">';
                 echo '</form>';
               }
-              echo '<button class="action_btn" type="submit" name="agregar">Añadir al carrito</button>';
+              echo '<button class="action_btn" type="submit" name="agregar">Generar Pedido</button>';
               echo '<h2> Cantidad de productos = ' . $cantidad .'</h2>';
               echo '<h2> Precio total = ' . $precioTotal .'$</h2>';
               echo '<button class="action_btn" type="button" name="agregar"><a href="?resp=MetodoPagos">Pagos</a></button>';
