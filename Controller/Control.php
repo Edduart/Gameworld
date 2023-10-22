@@ -25,11 +25,16 @@ class control{
 		$alm->Telefono = $_POST['TxtTelefono'];
 
 		$persona = $this->Usuario->misregistros();
+		$mail="/@/";
 
 		foreach($persona as $registro){
 			if($alm->Username == $registro->usuario || $alm->Email == $registro->correo || $alm->Telefono == $registro->telefono){
 				$error = 1;
 				break;
+			}if(!is_numeric($alm->Telefono)){
+				$error = 1;
+			}if(!preg_match($mail, $alm->Email)){
+				$error = 1;
 			} else {
 				$error = 0;
 			}
@@ -47,6 +52,10 @@ class control{
 					$_SESSION['error_message'] = '¡Este correo ya existe!';
 				}if($alm->Telefono == $registro->telefono){
 					$_SESSION['error_message'] = '¡Este contacto ya fue registrado!';
+				}if(!is_numeric($alm->Telefono)){
+					$_SESSION['error_message'] = '¡La casilla de telefono solo se permite caracteres numericos!';
+				}if(!preg_match($mail, $alm->Email)){
+					$_SESSION['error_message'] = '¡Falto este @ caracter!';
 				}
 
 				include_once "View/Registro.php";
