@@ -26,13 +26,13 @@
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <div class="input-box">
-                    <input type="Correo"  name="TxtEmail" required>
+                    <input type="email"  name="TxtEmail" required>
                     <label for="Clave" class="label_group">Correo</label>
                     
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <div class="input-box">
-                    <input type="Clave" name="TxtContraseña" required>
+                    <input type="password" name="TxtContraseña" required>
                     <label for="Clave" class="label_group">Clave</label>
                     <box-icon name='lock-alt'></box-icon>
                 </div>
@@ -42,18 +42,18 @@
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <div class="input-box">
-                    <input type="Telefono" name="TxtTelefono" required>
+                    <input type="tel" name="TxtTelefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                     <label for="Clave" class="label_group">Telefono</label>
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <button type="submit" class="btn"> Registrarse </button>
-                <div class="">
+                <div class="register-link">
+                    <p>¿Ya posees una cuenta? <a href="?resp=sesion">Login</a></p>
+                </div>
+                <div class="Errores">
                     <?php
                     echo $_SESSION['error_message'];
                     ?>
-                </div>
-                <div class="register-link">
-                    <p>¿Ya posees una cuenta? <a href="?resp=sesion">Login</a></p>
                 </div>
             </form>
         </div>

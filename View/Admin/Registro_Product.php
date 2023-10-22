@@ -11,7 +11,7 @@
 <body>
 
     <div class="wrapper">
-        <form method="POST" action="?resp=regist_product">
+        <form method="POST" action="?resp=regist_product" enctype="multipart/form-data">
             <h1>Registro de Producto</h1>
             <div class="input-box">
                 <input type="Nombre de producto"name="TxtNproducto" required>
@@ -25,13 +25,12 @@
             </div>
 
             <div class="input-box">
-                <input type="Precio" name="TxtPrecio" required>
+                <input type="number" name="TxtPrecio" step="0.01" required>
                 <label for="Usuario" class="label_group">Precio</label>
             </div>
 
             <div class="input-box">
-                <input type="Imagen" name="TxtImagen" value="Resources/Productos/steam.jpeg" required>
-                <label for="Usuario" class="label_group">Imagen</label>
+                <input type="file" name="TxtImagen" required>
             </div>
              
             <button type="submit" class="btn"> Registrar </button>
@@ -39,6 +38,12 @@
 
             <div class="register-link">
             <p><a href="?resp=PrincipalAdmin"><i class='bx bx-arrow-back' ></i></a></p>
+            </div>
+
+            <div class="Errores">
+                    <?php
+                    echo $_SESSION['error_message'];
+                    ?>
             </div>
             
       </div>

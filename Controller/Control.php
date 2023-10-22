@@ -1,6 +1,7 @@
 <?php
 include_once "Model/Cliente.php";
 include_once "Model/Producto.php";
+include_once "Model/Pedido.php";
 require "SesionControl.php";
 
 $start_sesion = new SesionControl;
@@ -9,10 +10,12 @@ class control{
 
 	public $Usuario;
 	public $Product;
+	public $Pedido;
 
     public function __construct(){
 		$this->Usuario = new cliente();
 		$this->Product = new producto();
+		$this->Pedido = new pedido();
 	}
 
 	public function registrar(){
@@ -27,9 +30,11 @@ class control{
 		$persona = $this->Usuario->misregistros();
 
 		foreach($persona as $registro){
-			if($alm->Username == $registro->usuario){
+			if($alm->Username == $registro->usuario || $alm->Email == $registro->correo || $alm->Telefono == $registro->telefono){
 				$error = 1;
 				break;
+			}if(!is_numeric($alm->Telefono)){
+				$error = 1;
 			} else {
 				$error = 0;
 			}
@@ -41,7 +46,16 @@ class control{
 			include_once "View/Usuario/Principal_cliente_acc.php";
 		} else {
 			if($error){
-				$_SESSION['error_message'] = '¡Este nombre ya ha sido seleccionado!';
+				if($alm->Username == $registro->usuario ){
+					$_SESSION['error_message'] = '¡Este nombre ya ha sido seleccionado!';
+				}if($alm->Email == $registro->correo){
+					$_SESSION['error_message'] = '¡Este correo ya existe!';
+				}if($alm->Telefono == $registro->telefono){
+					$_SESSION['error_message'] = '¡Este contacto ya fue registrado!';
+				}if(!is_numeric($alm->Telefono)){
+					$_SESSION['error_message'] = '¡La casilla de telefono solo se permite caracteres numericos!';
+				}
+
 				include_once "View/Registro.php";
 				$_SESSION['error_message'] == null;
 			}else{
@@ -58,13 +72,36 @@ class control{
 
 	public function regist_product(){
 		//$_SESSION['error_message'] = null;
+
 		$alm = new producto();
 		$alm->Nombre_p = $_POST['TxtNproducto'];
 		$alm->Descripcion = $_POST['TxtDescripcion'];
 		$alm->Precio = $_POST['TxtPrecio'];
 		$alm->Image_URL = $_POST['TxtImagen'];
-		$this->Product->guardar($alm);
-		include_once "View/Admin/Admin.php";
+		$error=0;
+
+		$mercado = $this->Product->misproductos();
+		foreach($mercado as $mercancia){
+			if($alm->Nombre_p == $mercancia->Nombre_Producto & $alm->Precio == $mercancia->Precio){
+				$error = 1;
+				break;
+			}if(!is_numeric($alm->Precio)){
+				$error = 0;
+			}
+		}
+		//var_dump($mercancia);
+		if($error){
+			if($alm->Nombre_p == $mercancia->Nombre_Producto & $alm->Precio == $mercancia->Precio){
+				$_SESSION['error_message'] = "¡El producto no puede tener el precio repetido!";
+				include_once "View/Admin/Registro_Product.php";
+			}/*if(!is_numeric($alm->Precio)){
+				$_SESSION['error_message'] = "¡La casilla de precio solo acepta caracteres numericos!";
+				include_once "View/Admin/Registro_Product.php";
+			}*/
+		}else{
+			$this->Product->guardar($alm);
+			include_once "View/Admin/Admin.php";
+		}
 	}
 
 	public function login()
@@ -95,19 +132,13 @@ class control{
 				{
 					include_once "View/Usuario/Principal_login.php";
 				}
+			} else {
+				// Credenciales inválidas, mostrar un mensaje de error o redirigir a la página de inicio de sesión
+				$_SESSION['error_message'] = '¡Credenciales invalidas!';
+				$this->sesion();
+				$_SESSION['error_message'] = null;
 			}
-				/* Si utilizo hash
-				if(password_verify($clave,$encontrado->clave)){
-					echo "verificado";
-				}*/
 		} 
-		else
-		{
-			// Credenciales inválidas, mostrar un mensaje de error o redirigir a la página de inicio de sesión
-			$_SESSION['error_message'] = '¡Credenciales invalidas!';
-			include_once "View/login.php";
-			$_SESSION['error_message'] == null;
-		}
 	}
 
 	// obtener informacion del usuario para actualizar
@@ -209,8 +240,9 @@ class control{
 					$precio = $_POST['precio'];
 					$imagen = $_POST['img'];
 					$cantidad = $_POST['cantidad'];
+					$id_producto = $_POST['id_producto'];
 		
-					$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "img"=>$imagen, "cantidad"=>$cantidad);
+					$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "img"=>$imagen, "cantidad"=>$cantidad, "id_producto"=>$id_producto);
 				}
 			}else{
 				$nombre = $_POST['nombre_product'];
@@ -218,13 +250,37 @@ class control{
 				$precio = $_POST['precio'];
 				$imagen = $_POST['img'];
 				$cantidad = $_POST['cantidad'];
-				$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "img"=>$imagen, "cantidad"=>$cantidad);
+				$id_producto = $_POST['id_producto'];
+				$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "img"=>$imagen, "cantidad"=>$cantidad, "id_producto"=>$id_producto);
 			}
 			$_SESSION['carrito'] = $carrito_mio;
 			var_dump($_SESSION['carrito']);
 		}
 		include_once "View/Usuario/Principal_login.php";
 	} 
+	public function crearPedido(){
+		// Obtener los arreglos de productos desde $_POST
+		$id_productos = $_POST['TxtId_producto'];
+		$id_clientes = $_POST['TxtId_cliente'];
+		$id_pagos = $_POST['TxtId_pago'];
+		$precios = $_POST['Txtprecio'];
+		$pedidoN = $_POST['TxtpedidoN'];
+		$estatus = $_POST['TxtEstatus'];
+
+		// Iterar sobre los arreglos y guardar cada producto en la base de datos
+		foreach ($id_productos as $key => $id_producto) {
+			$alm = new pedido();
+			$alm->Id_producto = $id_producto;
+			$alm->Id_cliente = $id_clientes[$key];
+			$alm->Id_pago = $id_pagos[$key];
+			$alm->Precio_total = $precios[$key];
+			$alm->pedidoN = $pedidoN[$key];
+			$alm->estatus = $estatus[$key];
+
+			$this->Pedido->guardar($alm);
+		}
+		$this->Mipedido();
+	}
 
 	//Funciones de redireccion ***** hay que organizar
 

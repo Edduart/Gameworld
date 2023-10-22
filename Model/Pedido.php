@@ -1,15 +1,16 @@
 <?php
    //require_once("conexion.php");
 
-    class producto //extends conexion
+    class pedido //extends conexion
     {
             public $CNX;
-            public $Id;
-            public $Nombre_p;
-            public $Id_categoria;
-            public $Descripcion;
-            public $Precio;
-            public $Image_URL;
+            public $Id_pedido;
+            public $Id_producto;
+            public $Id_cliente;
+            public $Id_pago;
+            public $Precio_total;
+            public $pedidoN;
+            public $estatus;
 
             //contructor que enlaza la conexion
             public function __construct() {
@@ -23,18 +24,18 @@
             //en lista los insert join que se hizo en sql
             public function listar(){
                 try{
-                $query = "SELECT z.ID_Producto,z.Nombre_Producto,z.ID_catergoria,z.Descripcion,z.Precio,z.Image_URL FROM producto z ORDER BY z.ID_Producto";
+                $query = "SELECT * FROM pedido";
                 $resultado = $this->CNX->prepare($query);
                 $resultado->execute();
                 return $resultado->fetchAll(PDO::FETCH_OBJ);
             } catch (Exception $e){
                 die ($e->getMessage());
             }
-        }
+            }
 
             public function cargarId($Id){
                 try {
-                    $query = "SELECT * from producto where ID_Producto=?";
+                    $query = "SELECT * from pedido where 	Id_pedido=?";
                     $resultado = $this->CNX->prepare($query);
                     $resultado->execute(array($Id));
                     return $resultado->fetch(PDO::FETCH_OBJ);
@@ -46,14 +47,14 @@
 
             public function guardar($data){
                 try {
-                    $query = "INSERT INTO producto(Nombre_Producto, Descripcion, Precio, Image_URL) VALUES(?,?,?,?)";
-                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->Descripcion,$data->Precio,$data->Image_URL));
+                    $query = "INSERT INTO pedido(Id_producto, id_cliente, Id_pago, Precio_total, pedidoN, estatus) VALUES(?,?,?,?,?,?)";
+                    $this->CNX->prepare($query)->execute(array($data->Id_producto,$data->Id_cliente,$data->Id_pago,$data->Precio_total,$data->pedidoN,$data->estatus));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
             }
 
-            //actualizar para el registro a futuro
+            //Incompleto
             public function actualizarDatos($data){
                 try {
                     $query = "UPDATE producto set Nombre_Producto=?,Descripcion=?,Precio=?,Image_URL=? WHERE ID_Producto=?";
@@ -81,18 +82,6 @@
                 } catch (Exception $e){
                     die ($e->getMessage());
                 }
-            }
-
-            public function misproductos(){
-                try {
-                    $query = "SELECT * from producto";
-                    $resultado = $this->CNX->prepare($query);
-                    $resultado->execute();
-                    return $resultado->fetchAll(PDO::FETCH_OBJ);
-                } catch (Exception $e) {
-                    die($e->getMessage());
-                }
-        
             }
     }
 ?>
