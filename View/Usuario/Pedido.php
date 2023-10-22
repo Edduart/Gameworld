@@ -25,14 +25,14 @@
             </div>
 
         </header>
-        <div class="wrapper">
+        <div class="pedidos-wrapper">
         <?php 
           if(isset($_SESSION['carrito'])){
 
             $carrito_mio = $_SESSION['carrito'];
 
             if(!empty($carrito_mio)){ 
-                  echo '<div class="products-wrapper">';
+                    echo '<div class="pedidos">';
                   foreach($carrito_mio as $pedido){ 
                   echo '<div class="prod_box">';
                   echo '<img class="image" src="' . $pedido["img"] . '" alt="' . $pedido["nombre_product"] . '">';

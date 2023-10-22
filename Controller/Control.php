@@ -251,4 +251,8 @@ class control{
 		include_once "View/Usuario/Pedido.php";
 	}
 
+	public function MetodoPagos(){
+		include_once "View/Usuario/MetodoPagos.php";
+	}
+
 }
