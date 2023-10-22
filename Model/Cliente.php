@@ -51,7 +51,7 @@
                     $query = "SELECT * from cliente";
                     $resultado = $this->CNX->prepare($query);
                     $resultado->execute();
-                    return $resultado->fetch(PDO::FETCH_OBJ);
+                    return $resultado->fetchAll(PDO::FETCH_OBJ);
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }

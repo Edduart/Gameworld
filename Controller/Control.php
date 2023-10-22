@@ -25,15 +25,22 @@ class control{
 		$alm->Telefono = $_POST['TxtTelefono'];
 
 		$persona = $this->Usuario->misregistros();
-		foreach($persona as $registro){var_dump($registro);}
-        
+
+		foreach($persona as $registro){
+			if($alm->Username == $registro->usuario){
+				$error = 1;
+				break;
+			} else {
+				$error = 0;
+			}
+		}
+
 		if ($alm->Id > 0) {
 			$this->Usuario->actualizarDatos($alm);
 			$_SESSION['error_message'] = '¡Datos de usuario actualizados!';
 			include_once "View/Usuario/Principal_cliente_acc.php";
 		} else {
-			
-			if($_POST['TxtUsername'] == $registro->usuario){
+			if($error){
 				$_SESSION['error_message'] = '¡Este nombre ya ha sido seleccionado!';
 				include_once "View/Registro.php";
 				$_SESSION['error_message'] == null;
@@ -45,6 +52,7 @@ class control{
 			}
 
 		}
+        
 		$_SESSION['error_message'] = null;
 	}
 
