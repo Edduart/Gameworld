@@ -80,6 +80,7 @@ class control{
 		foreach($mercado as $mercancia){
 			if($alm->Nombre_p == $mercancia->Nombre_Producto & $alm->Precio == $mercancia->Precio){
 				$error=1;
+				break;
 			}if(!is_numeric($alm->Precio)){
 				$error=1;
 			}
