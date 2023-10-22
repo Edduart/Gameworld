@@ -1,0 +1,156 @@
+/* COMIENZO DEL DESING PARA EL LOGIN*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  backdrop-filter: blur(
+    15px
+  ); /*le permite aplicar efectos gráficos como desenfoque o cambio de color al área detrás de un elemento.*/
+  border-radius: 100px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo {
+  font-size: 2em;
+  color: #fff;
+  user-select: none;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}
+
+header a:hover {
+  color: aqua;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("img.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* NAVBAR*/
+
+.navbar {
+  width: 100%;
+  height: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(
+    15px
+  ); /*le permite aplicar efectos gráficos como desenfoque o cambio de color al área detrás de un elemento.*/
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.navbar .logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer; /*Este cursor muestra la mano esa que aparece cuando el contenido es un hiperenlace, mostrando al usuario que ese elemento se puede apretar, hacer click, para ir a otro lugar o desencadenar algún tipo de comportamiento.*/
+  display: none; /*el valor de none permite Desactivar la Visualizacion DE UN Elemento; cuando no se utiliza none , todos los elementos descendentes también quedan desactivados.*/
+}
+
+.action_btn {
+  width: auto;
+  text-align: center;
+  float: right;
+  background-color: #5cd1e6;
+  color: #fff;
+  padding: 0.5rem 3rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+  margin-left: 5px; /* Adjust the distance between buttons */
+  position: relative;
+}
+
+.wrapper {
+  width: 50%;
+  height: 200px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px 30px;
+}
+
+/* BOTON */
+
+/*TABLA 1*/
+.Container-Tabla {
+  width: 500px;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  padding: 15px 15px;
+  border-radius: 10px;
+  margin-left: 30px;
+}
+
+.Container-Tabla .Tabla {
+  width: 100%;
+}
+
+.Container-Tabla .Tabla img {
+  background: aquamarine;
+  border-radius: 10px;
+  margin-right: 10px;
+  border: 2px solid #ddd;
+  width: 170px; /* Make the image width 100% of its container */
+  height: 250px;
+  float: left;
+}
+
+.Container-Tabla .Tabla h2 {
+  font-size: 42px;
+}
+
+.Container-Tabla .Tabla h5 {
+  float: initial;
+}
+
+.Container-Tabla .Tabla p {
+  color: #fff;
+  padding: 2%;
+  font-size: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.Container-Tabla:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0, 2);
+}

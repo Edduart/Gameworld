@@ -1,1 +1,68 @@
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est non sint, dolorem mollitia repellat eveniet ipsum laborum assumenda commodi, laudantium nesciunt libero fugit natus asperiores quod! Quis impedit ut reprehenderit?</p>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="Resources/StylePagos.css" />
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="?resp=index">GAMEWORLD</a></div>
+                <div class="navbar_login">
+                    <a href="?resp=Registro" class="action_btn">Registrate</a>
+                    <a href="?resp=sesion" class="action_btn">Login</a>
+                </div>
+                <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+
+        </header>
+
+    
+            <div class="Container-Tabla">
+             <div class="Tabla">
+                <img src="./Resources/Pago.jpg" alt="#">
+                <h2>Pago Movil</h2>
+                <p>C.I: 22.222.222</p>
+                <p>Telfono: 0416-111.11.11</p>
+                <p>Banco: Banco</p>
+             </div>
+            </div>
+
+            <div class="Container-Tabla">
+             <div class="Tabla">
+                <img src="./Resources/PayPall.jpg" alt="#">
+                <h2>PayPall</h2>
+                <p>Correo:</p>
+                
+             </div>
+            </div>
+
+
+   
+
+
+        <!-- <div class="wrapper">
+            <p>lor</p>
+        </div> -->
+
+<!-- <div class = "#">
+  <div class="#">
+
+    <h4>Segundo Paso</h4>
+    <p>Ingresa a tu carrito y selecciona la opción “Pagar”. Verifica los objetos del carrito antes de proceder con el pago.</p>
+  </div>
+</div>
+
+<div class = "#">
+  <div class="#">
+
+    <h4>Tercer Paso</h4>
+    <p>Ingresa los datos solicitados para procesar el pago y por ultimo finaliza con la compra. </p>
+  </div>
+</div> -->
+
+    </body>
+</html>

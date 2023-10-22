@@ -39,26 +39,48 @@
   </header>
 
   <div class="top-tittle">
-    <h1>Tarjetas regalo electrónicas más vendidas</h1>
+    <h1>Resumen del Carrito</h1>
   </div>
 
   <section id="list">
     <div class="list-container">
       <?php
+        $precioTotal = 0;
         if (isset($_SESSION['carrito'])) {
           $carrito_mio = $_SESSION['carrito'];
           if (!empty($carrito_mio)) {
+            echo '<div class="list-wrapper">';
             foreach ($carrito_mio as $pedido) {
-            echo '<div class="pedidos-wrapper">';
-              echo '<img class="icon" src="' . $pedido["img"] . '" alt="' . $pedido["nombre_product"] . '">';
-              echo '<div class="prod_desc">';
-                echo '<h3>' . $pedido["nombre_product"] . '</h3>';
-                echo '<p>' . $pedido["descripcion"] . '</p>';
-                /*echo '<p> ID producto = ' . $pedido->ID_Producto . '</p>';*/
-                echo '<span class="price">$' . $pedido["precio"] . '</span>';
+              echo '<div class="pedidos-wrapper">';
+                echo '<img class="icon" src="' . $pedido["img"] . '" alt="' . $pedido["nombre_product"] . '">';
+                echo '<div class="prod_desc">';
+                  echo '<h3>' . $pedido["nombre_product"] . '</h3>';
+                  echo '<p>' . $pedido["descripcion"] . '</p>';
+                  /*echo '<p> ID producto = ' . $pedido->ID_Producto . '</p>';*/
+                  echo '<span class="price">$' . $pedido["precio"] . '</span>';
+                echo '</div>';
+              echo '</div>';
+            $cantidad = count($pedido);
+            $precioTotal += $pedido["precio"];
+            }
+            echo '</div>';
+            echo '<div class="resumen-container">';
+            echo '<h1>Resumen del carrito</h1>';
+              echo '<div class="resumen-list">';
+                echo '<form method="post" action="#">';
+                  /*echo '<input name="img" type="hidden" id="img" value="' . $productos->Image_URL . '">';
+                  echo '<input name="nombre_product" type="hidden" id="nombre_product" value="' . $productos->Nombre_Producto . '">';
+                  echo '<input name="id_producto" type="hidden" id="id_producto" value="' . $productos->ID_Producto  . '">';
+                  echo '<input name="descripcion" type="hidden" id="descripcion" value="' . $productos->Descripcion . '">';
+                  echo '<input name="precio" type="hidden" id="precio" value="' . $productos->Precio . '">';
+                  echo '<input name="cantidad" type="hidden" id="cantidad" value="1">';*/
+                  echo '<button class="action_btn" type="submit" name="agregar">Añadir al carrito</button>';
+                echo '</form>';
+                echo '<h2> Cantidad de productos = ' . $cantidad .'</h2>';
+                echo '<h2> Precio total = ' . $precioTotal .'$</h2>';
+                echo '<button class="action_btn" type="button" name="agregar"><a href="?resp=MetodoPagos">Pagos</a></button>';
               echo '</div>';
             echo '</div>';
-            }
           } else {
             echo '<p>No hay productos disponibles en este momento.</p>';
           }

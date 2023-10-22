@@ -537,10 +537,10 @@ table thead tr td {
   box-shadow: 0 12px 16px rgba(0, 0, 0, 0, 2);
 }
 
-/*Final Tarjetas de la pantalla principal*/
+/*Inicio de lista de pedidos*/
 
 section#list {
-  height: 400px;
+  height: auto;
   width: auto;
   margin-left: 100px;
   margin-right: 100px;
@@ -550,15 +550,37 @@ section#list {
   border-radius: 50px;
 }
 
+.list-wrapper {
+  background-color: #5cd1e6;
+  width: 400px;
+  padding: 10px;
+}
+
 .list-container {
   background: #ff00d4;
   border: #00ff11;
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.resumen-container {
+  background: transparent;
+  border: 1px solid #fff200;
   padding: 10px;
+  height: 500px;
+  width: 500px;
+}
+
+.resumen-list {
+  border: 1px solid #fff200;
+  color: #ddd;
 }
 
 .pedidos-wrapper {
   display: flex;
-  margin: 0 -10px;
+  padding: 5px;
+  width: auto;
   background-color: transparent;
   border: 1px solid #00ff11;
   
@@ -566,11 +588,14 @@ section#list {
 
 .prod_desc{
   background-color: #841313;
+  text-align: center;
+  padding: 10px;
+  width: 300px;
 }
 
 .icon {
   border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 1px;
+  padding: 2px;
   width: 75px;
 }
