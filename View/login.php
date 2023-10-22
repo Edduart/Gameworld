@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" type="text/css" href="Resources/StylePagos.css" />
+        <link rel="stylesheet" type="text/css" href="Resources/style.css" />
         <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     </head>
     <body>
@@ -17,52 +17,41 @@
                 </div>
                 <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
             </div>
-
+            <!--<div class="dropdown_menu">
+            <li><a href="hero">Home</a></li>
+            <li><a href="Borrame.html">About</a></li>
+            <li><a href="Borrame.html">Service</a></li>
+            <li><a href="Borrame.html">Contactanos</a></li>
+            <li><a href="#" class="action_btn">Login</a></li>
+        </div>-->
         </header>
-
-    
-            <div class="Container-Tabla">
-             <div class="Tabla">
-                <img src="./Resources/Pago.jpg" alt="#">
-                <h2>Pago Movil</h2>
-                <p>C.I: 22.222.222</p>
-                <p>Telfono: 0416-111.11.11</p>
-                <p>Banco: Banco</p>
-             </div>
-            </div>
-
-            <div class="Container-Tabla">
-             <div class="Tabla">
-                <img src="./Resources/PayPall.jpg" alt="#">
-                <h2>PayPall</h2>
-                <p>Correo:</p>
-                
-             </div>
-            </div>
-
-
-   
-
-
-        <!-- <div class="wrapper">
-            <p>lor</p>
-        </div> -->
-
-<!-- <div class = "#">
-  <div class="#">
-
-    <h4>Segundo Paso</h4>
-    <p>Ingresa a tu carrito y selecciona la opción “Pagar”. Verifica los objetos del carrito antes de proceder con el pago.</p>
-  </div>
-</div>
-
-<div class = "#">
-  <div class="#">
-
-    <h4>Tercer Paso</h4>
-    <p>Ingresa los datos solicitados para procesar el pago y por ultimo finaliza con la compra. </p>
-  </div>
-</div> -->
-
+        <div class="wrapper">
+            <form method="POST" action="?resp=login">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="Usuario" name="TxtUsuario" id="Usuario" required>
+                    <label for="Usuario" class="label_group">Usuario</label>
+                    <box-icon name='user' type='solid'></box-icon>
+                </div>
+                <div class="input-box">
+                    <input type="Clave" name="TxtClave" id="Clave" required>
+                    <label for="Clave" class="label_group">Contraseña</label>
+                    <box-icon name='lock-alt'></box-icon>
+                </div>
+                <div class="remember-forgot">
+                    <label> <input type="checkbox"> Recuerda mis datos</label>
+                    <a href="#">Olvidaste tu clave?</a>
+                </div>
+                <button type="submit" class="btn"> Login </button>
+                <div class="register-link">
+                    <p>Aun no tienes una cuenta? <a href="?resp=Registro">Registrate</a></p>
+                </div>
+                <div>
+                    <?php
+                    echo $_SESSION['error_message'];
+                    ?>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
