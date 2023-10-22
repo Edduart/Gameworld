@@ -15,26 +15,7 @@
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <div class="navbar">
-          <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
-            <ul class="links">
-              <li><a href="?resp=obtenerInfo">Mi cuenta</a></li>
-            </ul>
-            <div class="navbar_login">
-            <a href="?resp=PrincipalUser" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
-            </div>
-          <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
-        </div>
 
-      <!--<div class="dropdown_menu">
-        <li><a href="hero">Home</a></li>
-        <li><a href="Borrame.html">About</a></li>
-        <li><a href="Borrame.html">Service</a></li>
-        <li><a href="Borrame.html">Contactanos</a></li>
-        <li><a href="#" class="action_btn">Login</a></li>
-      </div> -->
-    </header>
     <main>
         <section id="hero">
           <div class="wrapper">
@@ -42,20 +23,24 @@
                 <h1>Cambiar Contraseña</h1>
                 <div class="input-box">
                 <input type="hidden" name="txtId" value="<?php echo $_SESSION['nombre']; ?>">
-                    <p1>Ingrese contraseña actual</p1>
-                    <input type="Contraseña_actual" placeholder="Contraseña actual" name="TxtContraseña" id="TxtContraseña" required>
+
+                    <input type="Contraseña_actual" placeholder="" name="TxtContraseña" id="TxtContraseña" required>
+                    <label for="Usuario" class="label_group">Contraseña actual</label>
                     <box-icon name='user' type='solid' ></box-icon>
                 </div>
 
                 <div class="input-box">
-                    <p1>Ingrese contraseña nueva</p1>
-                    <input type="Contraseña_nueva" placeholder="Contraseña nueva" name="TxtContraseñaNueva" id="TxtContraseñaNueva" required>
+
+                    <input type="Contraseña_nueva" placeholder="" name="TxtContraseñaNueva" id="TxtContraseñaNueva" required>
+                    <label for="Usuario" class="label_group">Contraseña nueva </label>
                     <box-icon name='user' type='solid' ></box-icon>
                 </div>
                 
                 <button type="submit" class="btn" id="GuardarBtn"> Guardar </button>
+                <br><br>
 
                 <p1>Ingrese contraseña para eliminar cuenta</p1>
+                <br><br>
 
                 <button type="submit" class="btn_warning" id="EliminarBtn"> Eliminar cuenta </button>
 

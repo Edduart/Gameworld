@@ -371,7 +371,7 @@ section#hero {
   margin-top: 40px;
   padding: 10px;
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 4px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border-radius: 5px;
 }
@@ -380,7 +380,7 @@ table {
   color: black;
   margin: 0 auto; /* Centrar la tabla horizontalmente */
   max-width: 200%; /* Ancho máximo */
-  border-radius: 200px;
+  border-radius: 15px;
 }
 
 table thead tr th {
@@ -388,6 +388,7 @@ table thead tr th {
   font-size: 15px;
   text-transform: uppercase;
   background: #687eff;
+  border-radius: 5px;
 }
 
 table thead tr td {
@@ -396,6 +397,7 @@ table thead tr td {
   font-size: 15px;
   background: #80b3ff;
   color: black;
+  border-radius: 3px;
 }
 
 .Eliminar a:hover {
