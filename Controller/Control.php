@@ -72,6 +72,7 @@ class control{
 
 	public function regist_product(){
 		//$_SESSION['error_message'] = null;
+
 		$alm = new producto();
 		$alm->Nombre_p = $_POST['TxtNproducto'];
 		$alm->Descripcion = $_POST['TxtDescripcion'];
@@ -85,7 +86,7 @@ class control{
 				$error = 1;
 				break;
 			}if(!is_numeric($alm->Precio)){
-				$error = 1;
+				$error = 0;
 			}
 		}
 		//var_dump($mercancia);
@@ -93,10 +94,10 @@ class control{
 			if($alm->Nombre_p == $mercancia->Nombre_Producto & $alm->Precio == $mercancia->Precio){
 				$_SESSION['error_message'] = "¡El producto no puede tener el precio repetido!";
 				include_once "View/Admin/Registro_Product.php";
-			}if(!is_numeric($alm->Precio)){
+			}/*if(!is_numeric($alm->Precio)){
 				$_SESSION['error_message'] = "¡La casilla de precio solo acepta caracteres numericos!";
 				include_once "View/Admin/Registro_Product.php";
-			}
+			}*/
 		}else{
 			$this->Product->guardar($alm);
 			include_once "View/Admin/Admin.php";
