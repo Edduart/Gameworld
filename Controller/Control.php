@@ -27,7 +27,7 @@ class control{
 		$persona = $this->Usuario->misregistros();
 
 		foreach($persona as $registro){
-			if($alm->Username == $registro->usuario){
+			if($alm->Username == $registro->usuario || $alm->Email == $registro->correo || $alm->Telefono == $registro->telefono){
 				$error = 1;
 				break;
 			} else {
@@ -41,7 +41,14 @@ class control{
 			include_once "View/Usuario/Principal_cliente_acc.php";
 		} else {
 			if($error){
-				$_SESSION['error_message'] = '¡Este nombre ya ha sido seleccionado!';
+				if($alm->Username == $registro->usuario ){
+					$_SESSION['error_message'] = '¡Este nombre ya ha sido seleccionado!';
+				}if($alm->Email == $registro->correo){
+					$_SESSION['error_message'] = '¡Este correo ya existe!';
+				}if($alm->Telefono == $registro->telefono){
+					$_SESSION['error_message'] = '¡Este contacto ya fue registrado!';
+				}
+
 				include_once "View/Registro.php";
 				$_SESSION['error_message'] == null;
 			}else{

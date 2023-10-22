@@ -47,13 +47,13 @@
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <button type="submit" class="btn"> Registrarse </button>
-                <div class="">
+                <div class="register-link">
+                    <p>¿Ya posees una cuenta? <a href="?resp=sesion">Login</a></p>
+                </div>
+                <div class="Errores">
                     <?php
                     echo $_SESSION['error_message'];
                     ?>
-                </div>
-                <div class="register-link">
-                    <p>¿Ya posees una cuenta? <a href="?resp=sesion">Login</a></p>
                 </div>
             </form>
         </div>
