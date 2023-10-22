@@ -82,5 +82,17 @@
                     die ($e->getMessage());
                 }
             }
+
+            public function misproductos(){
+                try {
+                    $query = "SELECT * from producto";
+                    $resultado = $this->CNX->prepare($query);
+                    $resultado->execute();
+                    return $resultado->fetchAll(PDO::FETCH_OBJ);
+                } catch (Exception $e) {
+                    die($e->getMessage());
+                }
+        
+            }
     }
 ?>
