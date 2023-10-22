@@ -46,6 +46,18 @@
         
             }
 
+            public function misregistros(){
+                try {
+                    $query = "SELECT * from cliente";
+                    $resultado = $this->CNX->prepare($query);
+                    $resultado->execute();
+                    return $resultado->fetch(PDO::FETCH_OBJ);
+                } catch (Exception $e) {
+                    die($e->getMessage());
+                }
+        
+            }
+
             public function listar(){
                 try{
                 $query = "SELECT z.id_cliente,z.usuario,z.correo,z.contraseña,z.nombre,z.telefono FROM cliente z ORDER BY z.id_cliente";

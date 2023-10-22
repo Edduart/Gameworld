@@ -27,7 +27,7 @@
                 </div>
                 <div class="input-box">
                     <input type="Correo"  name="TxtEmail" required>
-                    <label for="Clave" class="label_group">Contraseña</label>
+                    <label for="Clave" class="label_group">Correo</label>
                     
                     <box-icon name='user' type='solid'></box-icon>
                 </div>

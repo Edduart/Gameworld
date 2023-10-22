@@ -37,7 +37,7 @@
                 <div class="items">
                     <a href="?resp=CerrarSesion">Cerrar sesion</a>
                     <a href="?resp=seguridad">Seguridad</a>
-                    <a href="?resp=obtenerInfo">Mi cuenta</a>
+                    <a href="?resp=obtenerInfo">Metodos de pagos</a>
                 </div>
             </div>
 
