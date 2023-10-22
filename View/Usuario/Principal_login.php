@@ -19,6 +19,15 @@
   <body>
     <header>
 
+    <?php 
+      if(isset($_SESSION['carrito'])){
+        $carrito_mio = $_SESSION['carrito'];
+        $total_cantidad = count($carrito_mio);
+      } else {
+        $total_cantidad = 0;
+      } 
+    ?>
+
       <div class="navbar">
           <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
           <form class="search_container">
@@ -28,7 +37,7 @@
             </ul>
             <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
           </form>
-            <li><a href="#">Carrito (0)</a></li>
+            <li><a href="?resp=Mipedido">Carrito <?php echo $total_cantidad; ?> </a></li>
             <a href="?resp=PrincipalUser" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
       </div>
 
@@ -61,27 +70,31 @@
        </div> 
        <section id="hero">
         <div class="product-container">
-          <?php
-          // Obtener los productos desde la base de datos (supongamos que la función obtenerProductos existe)
-          $productos = $this->Product->obtenerProductos();
-
-          // Verificar si hay productos para mostrar
-          if (!empty($productos)) {
-              echo '<div class="products-wrapper">';
-              foreach ($productos as $producto) {
-                  // Generar el HTML para mostrar cada producto
-                  echo '<div class="prod_box">';
-                  echo '<img class="image" src="' . $producto->Image_URL . '" alt="' . $producto->Nombre_Producto . '">';
-                  echo '<h3>' . $producto->Nombre_Producto . '</h3>';
-                  echo '<p>' . $producto->Descripcion . '</p>';
-                  echo '<span class="price">$' . $producto->Precio . '</span>';
-                  //echo '<a href="#" class="btn">Agregar al carrito</a>';
-                  echo '</div>';
+          <?php $Listproduct = $this->Product->obtenerProductos();?>
+          <?php 
+          if(!empty($Listproduct)){ 
+            echo '<div class="products-wrapper">';
+              foreach($Listproduct as $productos){ 
+                echo '<div class="prod_box">';
+                echo '<img class="image" src="' . $productos->Image_URL . '" alt="' . $productos->Nombre_Producto . '">';
+                echo '<h3>' . $productos->Nombre_Producto . '</h3>';
+                echo '<p>' . $productos->Descripcion . '</p>';
+                echo '<p> ID producto = ' . $productos->ID_Producto . '</p>';
+                echo '<span class="price">$' . $productos->Precio . '</span>';
+                
+                echo '<form method="post" action="?resp=carrito">';
+                echo '<input name="img" type="hidden" id="img" value="' . $productos->Image_URL . '">';
+                echo '<input name="nombre_product" type="hidden" id="nombre_product" value="' . $productos->Nombre_Producto . '">';
+                echo '<input name="id_producto" type="hidden" id="id_producto" value="' . $productos->ID_Producto  . '">';
+                echo '<input name="descripcion" type="hidden" id="descripcion" value="' . $productos->Descripcion . '">';
+                echo '<input name="precio" type="hidden" id="precio" value="' . $productos->Precio . '">';
+                echo '<input name="cantidad" type="hidden" id="cantidad" value="1">';
+                echo '<button class="action_btn" type="submit" name="agregar">Añadir al carrito</button>';
+                echo '</form>';
+                echo '</div>';
               }
-              echo '</div>';
           } else {
-              // Si no hay productos disponibles, puedes mostrar un mensaje o contenido alternativo
-              echo '<p>No hay productos disponibles en este momento.</p>';
+            echo '<p>No hay productos disponibles en este momento.</p>';
           }
           ?>
           </div>

@@ -19,28 +19,6 @@
   <body>
     <header>
 
-    <?php 
-      if(isset($_SESSION['carrito'])){
-        $carrito_mio = $_SESSION['carrito'];
-      }
-
-      //Contamos nuestro carrito
-      if(isset($_SESSION['carrito'])){
-        for($i=0;$i<=count($carrito_mio)-1;$i++){
-          if(isset($carrito_mio[$i])){
-            if($carrito_mio[$i] != NULL){
-              if(!isset($carrito_mio['cantidad'])){$carrito_mio['cantidad'] = '0';}else{$carrito_mio['cantidad'] = $carrito_mio['cantidad'];}
-              $total_cantidad = $carrito_mio['cantidad'];
-              $total_cantidad ++;  
-              if(!isset($total_cantidad)){$total_cantidad = '0';}else{$total_cantidad = $total_cantidad;}
-              $total_cantidad += $total_cantidad;
-            }}}
-      }
-
-        //Declaramos variables
-        if(!isset($total_cantidad)){$total_cantidad = '';}else{$total_cantidad = $total_cantidad;}
-      ?>
-
       <div class="navbar">
           <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
           <form class="search_container">
@@ -50,7 +28,7 @@
             </ul>
             <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
           </form>
-            <li><a href="#">Carrito <?php echo $total_cantidad; ?> </a></li>
+            <li><a href="#">Carrito (0)</a></li>
             <a href="?resp=PrincipalUser" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
       </div>
 
@@ -83,34 +61,66 @@
        </div> 
        <section id="hero">
         <div class="product-container">
-        <?php// Obtener los productos desde la base de datos (supongamos que la función obtenerProductos existe)?>
-          <?php $Listproduct = $this->Product->obtenerProductos();?>
+          <?php
+          // Obtener los productos desde la base de datos (supongamos que la función obtenerProductos existe)
+          $productos = $this->Product->obtenerProductos();
 
-          <?php 
-if(!empty($Listproduct)){ 
-  foreach($Listproduct as $productos){ 
-    echo '<div class="prod_box">';
-    echo '<img class="image" src="' . $productos->Image_URL . '" alt="' . $productos->Nombre_Producto . '">';
-    echo '<h3>' . $productos->Nombre_Producto . '</h3>';
-    echo '<p>' . $productos->Descripcion . '</p>';
-    echo '<span class="price">$' . $productos->Precio . '</span>';
-    echo '<form method="post" action="View/Usuario/cart.php">';
-    echo '<input name="img" type="hidden" id="img" value="' . $productos->Image_URL . '">';
-    echo '<input name="nombre_product" type="hidden" id="nombre_product" value="' . $productos->Nombre_Producto . '">';
-    echo '<input name="descripcion" type="hidden" id="descripcion" value="' . $productos->Descripcion . '">';
-    echo '<input name="precio" type="hidden" id="precio" value="' . $productos->Precio . '">';
-    echo '<input name="cantidad" type="hidden" id="cantidad" value="1">';
-    echo '<button class="action_btn" type="submit" name="agregar">Añadir al carrito</button>';
-    echo '</form>';
-    echo '</div>';
-  }
-} else {
-  echo '<p>No hay productos disponibles en este momento.</p>';
-}
-?>
+          // Verificar si hay productos para mostrar
+          if (!empty($productos)) {
+              echo '<div class="products-wrapper">';
+              foreach ($productos as $producto) {
+                  // Generar el HTML para mostrar cada producto
+                  echo '<div class="prod_box">';
+                  echo '<img class="image" src="' . $producto->Image_URL . '" alt="' . $producto->Nombre_Producto . '">';
+                  echo '<h3>' . $producto->Nombre_Producto . '</h3>';
+                  echo '<p>' . $producto->Descripcion . '</p>';
+                  echo '<span class="price">$' . $producto->Precio . '</span>';
+                  //echo '<a href="#" class="btn">Agregar al carrito</a>';
+                  echo '</div>';
+              }
+              echo '</div>';
+          } else {
+              // Si no hay productos disponibles, puedes mostrar un mensaje o contenido alternativo
+              echo '<p>No hay productos disponibles en este momento.</p>';
+          }
+          ?>
           </div>
         </section>
     </main>
+        
+    
+    <div class="top-tittle2">
+        <h2>Informacion para realizar la compra</h2>    
+    </div> 
+
+        <div class="contenedor-allcard">
+
+          <div class = "container-card">
+            <div class="card">
+              <img src="#" alt="#">
+              <h4>Primer Paso</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, assumenda.</p>
+            </div>
+          </div>
+
+          <div class = "container-card">
+            <div class="card">
+              <img src="#" alt="#">
+              <h4>Segundo Paso</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, assumenda.</p>
+            </div>
+          </div>
+
+          <div class = "container-card">
+            <div class="card">
+              <img src="#" alt="#">
+              <h4>Tercer Paso</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, assumenda.</p>
+            </div>
+          </div>
+
+        </div>    
+
     <script>
         const toggleBtn = document.querySelector(".toggle_btn");
         const toggleBtnIcon = document.querySelector(".toggle_btn i");
