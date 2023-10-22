@@ -111,19 +111,13 @@ class control{
 				{
 					include_once "View/Usuario/Principal_login.php";
 				}
+			} else {
+				// Credenciales inválidas, mostrar un mensaje de error o redirigir a la página de inicio de sesión
+				$_SESSION['error_message'] = '¡Credenciales invalidas!';
+				$this->sesion();
+				$_SESSION['error_message'] = null;
 			}
-				/* Si utilizo hash
-				if(password_verify($clave,$encontrado->clave)){
-					echo "verificado";
-				}*/
 		} 
-		else
-		{
-			// Credenciales inválidas, mostrar un mensaje de error o redirigir a la página de inicio de sesión
-			$_SESSION['error_message'] = '¡Credenciales invalidas!';
-			include_once "View/login.php";
-			$_SESSION['error_message'] == null;
-		}
 	}
 
 	// obtener informacion del usuario para actualizar

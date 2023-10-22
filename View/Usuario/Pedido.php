@@ -67,18 +67,20 @@
             echo '<div class="resumen-container">';
             echo '<h1>Resumen del carrito</h1>';
               echo '<div class="resumen-list">';
+              // Generar pedido
+              foreach ($carrito_mio as $pedido){
                 echo '<form method="post" action="#">';
-                  /*echo '<input name="img" type="hidden" id="img" value="' . $productos->Image_URL . '">';
-                  echo '<input name="nombre_product" type="hidden" id="nombre_product" value="' . $productos->Nombre_Producto . '">';
-                  echo '<input name="id_producto" type="hidden" id="id_producto" value="' . $productos->ID_Producto  . '">';
-                  echo '<input name="descripcion" type="hidden" id="descripcion" value="' . $productos->Descripcion . '">';
-                  echo '<input name="precio" type="hidden" id="precio" value="' . $productos->Precio . '">';
-                  echo '<input name="cantidad" type="hidden" id="cantidad" value="1">';*/
-                  echo '<button class="action_btn" type="submit" name="agregar">Añadir al carrito</button>';
+                  echo '<input name="id_pedido" type="hidden" value="' . $productos->ID_Producto  . '">';
+                  echo '<input name="id_producto" type="hidden" value="' . $pedido["id_producto"]  . '">';
+                  echo '<input name="descripcion" type="hidden" value="' . $productos->Descripcion . '">';
+                  echo '<input name="precio" type="hidden" alue="' . $productos->Precio . '">';
+                  echo '<input name="cantidad" type="hidden" value="1">';
                 echo '</form>';
-                echo '<h2> Cantidad de productos = ' . $cantidad .'</h2>';
-                echo '<h2> Precio total = ' . $precioTotal .'$</h2>';
-                echo '<button class="action_btn" type="button" name="agregar"><a href="?resp=MetodoPagos">Pagos</a></button>';
+              }
+              echo '<button class="action_btn" type="submit" name="agregar">Añadir al carrito</button>';
+              echo '<h2> Cantidad de productos = ' . $cantidad .'</h2>';
+              echo '<h2> Precio total = ' . $precioTotal .'$</h2>';
+              echo '<button class="action_btn" type="button" name="agregar"><a href="?resp=MetodoPagos">Pagos</a></button>';
               echo '</div>';
             echo '</div>';
           } else {
