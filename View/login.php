@@ -34,7 +34,7 @@
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <div class="input-box">
-                    <input type="Clave" name="TxtClave" id="Clave" required>
+                    <input type="password" name="TxtClave" id="Clave" required>
                     <label for="Clave" class="label_group">Contraseña</label>
                     <box-icon name='lock-alt'></box-icon>
                 </div>

@@ -40,6 +40,12 @@
             <div class="register-link">
             <p><a href="?resp=PrincipalAdmin"><i class='bx bx-arrow-back' ></i></a></p>
             </div>
+
+            <div class="Errores">
+                    <?php
+                    echo $_SESSION['error_message'];
+                    ?>
+            </div>
             
       </div>
         </form>

@@ -28,15 +28,12 @@ class control{
 		$alm->Telefono = $_POST['TxtTelefono'];
 
 		$persona = $this->Usuario->misregistros();
-		$mail="/@/";
 
 		foreach($persona as $registro){
 			if($alm->Username == $registro->usuario || $alm->Email == $registro->correo || $alm->Telefono == $registro->telefono){
 				$error = 1;
 				break;
 			}if(!is_numeric($alm->Telefono)){
-				$error = 1;
-			}if(!preg_match($mail, $alm->Email)){
 				$error = 1;
 			} else {
 				$error = 0;
@@ -57,8 +54,6 @@ class control{
 					$_SESSION['error_message'] = '¡Este contacto ya fue registrado!';
 				}if(!is_numeric($alm->Telefono)){
 					$_SESSION['error_message'] = '¡La casilla de telefono solo se permite caracteres numericos!';
-				}if(!preg_match($mail, $alm->Email)){
-					$_SESSION['error_message'] = '¡Falto este @ caracter!';
 				}
 
 				include_once "View/Registro.php";
@@ -82,8 +77,30 @@ class control{
 		$alm->Descripcion = $_POST['TxtDescripcion'];
 		$alm->Precio = $_POST['TxtPrecio'];
 		$alm->Image_URL = $_POST['TxtImagen'];
-		$this->Product->guardar($alm);
-		include_once "View/Admin/Admin.php";
+		$error=0;
+
+		$mercado = $this->Product->misproductos();
+		foreach($mercado as $mercancia){
+			if($alm->Nombre_p == $mercancia->Nombre_Producto & $alm->Precio == $mercancia->Precio){
+				$error = 1;
+				break;
+			}if(!is_numeric($alm->Precio)){
+				$error = 1;
+			}
+		}
+		//var_dump($mercancia);
+		if($error){
+			if($alm->Nombre_p == $mercancia->Nombre_Producto & $alm->Precio == $mercancia->Precio){
+				$_SESSION['error_message'] = "¡El producto no puede tener el precio repetido!";
+				include_once "View/Admin/Registro_Product.php";
+			}if(!is_numeric($alm->Precio)){
+				$_SESSION['error_message'] = "¡La casilla de precio solo acepta caracteres numericos!";
+				include_once "View/Admin/Registro_Product.php";
+			}
+		}else{
+			$this->Product->guardar($alm);
+			include_once "View/Admin/Admin.php";
+		}
 	}
 
 	public function login()
