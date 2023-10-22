@@ -46,6 +46,7 @@
                 <div class="items">
                     <a href="?resp=CerrarSesion">Cerrar sesion</a>
                     <a href="?resp=seguridad">Seguridad</a>
+                    <a href="?resp=#Metodos_Pagos">Pagos</a>
                     <a href="?resp=obtenerInfo">Mi cuenta</a>
                 </div>
             </div>
@@ -60,6 +61,7 @@
         <li><a href="Borrame.html">About</a></li>
         <li><a href="Borrame.html">Service</a></li>
         <li><a href="Borrame.html">Contactanos</a></li>
+        
         <li><a href="#" class="action_btn">Login</a></li>
       </div>
     </header>
