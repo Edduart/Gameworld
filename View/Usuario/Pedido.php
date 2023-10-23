@@ -62,7 +62,7 @@
                   echo '<span class="price">$' . $pedido["precio"] . '</span>';
                 echo '</div>';
               echo '</div>';
-            $cantidad = count($pedido);
+            $cantidad = count($carrito_mio);
             $precioTotal += $pedido["precio"];
             }
             echo '</div>';
