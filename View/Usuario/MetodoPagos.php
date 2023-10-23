@@ -11,10 +11,7 @@
         <header>
             <div class="navbar">
                 <div class="logo"><a href="?resp=index">GAMEWORLD</a></div>
-                <div class="navbar_login">
-                    <a href="?resp=Registro" class="action_btn">Registrate</a>
-                    <a href="?resp=sesion" class="action_btn">Login</a>
-                </div>
+
                 <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
             </div>
 
