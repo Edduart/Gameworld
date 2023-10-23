@@ -259,6 +259,7 @@ class control{
 		include_once "View/Usuario/Principal_login.php";
 	} 
 	public function crearPedido(){
+
 		// Obtener los arreglos de productos desde $_POST
 		$id_productos = $_POST['TxtId_producto'];
 		$id_clientes = $_POST['TxtId_cliente'];
@@ -267,6 +268,9 @@ class control{
 		$pedidoN = $_POST['TxtpedidoN'];
 		$estatus = $_POST['TxtEstatus'];
 
+		$compraPedido[] = array("fecha"=>date("Y-m-d"), "cantidad"=>$_POST['Txtcantidad'], "precioTotal"=>$_POST['TxtprecioT'], "correo_envio"=>$_SESSION['correo'],"id_cliente"=>$_SESSION['id'],"pedidoN"=>$pedidoN[0]);
+		$_SESSION['pedido'] = $compraPedido;
+		var_dump($compraPedido);
 		// Iterar sobre los arreglos y guardar cada producto en la base de datos
 		foreach ($id_productos as $key => $id_producto) {
 			$alm = new pedido();

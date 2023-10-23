@@ -79,6 +79,8 @@
                     echo '<input name="Txtprecio[]" type="hidden" value="' . $pedido["precio"] . '">';
                     echo '<input name="TxtpedidoN[]" type="hidden" value="' . $_SESSION['id_pedido']  . '">';
                     echo '<input name="TxtEstatus[]" type="hidden" value="' . false . '">';
+                    echo '<input name="Txtcantidad" type="hidden" value="' . $cantidad  . '">';
+                    echo '<input name="TxtprecioT" type="hidden" value="' . $precioTotal . '">';
                 }
                 echo '<button class="action_btn" type="submit" name="agregar">Generar Pedido</button>';
               echo '</form>';
