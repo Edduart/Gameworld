@@ -96,19 +96,40 @@
       ?>
     </div>
   </section>
-  <?php
-  if(isset($_SESSION['pedido'])){
-    echo '<div class="top-tittle">';
-    echo '<h1>Detalles de compra</h1>';
-    echo '</div>';
+  
+  <?php if(isset($_SESSION['pedido'])){ ?>
+    <div class="top-tittle">
+    <h1>Detalles de compra</h1>;
+    </div>'
 
-    echo '<section class="list">';
-      echo '<div class="list-container">';
-        echo '<h1>AQUI VA LA TABLA Y BOTON DE COMPRA</h1>';
-        echo var_dump($_SESSION['pedido']);
-      echo '</div>';
-    echo '</section>';
-  }
-  ?>
+    <section class="list">
+    <table class="table-responsive">
+    <thead>
+          <tr> 
+            <th>Fecha</th>
+            <th>Cantidad de productos</th>
+            <th>Total $</th>
+            <th class="white-text center-align">Eliminar</th>
+            <th class="white-text center-align">Actualizar</th>
+            </tr>
+          <?php foreach ($_SESSION['pedido'] as $detalle) : ?>
+            <tr>
+              <td><?php echo $detalle['fecha']; ?></td>
+              <td><?php echo $detalle['cantidad']; ?></td>
+              <td><?php echo $detalle['precioTotal']; ?></td>
+              <td class = "Eliminar">
+                <a href="?resp=dCliente&id_cliente=<?php  ?>" class="btn red z-depth-4">Eliminar</a>
+              </td>
+              <td>
+                <a href="?resp=ActCliente&id_cliente=<?php ?>" class="btn green z-depth-4">Actualizar</a>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+          </thead>
+        </table>
+      </div>
+    </section>'
+    <?php } ?>
+  
 </body>
 </html>
