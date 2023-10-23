@@ -96,5 +96,19 @@
       ?>
     </div>
   </section>
+  <?php
+  if(isset($_SESSION['pedido'])){
+    echo '<div class="top-tittle">';
+    echo '<h1>Detalles de compra</h1>';
+    echo '</div>';
+
+    echo '<section class="list">';
+      echo '<div class="list-container">';
+        echo '<h1>AQUI VA LA TABLA Y BOTON DE COMPRA</h1>';
+        echo var_dump($_SESSION['pedido']);
+      echo '</div>';
+    echo '</section>';
+  }
+  ?>
 </body>
 </html>
