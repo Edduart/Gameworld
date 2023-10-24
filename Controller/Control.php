@@ -72,12 +72,35 @@ class control{
 
 	public function regist_product(){
 		//$_SESSION['error_message'] = null;
+		if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+			// Acceder a la información del archivo cargado
+			$file = $_FILES['fileImagen'];
+
+			// Comprobar si se cargó un archivo
+			if ($file['error'] === UPLOAD_ERR_OK) {
+				// Ruta donde se guardarán las imágenes (puedes personalizarla)
+				$uploadDirectory = 'Resources/Productos';
+	
+				// Nombre del archivo (puedes personalizarlo)
+				$fileName = uniqid() . '_' . $file['name'];
+	
+				// Mover la imagen al directorio de destino
+				$uploadPath = $_SERVER['DOCUMENT_ROOT'] . $uploadDirectory . $fileName;
+
+				if (move_uploaded_file($file['tmp_name'], $uploadPath)){
+					//Se utiliza para mover a la dirección indicada en la variable $uploadPath
+
+					$imageUrl = $uploadDirectory . $fileName;
+                    //Esto ultimo se utiliza para transformar el archivo de la imagen a un url
+				}
+		    }
+		}	
 
 		$alm = new producto();
 		$alm->Nombre_p = $_POST['TxtNproducto'];
 		$alm->Descripcion = $_POST['TxtDescripcion'];
 		$alm->Precio = $_POST['TxtPrecio'];
-		$alm->Image_URL = $_POST['TxtImagen'];
+		$alm->Image_URL = $imageUrl;
 		$error=0;
 
 		$mercado = $this->Product->misproductos();

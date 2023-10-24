@@ -30,7 +30,7 @@
             </div>
 
             <div class="input-box">
-                <input type="file" name="TxtImagen" required>
+                <input type="file" name="fileImagen" required>
             </div>
              
             <button type="submit" class="btn"> Registrar </button>
