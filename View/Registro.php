@@ -42,7 +42,7 @@
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <div class="input-box">
-                    <input type="tel" name="TxtTelefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <input type="tel" name="TxtTelefono"  required>
                     <label for="Clave" class="label_group">Telefono</label>
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
