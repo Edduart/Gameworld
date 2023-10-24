@@ -26,6 +26,7 @@ class control{
 		$alm->Email = $_POST['TxtEmail'];
 		$alm->Nombre = $_POST['TxtNombre'];
 		$alm->Telefono = $_POST['TxtTelefono'];
+		$error;
 
 		$persona = $this->Usuario->misregistros();
 
