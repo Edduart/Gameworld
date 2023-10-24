@@ -79,13 +79,13 @@ class control{
 			// Comprobar si se cargó un archivo
 			if ($file['error'] === UPLOAD_ERR_OK) {
 				// Ruta donde se guardarán las imágenes (puedes personalizarla)
-				$uploadDirectory = 'Resources/Productos';
+				$uploadDirectory = 'Resources/Productos/';
 	
 				// Nombre del archivo (puedes personalizarlo)
 				$fileName = uniqid() . '_' . $file['name'];
 	
 				// Mover la imagen al directorio de destino
-				$uploadPath = $_SERVER['DOCUMENT_ROOT'] . $uploadDirectory . $fileName;
+				$uploadPath = $uploadDirectory . $fileName;
 
 				if (move_uploaded_file($file['tmp_name'], $uploadPath)){
 					//Se utiliza para mover a la dirección indicada en la variable $uploadPath
