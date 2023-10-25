@@ -3,6 +3,7 @@ include_once "Model/Cliente.php";
 include_once "Model/Producto.php";
 include_once "Model/Pedido.php";
 include_once "Model/Category.php";
+include_once "Model/pago.php";
 require "SesionControl.php";
 
 $start_sesion = new SesionControl;
@@ -13,8 +14,10 @@ class control{
 	public $Product;
 	public $Pedido;
 	public $Category;
+	public $pago;
 
     public function __construct(){
+		$this->pago = new pago();
 		$this->Usuario = new cliente();
 		$this->Product = new producto();
 		$this->Pedido = new pedido();
@@ -311,7 +314,7 @@ class control{
 		$pedidoN = $_POST['TxtpedidoN'];
 		$estatus = $_POST['TxtEstatus'];
 
-		$compraPedido[] = array("fecha"=>date("Y-m-d"), "cantidad"=>$_POST['Txtcantidad'], "precioTotal"=>$_POST['TxtprecioT'], "correo_envio"=>$_SESSION['correo'],"id_cliente"=>$_SESSION['id'],"pedidoN"=>$pedidoN[0]);
+		$compraPedido[] = array("id_pago"=>$_POST['TxtId_pago'],"fecha"=>date("Y-m-d"), "cantidad"=>$_POST['Txtcantidad'], "precioTotal"=>$_POST['TxtprecioT'], "correo_envio"=>$_SESSION['correo'],"id_cliente"=>$_SESSION['id'],"pedidoN"=>$pedidoN[0]);
 		$_SESSION['pedido'] = $compraPedido;
 		var_dump($compraPedido);
 		// Iterar sobre los arreglos y guardar cada producto en la base de datos
@@ -327,6 +330,17 @@ class control{
 			$this->Pedido->guardar($alm);
 		}
 		$this->Mipedido();
+	}
+
+	public function PagoTDD() {
+
+		$data = $_SESSION['pedido'];
+		$alm = new pago();
+		$alm->Id_pago = $data['id_pago'];
+		$alm->monto = $data['precioTotal'];
+		$alm->status = true;
+
+		$this->pago->guardarPago($alm);
 	}
 
 	//Funciones de redireccion ***** hay que organizar
