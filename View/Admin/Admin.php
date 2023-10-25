@@ -28,6 +28,7 @@
             <div class="dropdown"><i class='bx bx-menu' ></i>
                 <div class="items">
                 <li><a href="?resp=Product">Registrar Producto</a></li>
+                <li><a href="?resp=Micategoria">Crear Categoria</a></li>
                 <li><a href="?resp=Lista_Client">Lista de Clientes</a></li>
                 <li><a href="?resp=Lista_Product">Lista de Productos</a></li>
                 <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
