@@ -10,12 +10,23 @@
 </head>
 <body>
 
+
+
     <div class="wrapper">
         <form method="POST" action="?resp=regist_product" enctype="multipart/form-data">
             <h1>Registro de Producto</h1>
             <div class="input-box">
                 <input type="Nombre de producto"name="TxtNproducto" required>
                 <label for="Usuario" class="label_group">Nombre de producto</label>
+            </div>
+
+            <div class="input-1">
+                <select name="TxtCategoria" id="micategory">
+                <?php foreach ($this->Category->listar() as $k) : ?>    
+                <option value=<?php echo $k->ID_categoria; ?>><?php echo $k->Nombre ?></option>
+                <?php endforeach; ?>
+                </select>
+                <label for="micategory" class="label_group">Categoria</label>
             </div>
 
             <div class="input-box">

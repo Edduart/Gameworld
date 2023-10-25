@@ -105,6 +105,7 @@ class control{
 		$alm->Nombre_p = $_POST['TxtNproducto'];
 		$alm->Descripcion = $_POST['TxtDescripcion'];
 		$alm->Precio = $_POST['TxtPrecio'];
+		$alm->Categoria = $_POST['TxtCategoria'];
 		$alm->Image_URL = $imageUrl;
 		$error = -1;
 
