@@ -1,11 +1,11 @@
 <?php
 
-    class pago 
+    class envio 
     {
             public $CNX;
-            public $Id_pago;
-            public $Id_metodo;
-            public $monto;
+            public $Id_envio;
+            public $Id_pedido;
+            public $descripcion;
             public $status;
 
 
@@ -19,10 +19,10 @@
             
             }
 
-            public function guardarPago($data){
+            public function guardarEnvio($data){
                 try {
-                    $query = "INSERT INTO pago(Id_pago,Id_metodo, Monto, Estatus_pago) VALUES(?,?,?,?)";
-                    $this->CNX->prepare($query)->execute(array($data->Id_pago,$data->Id_metodo,$data->monto,$data->status));
+                    $query = "INSERT INTO envio(Id_pedido,descripcion,estatus) VALUES(?,?,?)";
+                    $this->CNX->prepare($query)->execute(array($data->Id_pedido,$data->description,$data->status));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }

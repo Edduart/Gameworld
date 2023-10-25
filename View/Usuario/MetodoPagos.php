@@ -38,6 +38,9 @@
           <input type="text" name="TxtCcv" minlength="3" maxlength="4" placeholder="123" required>
           <label for="Clave" class="label_group">CCV</label>
         </div>
+        <input type="hidden" name="TxtTipo" value="TDD">
+        <input type="hidden" name="TxtDescripcion" value="Pago por tarjeta">
+        <input type="hidden" name="TxtDescripcionEnvio" value="Envio de la compra">
         <button class="action_btn" type="submit" name="pagar">Pagar</button>
       </form>
     </div>

@@ -4,6 +4,8 @@ include_once "Model/Producto.php";
 include_once "Model/Pedido.php";
 include_once "Model/Category.php";
 include_once "Model/pago.php";
+include_once "Model/Metodo.php";
+include_once "Model/Envio.php";
 require "SesionControl.php";
 
 $start_sesion = new SesionControl;
@@ -15,6 +17,8 @@ class control{
 	public $Pedido;
 	public $Category;
 	public $pago;
+	public $metodo;
+	public $envio;
 
     public function __construct(){
 		$this->pago = new pago();
@@ -22,6 +26,8 @@ class control{
 		$this->Product = new producto();
 		$this->Pedido = new pedido();
 		$this->Category = new categoria();
+		$this->metodo = new metodo();
+		$this->envio = new envio();
 	}
 
 	public function registrar(){
@@ -334,13 +340,36 @@ class control{
 
 	public function PagoTDD() {
 
-		$data = $_SESSION['pedido'];
+		$pago = $_SESSION['pedido'];
+		$id_metodo = rand(1,10000);
+
+		foreach ($pago as $i) {}
+
 		$alm = new pago();
-		$alm->Id_pago = $data['id_pago'];
-		$alm->monto = $data['precioTotal'];
+		$alm->Id_pago = $i['id_pago'][0];
+		$alm->Id_metodo = $id_metodo;
+		$alm->monto = $i['precioTotal'];
 		$alm->status = true;
 
-		$this->pago->guardarPago($alm);
+		//$this->pago->guardarPago($alm);
+
+		$alm1 = new metodo();
+		$alm1->Id_metodo = $id_metodo;
+		$alm1->tipo = $_POST['TxtTipo'];
+		$alm1->dato = $_POST['TxtNumero'];
+		$alm1->description = $_POST['TxtDescripcion'];
+
+		//$this->metodo->guardarMetodo($alm1);
+		
+		$id_pedido = $this->Pedido->pedidos($i['pedidoN']);
+
+		foreach ($id_pedido as $j) {}
+
+		$alm3 = new envio();
+		$alm3->Id_pedido = $j->Id_pedido;
+		$alm3->descripcion = $_POST['TxtDescripcionEnvio'];
+
+		$this->envio->guardarEnvio($alm3);
 	}
 
 	//Funciones de redireccion ***** hay que organizar

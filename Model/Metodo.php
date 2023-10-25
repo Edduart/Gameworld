@@ -1,12 +1,12 @@
 <?php
 
-    class pago 
+    class metodo 
     {
             public $CNX;
-            public $Id_pago;
             public $Id_metodo;
-            public $monto;
-            public $status;
+            public $tipo;
+            public $dato;
+            public $description;
 
 
             //contructor que enlaza la conexion
@@ -19,10 +19,10 @@
             
             }
 
-            public function guardarPago($data){
+            public function guardarMetodo($data){
                 try {
-                    $query = "INSERT INTO pago(Id_pago,Id_metodo, Monto, Estatus_pago) VALUES(?,?,?,?)";
-                    $this->CNX->prepare($query)->execute(array($data->Id_pago,$data->Id_metodo,$data->monto,$data->status));
+                    $query = "INSERT INTO metodo_de_pago(Id_metodo,Tipo,Dato,Descripcion) VALUES(?,?,?,?)";
+                    $this->CNX->prepare($query)->execute(array($data->Id_metodo,$data->tipo,$data->dato,$data->description));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
