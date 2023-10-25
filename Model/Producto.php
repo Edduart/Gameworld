@@ -47,7 +47,7 @@
             public function guardar($data){
                 try {
                     $query = "INSERT INTO producto(Nombre_Producto, ID_Catergoria, Descripcion, Precio, Image_URL) VALUES(?,?,?,?,?)";
-                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->ID_categoria,$data->Descripcion,$data->Precio,$data->Image_URL));
+                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->Id_categoria,$data->Descripcion,$data->Precio,$data->Image_URL));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
