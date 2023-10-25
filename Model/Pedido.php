@@ -54,6 +54,15 @@
                 }
             }
 
+            public function guardarPago($data){
+                try {
+                    $query = "INSERT INTO pago(Id_metodo, Monto, Estatus_pago) VALUES(?,?,?)";
+                    $this->CNX->prepare($query)->execute(array($data->Id_producto,$data->Id_cliente,$data->Id_pago,$data->Precio_total,$data->pedidoN,$data->estatus));
+                } catch (Exception $e) {
+                    die($e->getMessage());
+                }
+            }
+
             //Incompleto
             public function actualizarDatos($data){
                 try {

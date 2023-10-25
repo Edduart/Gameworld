@@ -28,7 +28,6 @@
                 <div class="input-box">
                     <input type="email"  name="TxtEmail" required>
                     <label for="Clave" class="label_group">Correo</label>
-                    
                     <box-icon name='user' type='solid'></box-icon>
                 </div>
                 <div class="input-box">

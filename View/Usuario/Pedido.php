@@ -109,8 +109,7 @@
             <th>Fecha</th>
             <th>Cantidad de productos</th>
             <th>Total $</th>
-            <th class="white-text center-align">Eliminar</th>
-            <th class="white-text center-align">Actualizar</th>
+            <th class="white-text center-align">Pago</th>
             </tr>
           <?php foreach ($_SESSION['pedido'] as $detalle) : ?>
             <tr>
@@ -118,10 +117,7 @@
               <td><?php echo $detalle['cantidad']; ?></td>
               <td><?php echo $detalle['precioTotal']; ?></td>
               <td class = "Eliminar">
-                <a href="?resp=dCliente&id_cliente=<?php  ?>" class="btn red z-depth-4">Eliminar</a>
-              </td>
-              <td>
-                <a href="?resp=ActCliente&id_cliente=<?php ?>" class="btn green z-depth-4">Actualizar</a>
+                <a href="?resp=MetodoPagos" class="btn red z-depth-4">Pagar</a>
               </td>
             </tr>
           <?php endforeach; ?>
