@@ -2,6 +2,7 @@
 include_once "Model/Cliente.php";
 include_once "Model/Producto.php";
 include_once "Model/Pedido.php";
+include_once "Model/Category.php";
 require "SesionControl.php";
 
 $start_sesion = new SesionControl;
@@ -11,11 +12,13 @@ class control{
 	public $Usuario;
 	public $Product;
 	public $Pedido;
+	public $Category;
 
     public function __construct(){
 		$this->Usuario = new cliente();
 		$this->Product = new producto();
 		$this->Pedido = new pedido();
+		$this->Category = new categoria();
 	}
 
 	public function registrar(){
@@ -127,6 +130,20 @@ class control{
 			$this->Product->guardar($alm);
 			include_once "View/Admin/Admin.php";
 		}
+	}
+
+	public function regist_categoria(){
+		//$_SESSION['error_message'] = null;
+
+		$alm = new categoria();
+		$alm->Nombre_c = $_POST['TxtNcategoria'];
+		$alm->Plataforma = $_POST['TxtPlataforma'];
+		$alm->Descripcion = $_POST['TxtDescripcion'];
+		$error=0;
+
+		$this->Category->guardar($alm);
+		include_once "View/Admin/Admin.php";
+
 	}
 
 	public function login()
@@ -357,6 +374,10 @@ class control{
 
 	public function MetodoPagos(){
 		include_once "View/Usuario/MetodoPagos.php";
+	}
+
+	public function Micategoria(){
+		include_once "View/Admin/Categoria.php";
 	}
 
 }
