@@ -45,20 +45,6 @@
       </form>
     </div>
   </div>
-
-  <div class="Container-Tabla">
-    <div class="Tabla">
-      <img src="./Resources/PayPal.jpg" alt="#">
-      <h2>PayPal</h2>
-      <p>Correo:</p>
-      <form method="post" action="#">
-        <div class="input-box">
-          <input type="email" name="TxtEmail" required>
-          <label for="Clave" class="label_group"></label>
-        </div>
-        <button class="action_btn" type="submit" name="pagar">Pagar</button>
-      </form>
-    </div>
   </div>
 </body>
 

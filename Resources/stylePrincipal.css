@@ -551,22 +551,22 @@ section#list {
 }
 
 .list-wrapper {
-  background-color: #5cd1e6;
   width: 400px;
   padding: 10px;
 }
 
 .list-container {
-  background: #ff00d4;
-  border: #00ff11;
+  background-color: #687eff;
+  border-radius: 50px;
   padding: 15px;
   display: flex;
-  gap: 10px;
+  gap: 450px;
 }
 
 .resumen-container {
   background: transparent;
-  border: 1px solid #fff200;
+  border-radius: 5px;
+  border: 1px dashed #fff200;
   padding: 10px;
   height: 500px;
   width: 500px;
@@ -574,6 +574,7 @@ section#list {
 
 .resumen-list {
   border: 1px solid #fff200;
+  border-radius: 5px;
   color: #ddd;
 }
 

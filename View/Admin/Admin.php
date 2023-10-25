@@ -48,7 +48,7 @@
     </header>
     <main>
        <div class="top-tittle">
-        <h1>Tarjetas regalo electrónicas más vendidas</h1>    
+        <h1>Tarjetas regalo electrónicas</h1>    
        </div> 
        <section id="hero">
         <div class="product-container">

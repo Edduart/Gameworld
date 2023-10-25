@@ -81,7 +81,6 @@
                   echo '<img class="image" src="' . $productos->Image_URL . '" alt="' . $productos->Nombre_Producto . '">';
                   echo '<h3>' . $productos->Nombre_Producto . '</h3>';
                   echo '<p>' . $productos->Descripcion . '</p>';
-                  echo '<p> ID producto = ' . $productos->ID_Producto . '</p>';
                   echo '<span class="price">$' . $productos->Precio . '</span>';
                   
                   echo '<form method="post" action="?resp=carrito">';

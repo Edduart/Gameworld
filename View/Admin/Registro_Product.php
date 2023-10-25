@@ -20,15 +20,6 @@
                 <label for="Usuario" class="label_group">Nombre de producto</label>
             </div>
 
-            <div class="input-1">
-                <select name="TxtCategoria" id="micategory">
-                <?php foreach ($this->Category->listar() as $k) : ?>    
-                <option value=<?php echo $k->ID_categoria; ?>><?php echo $k->Nombre ?></option>
-                <?php endforeach; ?>
-                </select>
-                <label for="micategory" class="label_group">Categoria</label>
-            </div>
-
             <div class="input-box">
                 <input type="Descripción"  name="TxtDescripcion" required>
                 <label for="Usuario" class="label_group">Descripción</label>
@@ -41,6 +32,16 @@
 
             <div class="input-box">
                 <input type="file" name="fileImagen" required>
+            </div>
+
+            <div class="input-1">
+                <p>Categoria</p>
+                <select name="TxtCategoria" id="micategory">
+                <?php foreach ($this->Category->listar() as $k) : ?>    
+                <option value=<?php echo $k->ID_categoria; ?>><?php echo $k->Nombre ?></option>
+                <?php endforeach; ?>
+                </select>
+                <label for="micategory" class="label_group">Categoria</label>
             </div>
              
             <button type="submit" class="btn"> Registrar </button>

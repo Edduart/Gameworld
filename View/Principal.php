@@ -33,40 +33,7 @@
     </header>
     <main>
       <div class="top-tittle">
-        <h2>Tarjetas regalo electrónicas más vendidas</h2>
-      </div>
-      <section id="hero">
-        <div class="product-container">
-          <?php
-          // Obtener los productos desde la base de datos (supongamos que la función obtenerProductos existe)
-          $productos = $this->Product->obtenerProductos();
-          // Verificar si hay productos para mostrar
-          if (!empty($productos)) {
-              echo '<div class="products-wrapper">';
-              foreach ($productos as $producto) {
-              // Generar el HTML para mostrar cada producto
-              echo '<div class="prod_box">';
-              echo '<img class="image" src="' . $producto->Image_URL . '" alt="' . $producto->Nombre_Producto . '">';
-              echo '<h3>' . $producto->Nombre_Producto . '</h3>';
-              echo '<p>' . $producto->Descripcion . '</p>';
-              echo '<span class="price">$' . $producto->Precio . '</span>';
-              //echo '<a href="#" class="btn">Agregar al carrito</a>';
-              echo '</div>';
-            }
-            echo '</div>';
-          } else {
-            // Si no hay productos disponibles, puedes mostrar un mensaje o contenido alternativo
-            echo '<p>No hay productos disponibles en este momento.</p>';
-          }
-          ?>
-        </div>
-      </section>
-    </main>
-
-
-    <main>
-      <div class="top-tittle">
-        <h2>Gift Cards para Juegos</h2>
+        <h2>Tarjetas regalo electrónicas</h2>
       </div>
       <section id="hero">
         <div class="product-container">

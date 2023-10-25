@@ -58,7 +58,6 @@
                 echo '<div class="prod_desc">';
                   echo '<h3>' . $pedido["nombre_product"] . '</h3>';
                   echo '<p>' . $pedido["descripcion"] . '</p>';
-                  /*echo '<p> ID producto = ' . $pedido->ID_Producto . '</p>';*/
                   echo '<span class="price">$' . $pedido["precio"] . '</span>';
                 echo '</div>';
               echo '</div>';
@@ -86,7 +85,6 @@
               echo '</form>';
               echo '<h2> Cantidad de productos = ' . $cantidad .'</h2>';
               echo '<h2> Precio total = ' . $precioTotal .'$</h2>';
-              echo '<button class="action_btn" type="button" name="agregar"><a href="?resp=MetodoPagos">Pagos</a></button>';
               echo '</div>';
             echo '</div>';
           } else {

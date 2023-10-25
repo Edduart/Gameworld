@@ -73,5 +73,15 @@
                     die ($e->getMessage());
                 }
             }
+
+            public function estatus($data){
+                    try {
+                        $query = "UPDATE pedido set estatus = true WHERE pedidoN = $data";
+                        $this->CNX->prepare($query)->execute();
+                    } catch (Exception $e) {
+                        die($e->getMessage());
+                    }
+            }
+            
     }
 ?>

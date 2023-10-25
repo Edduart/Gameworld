@@ -6,6 +6,7 @@ include_once "Model/Category.php";
 include_once "Model/pago.php";
 include_once "Model/Metodo.php";
 include_once "Model/Envio.php";
+include_once "Model/Compra.php";
 require "SesionControl.php";
 
 $start_sesion = new SesionControl;
@@ -19,6 +20,7 @@ class control{
 	public $pago;
 	public $metodo;
 	public $envio;
+	public $compra;
 
     public function __construct(){
 		$this->pago = new pago();
@@ -28,6 +30,7 @@ class control{
 		$this->Category = new categoria();
 		$this->metodo = new metodo();
 		$this->envio = new envio();
+		$this->compra = new compra();
 	}
 
 	public function registrar(){
@@ -190,7 +193,10 @@ class control{
 				$this->sesion();
 				$_SESSION['error_message'] = null;
 			}
-		} 
+		}
+			$_SESSION['error_message'] = '¡Credenciales invalidas!';
+			$this->sesion();
+			$_SESSION['error_message'] = null;
 	}
 
 	// obtener informacion del usuario para actualizar
@@ -306,7 +312,6 @@ class control{
 				$carrito_mio[] = array("nombre_product"=>$nombre, "descripcion"=>$descripcion, "precio"=>$precio, "img"=>$imagen, "cantidad"=>$cantidad, "id_producto"=>$id_producto);
 			}
 			$_SESSION['carrito'] = $carrito_mio;
-			var_dump($_SESSION['carrito']);
 		}
 		include_once "View/Usuario/Principal_login.php";
 	} 
@@ -322,7 +327,6 @@ class control{
 
 		$compraPedido[] = array("id_pago"=>$_POST['TxtId_pago'],"fecha"=>date("Y-m-d"), "cantidad"=>$_POST['Txtcantidad'], "precioTotal"=>$_POST['TxtprecioT'], "correo_envio"=>$_SESSION['correo'],"id_cliente"=>$_SESSION['id'],"pedidoN"=>$pedidoN[0]);
 		$_SESSION['pedido'] = $compraPedido;
-		var_dump($compraPedido);
 		// Iterar sobre los arreglos y guardar cada producto en la base de datos
 		foreach ($id_productos as $key => $id_producto) {
 			$alm = new pedido();
@@ -351,7 +355,7 @@ class control{
 		$alm->monto = $i['precioTotal'];
 		$alm->status = true;
 
-		//$this->pago->guardarPago($alm);
+		$this->pago->guardarPago($alm);
 
 		$alm1 = new metodo();
 		$alm1->Id_metodo = $id_metodo;
@@ -359,7 +363,7 @@ class control{
 		$alm1->dato = $_POST['TxtNumero'];
 		$alm1->description = $_POST['TxtDescripcion'];
 
-		//$this->metodo->guardarMetodo($alm1);
+		$this->metodo->guardarMetodo($alm1);
 		
 		$id_pedido = $this->Pedido->pedidos($i['pedidoN']);
 
@@ -368,8 +372,21 @@ class control{
 		$alm3 = new envio();
 		$alm3->Id_pedido = $j->Id_pedido;
 		$alm3->descripcion = $_POST['TxtDescripcionEnvio'];
+		$alm3->status = true;
 
 		$this->envio->guardarEnvio($alm3);
+
+		$alm4 = new compra();
+
+		$alm4->fecha = $i['fecha'];
+		$alm4->Id_pedido = $j->Id_pedido;
+
+		$this->compra->guardarCompra($alm4);
+		$this->Pedido->estatus($i['pedidoN']);
+
+		$_SESSION['error_message'] = '¡Compra exitosa, informacion enviada al correo del usuario!';
+		$this->PrincipalUser();
+		$_SESSION['error_message'] = null;
 	}
 
 	//Funciones de redireccion ***** hay que organizar

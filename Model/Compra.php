@@ -1,13 +1,10 @@
 <?php
-
-    class envio 
+    class compra 
     {
             public $CNX;
-            public $Id_envio;
+            public $Id_compra;
+            public $fecha;
             public $Id_pedido;
-            public $descripcion;
-            public $status;
-
 
             //contructor que enlaza la conexion
             public function __construct() {
@@ -19,10 +16,10 @@
             
             }
 
-            public function guardarEnvio($data){
+            public function guardarCompra($data){
                 try {
-                    $query = "INSERT INTO envio(Id_pedido,descripcion,estatus) VALUES(?,?,?)";
-                    $this->CNX->prepare($query)->execute(array($data->Id_pedido,$data->descripcion,$data->status));
+                    $query = "INSERT INTO compra(Fecha,id_pedido) VALUES(?,?)";
+                    $this->CNX->prepare($query)->execute(array($data->fecha,$data->Id_pedido));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
