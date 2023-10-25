@@ -193,10 +193,11 @@ class control{
 				$this->sesion();
 				$_SESSION['error_message'] = null;
 			}
-		}
+		} else {
 			$_SESSION['error_message'] = '¡Credenciales invalidas!';
 			$this->sesion();
 			$_SESSION['error_message'] = null;
+		}
 	}
 
 	// obtener informacion del usuario para actualizar
@@ -384,9 +385,10 @@ class control{
 		$this->compra->guardarCompra($alm4);
 		$this->Pedido->estatus($i['pedidoN']);
 
-		$_SESSION['error_message'] = '¡Compra exitosa, informacion enviada al correo del usuario!';
+		$_SESSION['error_message'] = "Compra exitosa, los datos se enviaran al correo del usuario!";
 		$this->PrincipalUser();
 		$_SESSION['error_message'] = null;
+
 	}
 
 	//Funciones de redireccion ***** hay que organizar

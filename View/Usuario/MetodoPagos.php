@@ -12,7 +12,7 @@
 <body>
   <header>
     <div class="navbar">
-      <div class="logo"><a href="?resp=index">GAMEWORLD</a></div>
+      <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
 
       <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
     </div>
