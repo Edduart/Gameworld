@@ -29,7 +29,8 @@ class control{
 		$alm->Email = $_POST['TxtEmail'];
 		$alm->Nombre = $_POST['TxtNombre'];
 		$alm->Telefono = $_POST['TxtTelefono'];
-		$error;
+
+		$error = -1;
 
 		$persona = $this->Usuario->misregistros();
 
@@ -64,7 +65,7 @@ class control{
 				$_SESSION['error_message'] == null;
 			}else{
 				$alm->Contraseña = $_POST['TxtContraseña'];
-				//$this->Usuario->guardar($alm);
+				$this->Usuario->guardar($alm);
 				$_SESSION['error_message'] = "¡Usuario Registrado exitosamente!";
 				include_once "View/login.php";
 			}
@@ -105,7 +106,7 @@ class control{
 		$alm->Descripcion = $_POST['TxtDescripcion'];
 		$alm->Precio = $_POST['TxtPrecio'];
 		$alm->Image_URL = $imageUrl;
-		$error=0;
+		$error = -1;
 
 		$mercado = $this->Product->misproductos();
 		foreach($mercado as $mercancia){
