@@ -19,16 +19,16 @@
             
             }
             //en lista los insert join que se hizo en sql
-           /* public function listar(){
+            public function listar(){
                 try{
-                $query = "SELECT z.ID_Producto,z.Nombre_Producto,z.ID_catergoria,z.Descripcion,z.Precio,z.Image_URL FROM producto z ORDER BY z.ID_Producto";
+                $query = "SELECT z.ID_categoria,z.Nombre,z.Plataforma,z.Descripcion FROM categoria z ORDER BY z.ID_categoria";
                 $resultado = $this->CNX->prepare($query);
                 $resultado->execute();
                 return $resultado->fetchAll(PDO::FETCH_OBJ);
             } catch (Exception $e){
                 die ($e->getMessage());
             }
-        }*/
+        }
 
            /* public function cargarId($Id){
                 try {
@@ -52,16 +52,16 @@
             }
 
             //actualizar para el registro a futuro
-            public function actualizarDatos($data){
+           /* public function actualizarDatos($data){
                 try {
                     $query = "UPDATE categoria set Nombre=?, Plataforma=?, Descripcion=? WHERE ID_categoria=?";
                     $this->CNX->prepare($query)->execute(array($data->Nombre_c,$data->Plataforma,$data->Descripcion));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
-            }
+            }*/
             //funcion de eliminar a futuro
-            public function delete ($Id){
+           /* public function delete ($Id){
                 try {
                     $query = "Delete from categoria where ID_categoria =?";
                     $resultado = $this->CNX->prepare($query);
@@ -69,7 +69,7 @@
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
-            }
+            }*/
            /* public function obtenercategorias() {
                 try{
                     $query = "SELECT * FROM categoria ORDER BY Nombre";

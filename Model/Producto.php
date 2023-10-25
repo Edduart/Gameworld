@@ -46,8 +46,8 @@
 
             public function guardar($data){
                 try {
-                    $query = "INSERT INTO producto(Nombre_Producto, Descripcion, Precio, Image_URL) VALUES(?,?,?,?)";
-                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->Descripcion,$data->Precio,$data->Image_URL));
+                    $query = "INSERT INTO producto(Nombre_Producto, ID_Catergoria, Descripcion, Precio, Image_URL) VALUES(?,?,?,?,?)";
+                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->ID_categoria,$data->Descripcion,$data->Precio,$data->Image_URL));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
@@ -56,8 +56,8 @@
             //actualizar para el registro a futuro
             public function actualizarDatos($data){
                 try {
-                    $query = "UPDATE producto set Nombre_Producto=?,Descripcion=?,Precio=?,Image_URL=? WHERE ID_Producto=?";
-                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->Descripcion,$data->Precio,$data->Image_URL));
+                    $query = "UPDATE producto set Nombre_Producto=?,ID_Catergoria,Descripcion=?,Precio=?,Image_URL=? WHERE ID_Producto=?";
+                    $this->CNX->prepare($query)->execute(array($data->Nombre_p,$data->ID_categoria,$data->Descripcion,$data->Precio,$data->Image_URL));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
