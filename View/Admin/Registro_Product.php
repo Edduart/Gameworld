@@ -16,7 +16,6 @@
             <div class="input-box">
                 <input type="Nombre de producto"name="TxtNproducto" required>
                 <label for="Usuario" class="label_group">Nombre de producto</label>
-               
             </div>
 
             <div class="input-box">

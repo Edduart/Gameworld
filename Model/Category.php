@@ -52,16 +52,16 @@
             }
 
             //actualizar para el registro a futuro
-            public function actualizarDatos($data){
+           /* public function actualizarDatos($data){
                 try {
                     $query = "UPDATE categoria set Nombre=?, Plataforma=?, Descripcion=? WHERE ID_categoria=?";
                     $this->CNX->prepare($query)->execute(array($data->Nombre_c,$data->Plataforma,$data->Descripcion));
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
-            }
+            }*/
             //funcion de eliminar a futuro
-            public function delete ($Id){
+           /* public function delete ($Id){
                 try {
                     $query = "Delete from categoria where ID_categoria =?";
                     $resultado = $this->CNX->prepare($query);
@@ -69,7 +69,7 @@
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
-            }
+            }*/
            /* public function obtenercategorias() {
                 try{
                     $query = "SELECT * FROM categoria ORDER BY Nombre";
