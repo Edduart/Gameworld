@@ -163,7 +163,7 @@ $pdf->SetFillColor(170, 200, 167); /*87, 197, 182*/
 $pdf->Cell(35,7,'Cliente',1,0,'C',1);
 $pdf->Cell(35,7, 'Id_pago',1,0,'C',1);
 $pdf->Cell(35,7,'Total',1,0,'C',1);
-$pdf->Cell(35,7,'Referencia',1,0,'C',1);
+$pdf->Cell(35,7,'Referencia',1,1,'C',1);
 
 
 
@@ -187,7 +187,7 @@ while($fila = $resultado->fetch_assoc()){
     $pdf->Cell(35,7,$fila['Nombre de cliente'],1,0,'C',1);
     $pdf->Cell(35,7,$fila['Id_pago'],1,0,'C',1);
     $pdf->Cell(35,7,$fila['precioTotal'],1,0,'C',1);
-    $pdf->Cell(35,7,$fila['pedidoN'],1,0,'C',1);
+    $pdf->Cell(35,7,$fila['pedidoN'],1,1,'C',1);
 
 
     /*$pdf->Cell(35,7,$fila['Color'],1,1,'C',1);*/
