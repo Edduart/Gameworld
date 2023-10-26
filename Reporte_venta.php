@@ -182,11 +182,11 @@ $pdf->SetFont('Times','',12);
 while($fila = $resultado->fetch_assoc()){
     $pdf->SetX(10);
     $pdf->SetFillColor(201, 219, 178); 
-    $pdf->Cell(10,7,$fila['id_pedido'],1,0,'C',1);
+    $pdf->Cell(10,7,$fila['Id_pedido'],1,0,'C',1);
     $pdf->SetFillColor(246, 255, 222); // Color de Fondo RGB
-    $pdf->Cell(35,7,$fila['nombre'],1,0,'C',1);
-    $pdf->Cell(35,7,$fila['id_pago'],1,0,'C',1);
-    $pdf->Cell(35,7,$fila['Precio_total'],1,0,'C',1);
+    $pdf->Cell(35,7,$fila['Nombre de cliente'],1,0,'C',1);
+    $pdf->Cell(35,7,$fila['Id_pago'],1,0,'C',1);
+    $pdf->Cell(35,7,$fila['precioTotal'],1,0,'C',1);
     $pdf->Cell(35,7,$fila['pedidoN'],1,0,'C',1);
 
 

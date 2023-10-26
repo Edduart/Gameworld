@@ -31,7 +31,7 @@
                 <li><a href="?resp=Micategoria">Crear Categoria</a></li>
                 <li><a href="?resp=Lista_Client">Lista de Clientes</a></li>
                 <li><a href="?resp=Lista_Product">Lista de Productos</a></li>
-                <li><a href="?resp=Misventas">Reporte de Ventas</a></li>
+                <li><a href="Reporte_venta.php"  target="_blank">Reporte de Ventas</a></li>
                 <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
                 </div>
             </div>
