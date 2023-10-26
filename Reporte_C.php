@@ -159,11 +159,11 @@ $pdf->SetTextColor(255, 255, 255);
 $pdf->Cell(10,7,'ID',1,0,'C',1); 
 $pdf->SetTextColor(61, 61, 61);
 $pdf->SetFillColor(170, 200, 167); /*87, 197, 182*/
-$pdf->Cell(35,7,'nombre',1,0,'C',1);
-$pdf->Cell(35,7, 'usuario',1,0,'C',1);
+$pdf->Cell(35,7,'Nombre',1,0,'C',1);
+$pdf->Cell(35,7, 'Usuario',1,0,'C',1);
 $pdf->Cell(35,7,utf8_decode('contraseña'),1,0,'C',1);
-$pdf->Cell(35,7,'correo',1,0,'C',1);
-$pdf->Cell(35,7,'telefono',1,1,'C',1);
+$pdf->Cell(35,7,'Correo',1,0,'C',1);
+$pdf->Cell(35,7,'Telefono',1,1,'C',1);
 
 
 

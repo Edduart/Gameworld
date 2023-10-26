@@ -159,11 +159,10 @@ $pdf->SetTextColor(255, 255, 255);
 $pdf->Cell(10,7,'ID',1,0,'C',1); 
 $pdf->SetTextColor(61, 61, 61);
 $pdf->SetFillColor(170, 200, 167); /*87, 197, 182*/
-$pdf->Cell(35,7,'Nombre_Pruducto',1,0,'C',1);
-$pdf->Cell(35,7, 'ID_Categoria',1,0,'C',1);
+$pdf->Cell(35,7,'Nombre Producto',1,0,'C',1);
+$pdf->Cell(35,7, 'ID Categoria',1,0,'C',1);
 $pdf->Cell(35,7,utf8_decode('Descripción'),1,0,'C',1);
 $pdf->Cell(35,7,'Precio',1,0,'C',1);
-$pdf->Cell(35,7,'Imagen_URL',1,1,'C',1);
 
 
 
@@ -188,7 +187,6 @@ while($fila = $resultado->fetch_assoc()){
     $pdf->Cell(35,7,$fila['ID_catergoria'],1,0,'C',1);
     $pdf->Cell(35,7,$fila['Descripcion'],1,0,'C',1);
     $pdf->Cell(35,7,$fila['Precio'],1,0,'C',1);
-    $pdf->Cell(35,7,$fila['Image_URL'],1,1,'C',1);
 
 
     /*$pdf->Cell(35,7,$fila['Color'],1,1,'C',1);*/

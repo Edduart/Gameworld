@@ -157,11 +157,11 @@ $pdf->SetX(10);
 $pdf->SetFont('Helvetica','B',12);
 $pdf->SetFillColor(61, 61, 61); /*26, 95, 122*/ /* 201, 219, 178*/ 
 $pdf->SetTextColor(255, 255, 255);
-$pdf->Cell(10,7,'Id_pedido',1,0,'C',1); 
+$pdf->Cell(10,7,'ID',1,0,'C',1); 
 $pdf->SetTextColor(61, 61, 61);
 $pdf->SetFillColor(170, 200, 167); /*87, 197, 182*/
 $pdf->Cell(35,7,'Cliente',1,0,'C',1);
-$pdf->Cell(35,7, 'Id_pago',1,0,'C',1);
+$pdf->Cell(35,7, 'Id Pago',1,0,'C',1);
 $pdf->Cell(35,7,'Total',1,0,'C',1);
 $pdf->Cell(35,7,'Referencia',1,1,'C',1);
 
@@ -179,6 +179,8 @@ $pdf->SetFont('Times','',12);
 //$pdf->SetWidths(array(10, 35, 35, 35, 35, 35));
 ///$pdf->Row(array('id',utf8_decode('Marca'), 'Modelo', 'Año', 'Placa','Color'),30);
 
+$total = 0;
+
 while($fila = $resultado->fetch_assoc()){
     $pdf->SetX(10);
     $pdf->SetFillColor(201, 219, 178); 
@@ -189,10 +191,14 @@ while($fila = $resultado->fetch_assoc()){
     $pdf->Cell(35,7,$fila['precioTotal'],1,0,'C',1);
     $pdf->Cell(35,7,$fila['pedidoN'],1,1,'C',1);
 
-
+    $total += $fila['precioTotal'];
     /*$pdf->Cell(35,7,$fila['Color'],1,1,'C',1);*/
 }
-
+$pdf->Cell(10,7,null,1,0,'C',1);
+$pdf->Cell(35,7,null,1,0,'C',1);
+$pdf->Cell(35,7,null,1,0,'C',1);
+$pdf->Cell(35,7,$total.'$',1,0,'C',1);
+$pdf->Cell(35,7,null,1,1,'C',1);
 
 
 

@@ -27,10 +27,10 @@
                 $resultado = $this->CNX->prepare($query);
                 $resultado->execute();
                 return $resultado->fetchAll(PDO::FETCH_OBJ);
-            } catch (Exception $e){
-                die ($e->getMessage());
-            }
-        }
+                } catch (Exception $e){
+                    die ($e->getMessage());
+                }
+             }
 
             public function cargarId($Id){
                 try {
@@ -93,6 +93,17 @@
                     die($e->getMessage());
                 }
         
+            }
+
+            public function obtenerProductosSearch($data) {
+                try{
+                    $query = "SELECT * FROM producto WHERE $data";
+                    $resultado = $this->CNX->prepare($query);
+                    $resultado->execute();
+                    return $resultado->fetchAll(PDO::FETCH_OBJ);
+                } catch (Exception $e){
+                    die ($e->getMessage());
+                }
             }
     }
 ?>
