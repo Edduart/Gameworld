@@ -443,4 +443,8 @@ class control{
 		include_once "View/Admin/Categoria.php";
 	}
 
+	public function Misventas(){
+		include_once "Reporte_venta.php";
+	}
+
 }
