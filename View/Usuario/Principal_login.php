@@ -26,13 +26,6 @@
 
     <div class="navbar">
       <div class="logo"><a href="?resp=PrincipalUser">GAMEWORLD</a></div>
-      <form class="search_container">
-        <input class="search_bar" type="text" placeholder="Search..">
-        <ul>
-          <li><a href="#">Buscar</a></li>
-        </ul>
-        <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
-      </form>
       <li><a href="?resp=Mipedido">Carrito <?php echo $total_cantidad; ?> </a></li>
       <a href="?resp=PrincipalUser" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
     </div>

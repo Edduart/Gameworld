@@ -64,10 +64,10 @@
                 $resultado = $this->CNX->prepare($query);
                 $resultado->execute();
                 return $resultado->fetchAll(PDO::FETCH_OBJ);
-            } catch (Exception $e){
-                die ($e->getMessage());
+                } catch (Exception $e){
+                    die ($e->getMessage());
+                }
             }
-        }
 
             // Registro de cliente 
             public function guardar($data){
@@ -143,6 +143,16 @@
                 $this->CNX->prepare($query)->execute(array($data));
             } catch (Exception $e) {
                 die($e->getMessage());
+            }
+        }
+        public function listarBitacora(){
+            try{
+            $query = "SELECT * FROM bitacora_admin";
+            $resultado = $this->CNX->prepare($query);
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_OBJ);
+            } catch (Exception $e){
+                die ($e->getMessage());
             }
         }
     }

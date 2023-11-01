@@ -458,5 +458,8 @@ class control{
 	public function Misventas(){
 		include_once "Reporte_venta.php";
 	}
+	public function Bitacora(){
+		include_once "View/Admin/Bitacora.php";
+	}
 
 }
