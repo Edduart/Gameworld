@@ -17,35 +17,52 @@
   </head>
   <body>
     
-    <header>
-
-    <div class="navbar">
+  <header>
+      <div class="navbar">
         <div class="logo"><a href="?resp=PrincipalAdmin">GAMEWORLD</a></div>
         <a href="#" class="action_btn"><?php echo $_SESSION['nombre'] ?></a>
-        <div class="reporte">
-        <a href="Reporte_C.php" target="_blank" class="action_btn">Generar Reporte</a>
-        </div>
         <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
       </div>
 
+      <div class="navbar_login">
+            <div class="dropdown">Clientes<i class='bx bx-menu' ></i>
+                <div class="items">
+                <li><a href="?resp=Lista_Client">Lista de Clientes</a></li>
+                </div>
+            </div>
+      </div>
 
       <div class="navbar_login">
-            <div class="dropdown"><i class='bx bx-menu' ></i>
+            <div class="dropdown2">Productos<i class='bx bx-menu' ></i>
                 <div class="items">
                 <li><a href="?resp=Product">Registrar Producto</a></li>
+                <li><a href="?resp=Micategoria">Crear Categoria</a></li>
                 <li><a href="?resp=Lista_Product">Lista de Productos</a></li>
+                </div>
+            </div>
+      </div>
+
+      <div class="navbar_login">
+            <div class="dropdown3">Reportes<i class='bx bx-menu' ></i>
+                <div class="items">
+                <li><a href="https://docs.google.com/document/d/1e0ooxPFKHbpUV2OyHh06dMRSp4Vklbbs/edit" target="_blank">Producto más vendido por mes</a></li>
+                <li><a href="https://docs.google.com/document/d/1o0opA_CJssEmC-BWPI2oggxHMGlx2Kgj/edit#heading=h.gjdgxs" target="_blank">Producto más vendido</a></li>
+                <li><a href="https://docs.google.com/document/d/11YOHyqw8rkAwMRQS-AJGkieA8hmDMnmv/edit" target="_blank">Compras por cliente</a></li>
+                <li><a href="Reporte_venta.php"  target="_blank">Reporte de Ventas</a></li>
+                </div>
+            </div>
+      </div>
+
+      <div class="navbar_login">
+            <div class="dropdown4"><i class='bx bx-menu' ></i>
+                <div class="items">
+                <li><a href="?resp=Bitacora">Bitacora</a></li>
                 <li><a href="?resp=CerrarSesion">Cerrar sesion</a></li>
                 </div>
             </div>
-      </div>  
-
-      <div class="dropdown_menu">
-        <li><a href="hero">Home</a></li>
-        <li><a href="Borrame.html">About</a></li>
-        <li><a href="Borrame.html">Service</a></li>
-        <li><a href="Borrame.html">Contactanos</a></li>
-        <li><a href="#" class="action_btn"></a></li>
       </div>
+
+
     </header>
 
 

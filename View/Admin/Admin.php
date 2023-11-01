@@ -63,14 +63,6 @@
       </div>
 
 
-      <div class="dropdown_menu">
-        <li><a href="hero">Home</a></li>
-        <li><a href="Borrame.html">About</a></li>
-        <li><a href="Borrame.html">Service</a></li>
-        <li><a href="Borrame.html">Contactanos</a></li>
-        <li><a href="#" class="action_btn"></a></li>
-      </div>
-
     </header>
     <main>
        <div class="top-tittle">

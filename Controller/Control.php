@@ -284,15 +284,20 @@ class control{
 	}
 
 	public function dProducto(){
-
+		$prd = $_REQUEST['ID_Producto'];
 		$this->Product->delete($_REQUEST['ID_Producto']);
+		$descrip = "Se elimino el producto ID = $prd";
+		$this->Usuario->guardarBitacora($descrip);
 
 		include_once "View/Admin/List_Product.php";
 	}
 
 	public function dCliente(){
 
+		$cli = $_REQUEST['id_cliente'];
 		$this->Usuario->delete($_REQUEST['id_cliente']);
+		$descrip = "Se elimino el cliente ID = $cli";
+		$this->Usuario->guardarBitacora($descrip);
 
 		include_once "View/Admin/List_Client.php";
 	}
