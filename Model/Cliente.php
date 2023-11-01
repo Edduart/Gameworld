@@ -134,5 +134,16 @@
                 die($e->getMessage());
             }
         }
+
+        // registro bitacora
+
+        public function guardarBitacora($data){
+            try {
+                $query = "INSERT INTO bitacora_admin(Descripcion) VALUES(?)";
+                $this->CNX->prepare($query)->execute(array($data));
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
     }
 ?>

@@ -46,11 +46,12 @@ header {
 .navbar {
   width: 100%;
   height: 60px;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: left;
+  gap: 70%;
   backdrop-filter: blur(
     15px
   ); /*le permite aplicar efectos gráficos como desenfoque o cambio de color al área detrás de un elemento.*/
@@ -404,70 +405,6 @@ table thead tr td {
   color: #ff0000;
 }
 
-/*COMIENZO DEL MENU DESPEGABLE*/
-.dropdown {
-  position: relative;
-  width: auto;
-  background-color: transparent;
-  backdrop-filter: blur(20px);
-  color: #fff;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  position: fixed;
-  margin-left: 50px;
-  left: 20px;
-  top: 5%;
-  transform: translateY(-88%);
-  z-index: 9999;
-  font-size: 30px;
-}
-
-.dropdown .items {
-  position: absolute;
-  display: none;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  width: 150px;
-
-  padding: 12px 20px;
-  z-index: 9999;
-}
-
-.dropdown:hover .items {
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdown .items a {
-  text-align: center;
-  position: relative;
-  display: flex;
-  font-size: 20px;
-  color: black;
-  padding: 10px 15px;
-  margin-top: 2.5px;
-  text-decoration: none;
-  border-radius: 5px;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
-  text-align: center; /* Centrar el texto */
-}
-
-.dropdown .items a:hover {
-  background-color: #5cd1e6;
-  color: #fff;
-}
-
-.action_btn:active {
-  scale: 0.95;
-}
-
-/*FINAL DEL MENU DESPEGABLE*/
 
 .container {
   border: 1px black;
@@ -599,4 +536,254 @@ section#list {
   border-radius: 4px;
   padding: 2px;
   width: 75px;
+}
+
+/*COMIENZO DEL MENU DESPEGABLE*/
+.dropdown {
+  position: relative;
+  width: auto;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  position: fixed;
+  margin-left: 50px;
+  margin-top: 10px;
+  left: 300px;
+  top: 5%;
+  transform: translateY(-88%);
+  z-index: 9999;
+  font-size: 30px;
+}
+
+.dropdown .items {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+
+  padding: 12px 20px;
+  z-index: 9999;
+}
+
+.dropdown:hover .items {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown .items a {
+  text-align: center;
+  position: relative;
+  display: flex;
+  font-size: 20px;
+  color: black;
+  padding: 10px 15px;
+  margin-top: 2.5px;
+  text-decoration: none;
+  border-radius: 5px;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  text-align: center; /* Centrar el texto */
+}
+
+.dropdown .items a:hover {
+  background-color: #5cd1e6;
+  color: #fff;
+}
+
+.action_btn:active {
+  scale: 0.95;
+}
+
+/*FINAL DEL MENU DESPEGABLE*/
+/*COMIENZO DEL MENU DESPEGABLE 2*/
+
+.dropdown2 {
+  position: relative;
+  width: auto;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  position: fixed;
+  margin-left: 50px;
+  margin-top: 10px;
+  left: 460px;
+  top: 5%;
+  transform: translateY(-88%);
+  z-index: 9999;
+  font-size: 30px;
+}
+
+.dropdown2 .items {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+
+  padding: 12px 20px;
+  z-index: 9999;
+}
+
+.dropdown2:hover .items {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown2 .items a {
+  text-align: center;
+  position: relative;
+  display: flex;
+  font-size: 20px;
+  color: black;
+  padding: 10px 15px;
+  margin-top: 2.5px;
+  text-decoration: none;
+  border-radius: 5px;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  text-align: center; /* Centrar el texto */
+}
+
+.dropdown2 .items a:hover {
+  background-color: #5cd1e6;
+  color: #fff;
+}
+
+/*FINAL DEL MENU DESPEGABLE*/
+/*COMIENZO DEL MENU DESPEGABLE 3*/
+
+.dropdown3 {
+  position: relative;
+  width: auto;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  position: fixed;
+  margin-left: 50px;
+  margin-top: 10px;
+  left: 650px;
+  top: 5%;
+  transform: translateY(-88%);
+  z-index: 9999;
+  font-size: 30px;
+}
+
+.dropdown3 .items {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+
+  padding: 12px 20px;
+  z-index: 9999;
+}
+
+.dropdown3:hover .items {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown3 .items a {
+  text-align: center;
+  position: relative;
+  display: flex;
+  font-size: 20px;
+  color: black;
+  padding: 10px 15px;
+  margin-top: 2.5px;
+  text-decoration: none;
+  border-radius: 5px;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  text-align: center; /* Centrar el texto */
+}
+
+.dropdown3 .items a:hover {
+  background-color: #5cd1e6;
+  color: #fff;
+}
+
+/*FINAL DEL MENU DESPEGABLE*/
+/*COMIENZO DEL MENU DESPEGABLE 3*/
+
+.dropdown4 {
+  position: relative;
+  width: auto;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  position: fixed;
+  margin-left: 50px;
+  margin-top: 10px;
+  left: 1325px;
+  top: 5%;
+  transform: translateY(-88%);
+  z-index: 9999;
+  font-size: 30px;
+}
+
+.dropdown4 .items {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+
+  padding: 12px 20px;
+  z-index: 9999;
+}
+
+.dropdown4:hover .items {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown4 .items a {
+  text-align: center;
+  position: relative;
+  display: flex;
+  font-size: 20px;
+  color: black;
+  padding: 10px 15px;
+  margin-top: 2.5px;
+  text-decoration: none;
+  border-radius: 5px;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  text-align: center; /* Centrar el texto */
+}
+
+.dropdown4 .items a:hover {
+  background-color: #5cd1e6;
+  color: #fff;
 }

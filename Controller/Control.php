@@ -140,6 +140,9 @@ class control{
 				include_once "View/Admin/Registro_Product.php";
 			}*/
 		}else{
+
+			$descrip = "Creacion de producto nuevo = $alm->Nombre_p";
+			$this->Usuario->guardarBitacora($descrip);
 			$this->Product->guardar($alm);
 			include_once "View/Admin/Admin.php";
 		}
@@ -154,6 +157,8 @@ class control{
 		$alm->Descripcion = $_POST['TxtDescripcion'];
 		$error=0;
 
+		$descrip = "Creacion de categoria nueva = $alm->Nombre_c";
+		$this->Usuario->guardarBitacora($descrip);
 		$this->Category->guardar($alm);
 		include_once "View/Admin/Admin.php";
 
@@ -182,6 +187,8 @@ class control{
 				if($Uencontrado->usuario == "admin")
 				{
 					include_once "View/Admin/Admin.php";
+					$descrip = "Inicio de sesion = Admin";
+					$this->Usuario->guardarBitacora($descrip);
 				} 
 				elseif ($Uencontrado->usuario !== "admin")
 				{
@@ -248,6 +255,11 @@ class control{
 
 	public function CerrarSesion() {
 		//Eliminar todas las variables de sesion
+		if ($_SESSION['nombre'] == "admin") 
+		{
+			$descrip = "Cerro sesion = Admin";
+			$this->Usuario->guardarBitacora($descrip);
+		}
 		session_unset();
 		//Destruit la sesion
 		session_destroy();
