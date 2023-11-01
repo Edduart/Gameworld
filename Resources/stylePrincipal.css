@@ -45,13 +45,13 @@ header {
 
 .navbar {
   width: 100%;
-  height: 60px;
+  height: 80px;
   max-width: 1350px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 70%;
+  gap: 55%;
   backdrop-filter: blur(
     15px
   ); /*le permite aplicar efectos gráficos como desenfoque o cambio de color al área detrás de un elemento.*/
@@ -99,7 +99,7 @@ header {
 }
 
 .navbar_login {
-  float: right;
+  display: flex;
 }
 .action_btn {
   width: auto;
@@ -553,8 +553,8 @@ section#list {
   border: 4px solid rgba(255, 255, 255, 0.2);
   position: fixed;
   margin-left: 50px;
-  margin-top: 10px;
-  left: 300px;
+  margin-top: 18px;
+  left: 330px;
   top: 5%;
   transform: translateY(-88%);
   z-index: 9999;
@@ -619,8 +619,8 @@ section#list {
   border: 4px solid rgba(255, 255, 255, 0.2);
   position: fixed;
   margin-left: 50px;
-  margin-top: 10px;
-  left: 460px;
+  margin-top: 18px;
+  left: 480px;
   top: 5%;
   transform: translateY(-88%);
   z-index: 9999;
@@ -681,8 +681,8 @@ section#list {
   border: 4px solid rgba(255, 255, 255, 0.2);
   position: fixed;
   margin-left: 50px;
-  margin-top: 10px;
-  left: 650px;
+  margin-top: 18px;
+  left: 660px;
   top: 5%;
   transform: translateY(-88%);
   z-index: 9999;
@@ -743,8 +743,8 @@ section#list {
   border: 4px solid rgba(255, 255, 255, 0.2);
   position: fixed;
   margin-left: 50px;
-  margin-top: 10px;
-  left: 1325px;
+  margin-top: 18px;
+  left: 1310px;
   top: 5%;
   transform: translateY(-88%);
   z-index: 9999;
